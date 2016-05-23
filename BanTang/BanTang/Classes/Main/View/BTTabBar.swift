@@ -47,7 +47,7 @@ class BTTabBar: UITabBar {
                 button.frame = CGRectMake(x, y, w, h)
                 
                 i += 1
-                
+
             }
         }
         

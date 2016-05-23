@@ -9,15 +9,47 @@
 import UIKit
 
 class BTDiscoverViewController: UITableViewController {
+    //下划线属性
+    let underLine = UIView()
+    //懒加载左侧按钮
+    lazy var leftButton: UIButton = {
+        
+        var leftButton = UIButton(type: .Custom)
+        leftButton.setTitle("清单", forState: .Normal)
+        leftButton.titleLabel?.font = UIFont.systemFontOfSize(14)
+        leftButton.setTitleColor(UIColor.redColor(), forState: .Selected)
+        leftButton.setTitleColor(UIColor.lightGrayColor(), forState: .Normal)
+        leftButton.frame = CGRectMake(5, 0, 57.5, 44)
+        leftButton.selected = true
+        leftButton.addTarget(self, action: #selector(BTDiscoverViewController.clickLeft), forControlEvents: .TouchUpInside)
+        
+        return leftButton
+    }()
+    
+    //懒加载右侧按钮
+    lazy var rightButton: UIButton = {
+        
+        var rightButton = UIButton(type: .Custom)
+        rightButton.setTitle("单品", forState: .Normal)
+        rightButton.titleLabel?.font = UIFont.systemFontOfSize(14)
+        rightButton.setTitleColor(UIColor.redColor(), forState: .Selected)
+        rightButton.setTitleColor(UIColor.lightGrayColor(), forState: .Normal)
+        rightButton.frame = CGRectMake(67.5, 0, 57.5, 44)
+        rightButton.addTarget(self, action: #selector(BTDiscoverViewController.clickRight), forControlEvents: .TouchUpInside)
+        
+        return rightButton
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        //添加左侧关注按钮
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "discovey_pop_btn_20x20_"), highlightImage: UIImage(named: "discovey_pop_press_btn_20x20_"), target: self, action: #selector(BTDiscoverViewController.attentation))
+        
+        //添加右侧创建按钮
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "discover_write_article_icon_18x20_"), highlightImage: UIImage(named: "discover_write_article_highlisht_icon_19x20_"), target: self, action: #selector(BTDiscoverViewController.creatText))
+        
+        //添加导航栏中间的按钮
+        setupTitleView()
     }
 
     override func didReceiveMemoryWarning() {
@@ -37,59 +69,82 @@ class BTDiscoverViewController: UITableViewController {
         return 0
     }
 
-    /*
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
+}
 
-        // Configure the cell...
-
-        return cell
+//MARK:- 导航栏左右两侧的点击
+extension BTDiscoverViewController {
+    //MARK:- 关注点击
+    func attentation() {
+        print("关注")
     }
-    */
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
+    //MARK:- 创建文章点击
+    func creatText() {
+        print("创建文章")
     }
-    */
+}
 
-    /*
-    // Override to support editing the table view.
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if editingStyle == .Delete {
-            // Delete the row from the data source
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-        } else if editingStyle == .Insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+//MARK:- 设置导航栏中间的view
+extension BTDiscoverViewController {
+    
+
+    
+    func setupTitleView() {
+        //创建容器
+        let contentView = UIView(frame: CGRectMake(0, 0, 130, 44))
+        
+        //创建红色下划线
+        underLine.backgroundColor = UIColor.redColor()
+        underLine.frame.size.width = leftButton.frame.size.width - 20
+        underLine.frame.size.height = 2
+        underLine.center.x = leftButton.center.x
+        underLine.frame.origin.y = contentView.frame.size.height - underLine.frame.size.height
+        
+
+        //添加按钮
+        contentView.addSubview(leftButton)
+        contentView.addSubview(rightButton)
+        
+        //添加下划线
+        contentView.addSubview(underLine)
+        
+        
+        self.navigationItem.titleView = contentView
+        
     }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
-
+    
+    //MARK:- 清单点击
+    func clickLeft() {
+        print("点击清单")
+        rightButton.selected = false
+        leftButton.selected = true
+        
+        //下划线动画
+        UIView.animateWithDuration(0.25) { 
+            self.underLine.center.x = self.leftButton.center.x
+        }
+        
+        //添加右侧创建按钮
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "discover_write_article_icon_18x20_"), highlightImage: UIImage(named: "discover_write_article_highlisht_icon_19x20_"), target: self, action: #selector(BTDiscoverViewController.creatText))
     }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
+    
+    //MARK:- 单品点击
+    func clickRight() {
+        print("点击单品")
+        leftButton.selected = false
+        rightButton.selected = true
+        
+        //下划线动画
+        UIView.animateWithDuration(0.25) {
+            self.underLine.center.x = self.rightButton.center.x
+        }
+        
+        //加载照相按钮
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "discovey_camera_btn_24x19_"), highlightImage: UIImage(named: ""), target: self, action: #selector(BTDiscoverViewController.photoClick))
     }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    
+    //MARK:- photo点击
+    func photoClick() {
+        print("点击照片")
     }
-    */
-
+    
 }

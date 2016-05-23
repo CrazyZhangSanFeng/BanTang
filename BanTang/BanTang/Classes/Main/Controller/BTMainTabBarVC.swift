@@ -51,7 +51,7 @@ extension BTMainTabBarVC {
         
         let baseNav = BTBaseNaviController(rootViewController: viewController)
         
-        viewController.navigationItem.title = title
+//        viewController.navigationItem.title = title
 //        viewController.tabBarItem.title = nil
         viewController.tabBarItem.image = UIImage(named: imageName)
         viewController.tabBarItem.selectedImage = UIImage(named: selectImageName)
