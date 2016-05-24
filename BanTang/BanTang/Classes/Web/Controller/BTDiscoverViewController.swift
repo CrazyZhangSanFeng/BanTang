@@ -43,13 +43,30 @@ class BTDiscoverViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         //添加左侧关注按钮
-        self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "discovey_pop_btn_20x20_"), highlightImage: UIImage(named: "discovey_pop_press_btn_20x20_"), target: self, action: #selector(BTDiscoverViewController.attentation))
+        navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "discovey_pop_btn_20x20_"), highlightImage: UIImage(named: "discovey_pop_press_btn_20x20_"), target: self, action: #selector(BTDiscoverViewController.attentation))
         
         //添加右侧创建按钮
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "discover_write_article_icon_18x20_"), highlightImage: UIImage(named: "discover_write_article_highlisht_icon_19x20_"), target: self, action: #selector(BTDiscoverViewController.creatText))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "discover_write_article_icon_18x20_"), highlightImage: UIImage(named: "discover_write_article_highlisht_icon_19x20_"), target: self, action: #selector(BTDiscoverViewController.creatText))
         
         //添加导航栏中间的按钮
         setupTitleView()
+        
+        
+        //设置Tabl头部视图
+        let header = NSBundle.mainBundle().loadNibNamed("BTHeaderView", owner: nil, options: nil).first as! BTHeaderView
+        
+        let w = UIScreen.mainScreen().bounds.width
+        header.frame = CGRect(x:0, y: 0, width:w,height:44)
+        
+        
+//        let header = UIView(frame: CGRect(x: 0, y: 0, width: 0, height: 44))
+//        
+//        header.backgroundColor = UIColor.redColor()
+        
+        tableView.tableHeaderView = header
+        
+        
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -57,16 +74,28 @@ class BTDiscoverViewController: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
 
-    // MARK: - Table view data source
+    // MARK: - Table view 数据源
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+        
+        return 1
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+        
+        return 30
+    }
+    
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cellID = "cellID"
+        var cell = tableView.dequeueReusableCellWithIdentifier(cellID)
+        if cell == nil {
+            cell = UITableViewCell(style: .Default, reuseIdentifier: cellID)
+        }
+        
+        cell?.textLabel?.text = "\(indexPath.row)"
+        
+        return cell!
     }
 
 }
@@ -99,6 +128,15 @@ extension BTDiscoverViewController {
         underLine.center.x = leftButton.center.x
         underLine.frame.origin.y = contentView.frame.size.height - underLine.frame.size.height
         
+        //创建中间分割线
+        let middleLine = UIView()
+        middleLine.backgroundColor = UIColor.lightGrayColor()
+        middleLine.frame.size.width = 1
+        middleLine.frame.size.height = 15
+        middleLine.frame.origin.x = contentView.frame.size.width * 0.5
+        middleLine.frame.origin.y = 15
+        middleLine.alpha = 0.7
+        
 
         //添加按钮
         contentView.addSubview(leftButton)
@@ -106,6 +144,9 @@ extension BTDiscoverViewController {
         
         //添加下划线
         contentView.addSubview(underLine)
+        
+        //添加分割线
+        contentView.addSubview(middleLine)
         
         
         self.navigationItem.titleView = contentView

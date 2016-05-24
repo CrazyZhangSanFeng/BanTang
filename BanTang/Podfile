@@ -1,0 +1,7 @@
+platform :ios, '8.0'
+use_frameworks!
+
+target 'BanTang' do
+pod 'MJExtension'
+pod 'SDWebImage'
+end

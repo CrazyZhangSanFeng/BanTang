@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="NRI-dq-WxP" customClass="BTHeaderView" customModule="BanTang" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="discover_article_list_icon_11x14_" translatesAutoresizingMaskIntoConstraints="NO" id="GdY-k7-xpV">
+                    <rect key="frame" x="10" y="15" width="11" height="14"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="11" id="NrS-bG-9TS"/>
+                        <constraint firstAttribute="height" constant="14" id="ueM-Z6-1u1"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="原创文章" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a9l-eU-ewP">
+                    <rect key="frame" x="31" y="14" width="52" height="16"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BhZ-jK-M2f">
+                    <rect key="frame" x="325" y="8" width="30" height="28"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="30" id="7JE-se-ENF"/>
+                        <constraint firstAttribute="height" constant="28" id="O0u-u7-Ws7"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                    <state key="normal" title="最新">
+                        <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <state key="selected" title="最新">
+                        <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="newClick:" destination="NRI-dq-WxP" eventType="touchUpInside" id="UdW-GO-6RQ"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="POq-R7-vgR">
+                    <rect key="frame" x="275" y="8" width="30" height="28"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                    <state key="normal" title="最热">
+                        <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <state key="selected" title="最热">
+                        <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="hotClick:" destination="NRI-dq-WxP" eventType="touchUpInside" id="Y6I-bI-9at"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="BhZ-jK-M2f" firstAttribute="leading" secondItem="POq-R7-vgR" secondAttribute="trailing" constant="20" id="NN4-Nq-5HQ"/>
+                <constraint firstAttribute="trailing" secondItem="BhZ-jK-M2f" secondAttribute="trailing" constant="20" id="QEQ-Lt-YiS"/>
+                <constraint firstItem="GdY-k7-xpV" firstAttribute="top" secondItem="NRI-dq-WxP" secondAttribute="top" constant="15" id="Rsm-Ic-Mmm"/>
+                <constraint firstItem="a9l-eU-ewP" firstAttribute="centerY" secondItem="GdY-k7-xpV" secondAttribute="centerY" id="Uvd-PW-ngk"/>
+                <constraint firstItem="BhZ-jK-M2f" firstAttribute="centerY" secondItem="a9l-eU-ewP" secondAttribute="centerY" id="hDr-xp-osr"/>
+                <constraint firstItem="POq-R7-vgR" firstAttribute="centerY" secondItem="BhZ-jK-M2f" secondAttribute="centerY" id="iJD-1N-x7h"/>
+                <constraint firstItem="GdY-k7-xpV" firstAttribute="leading" secondItem="NRI-dq-WxP" secondAttribute="leading" constant="10" id="oSV-7U-4OX"/>
+                <constraint firstItem="POq-R7-vgR" firstAttribute="height" secondItem="BhZ-jK-M2f" secondAttribute="height" id="rVe-NW-Uq8"/>
+                <constraint firstItem="a9l-eU-ewP" firstAttribute="leading" secondItem="GdY-k7-xpV" secondAttribute="trailing" constant="10" id="thg-QK-iQu"/>
+                <constraint firstItem="POq-R7-vgR" firstAttribute="width" secondItem="BhZ-jK-M2f" secondAttribute="width" id="x0s-dy-MLv"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="hotBtn" destination="POq-R7-vgR" id="idL-Yo-reb"/>
+                <outlet property="newBtn" destination="BhZ-jK-M2f" id="yw9-Sp-CBJ"/>
+            </connections>
+            <point key="canvasLocation" x="930.5" y="-91"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="discover_article_list_icon_11x14_" width="11" height="14"/>
+    </resources>
+</document>

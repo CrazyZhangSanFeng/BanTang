@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		35724E10ED634AD0DF12CF74 /* Pods_BanTang.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20C1529032ADECFDBF01B63F /* Pods_BanTang.framework */; };
 		738710311CF2A749007D6979 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 738710301CF2A749007D6979 /* AppDelegate.swift */; };
 		738710381CF2A74A007D6979 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 738710371CF2A74A007D6979 /* Assets.xcassets */; };
 		7387103B1CF2A74A007D6979 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 738710391CF2A74A007D6979 /* LaunchScreen.storyboard */; };
@@ -19,9 +20,16 @@
 		738710681CF2DCC6007D6979 /* BTBaseNaviController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 738710671CF2DCC6007D6979 /* BTBaseNaviController.swift */; };
 		7387106A1CF2DF6E007D6979 /* BTTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 738710691CF2DF6E007D6979 /* BTTabBar.swift */; };
 		738710701CF30093007D6979 /* UIBarButtonItem+Item.m in Sources */ = {isa = PBXBuildFile; fileRef = 7387106F1CF30093007D6979 /* UIBarButtonItem+Item.m */; };
+		738710721CF40284007D6979 /* BTHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 738710711CF40284007D6979 /* BTHeaderView.swift */; };
+		738710741CF40299007D6979 /* BTHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 738710731CF40299007D6979 /* BTHeaderView.xib */; };
+		738710771CF449B5007D6979 /* BTDisTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 738710751CF449B5007D6979 /* BTDisTableViewCell.swift */; };
+		738710781CF449B5007D6979 /* BTDisTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 738710761CF449B5007D6979 /* BTDisTableViewCell.xib */; };
+		7387107A1CF46B85007D6979 /* BTTopicItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 738710791CF46B85007D6979 /* BTTopicItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		20C1529032ADECFDBF01B63F /* Pods_BanTang.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BanTang.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		67BC2053EB2595D37723139E /* Pods-BanTang.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BanTang.release.xcconfig"; path = "Pods/Target Support Files/Pods-BanTang/Pods-BanTang.release.xcconfig"; sourceTree = "<group>"; };
 		7387102D1CF2A749007D6979 /* BanTang.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BanTang.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		738710301CF2A749007D6979 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		738710371CF2A74A007D6979 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -38,6 +46,12 @@
 		7387106D1CF30092007D6979 /* BanTang-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "BanTang-Bridging-Header.h"; path = "Classes/Other/Category/BanTang-Bridging-Header.h"; sourceTree = "<group>"; };
 		7387106E1CF30093007D6979 /* UIBarButtonItem+Item.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+Item.h"; sourceTree = "<group>"; };
 		7387106F1CF30093007D6979 /* UIBarButtonItem+Item.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+Item.m"; sourceTree = "<group>"; };
+		738710711CF40284007D6979 /* BTHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BTHeaderView.swift; sourceTree = "<group>"; };
+		738710731CF40299007D6979 /* BTHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BTHeaderView.xib; sourceTree = "<group>"; };
+		738710751CF449B5007D6979 /* BTDisTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BTDisTableViewCell.swift; sourceTree = "<group>"; };
+		738710761CF449B5007D6979 /* BTDisTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BTDisTableViewCell.xib; sourceTree = "<group>"; };
+		738710791CF46B85007D6979 /* BTTopicItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BTTopicItem.swift; sourceTree = "<group>"; };
+		83010B63906DF58D502F3849 /* Pods-BanTang.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BanTang.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BanTang/Pods-BanTang.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +59,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				35724E10ED634AD0DF12CF74 /* Pods_BanTang.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,6 +71,8 @@
 			children = (
 				7387102F1CF2A749007D6979 /* BanTang */,
 				7387102E1CF2A749007D6979 /* Products */,
+				E3470DCB95A8F5070B803F84 /* Pods */,
+				8D5ED11B9233C156C6C22687 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -244,6 +261,7 @@
 		738710551CF2A8FC007D6979 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				738710791CF46B85007D6979 /* BTTopicItem.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -251,6 +269,10 @@
 		738710561CF2A8FC007D6979 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				738710711CF40284007D6979 /* BTHeaderView.swift */,
+				738710731CF40299007D6979 /* BTHeaderView.xib */,
+				738710751CF449B5007D6979 /* BTDisTableViewCell.swift */,
+				738710761CF449B5007D6979 /* BTDisTableViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -306,6 +328,23 @@
 			path = Category;
 			sourceTree = "<group>";
 		};
+		8D5ED11B9233C156C6C22687 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				20C1529032ADECFDBF01B63F /* Pods_BanTang.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E3470DCB95A8F5070B803F84 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				83010B63906DF58D502F3849 /* Pods-BanTang.debug.xcconfig */,
+				67BC2053EB2595D37723139E /* Pods-BanTang.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -313,9 +352,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7387103F1CF2A74A007D6979 /* Build configuration list for PBXNativeTarget "BanTang" */;
 			buildPhases = (
+				6AE03EFC66800DE810132363 /* 📦 Check Pods Manifest.lock */,
 				738710291CF2A749007D6979 /* Sources */,
 				7387102A1CF2A749007D6979 /* Frameworks */,
 				7387102B1CF2A749007D6979 /* Resources */,
+				B43FA7EF01B74D131D15C487 /* 📦 Embed Pods Frameworks */,
+				B93D7EC2291207404B0A4AFF /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -365,13 +407,63 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				738710781CF449B5007D6979 /* BTDisTableViewCell.xib in Resources */,
 				7387103B1CF2A74A007D6979 /* LaunchScreen.storyboard in Resources */,
 				738710381CF2A74A007D6979 /* Assets.xcassets in Resources */,
 				738710661CF2B776007D6979 /* BTAccountViewController.xib in Resources */,
+				738710741CF40299007D6979 /* BTHeaderView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		6AE03EFC66800DE810132363 /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		B43FA7EF01B74D131D15C487 /* 📦 Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BanTang/Pods-BanTang-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B93D7EC2291207404B0A4AFF /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BanTang/Pods-BanTang-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		738710291CF2A749007D6979 /* Sources */ = {
@@ -381,9 +473,12 @@
 				738710681CF2DCC6007D6979 /* BTBaseNaviController.swift in Sources */,
 				738710701CF30093007D6979 /* UIBarButtonItem+Item.m in Sources */,
 				738710651CF2B776007D6979 /* BTAccountViewController.swift in Sources */,
+				738710721CF40284007D6979 /* BTHeaderView.swift in Sources */,
+				738710771CF449B5007D6979 /* BTDisTableViewCell.swift in Sources */,
 				738710621CF2B706007D6979 /* BTMessageViewController.swift in Sources */,
 				7387106A1CF2DF6E007D6979 /* BTTabBar.swift in Sources */,
 				738710311CF2A749007D6979 /* AppDelegate.swift in Sources */,
+				7387107A1CF46B85007D6979 /* BTTopicItem.swift in Sources */,
 				738710601CF2B6D0007D6979 /* BTDiscoverViewController.swift in Sources */,
 				7387105C1CF2B568007D6979 /* BTMainTabBarVC.swift in Sources */,
 				7387105E1CF2B690007D6979 /* BTHomeViewController.swift in Sources */,
@@ -489,6 +584,7 @@
 		};
 		738710401CF2A74A007D6979 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 83010B63906DF58D502F3849 /* Pods-BanTang.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
@@ -505,6 +601,7 @@
 		};
 		738710411CF2A74A007D6979 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 67BC2053EB2595D37723139E /* Pods-BanTang.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
@@ -537,6 +634,7 @@
 				738710411CF2A74A007D6979 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
