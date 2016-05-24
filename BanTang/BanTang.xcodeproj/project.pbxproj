@@ -25,6 +25,7 @@
 		738710771CF449B5007D6979 /* BTDisTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 738710751CF449B5007D6979 /* BTDisTableViewCell.swift */; };
 		738710781CF449B5007D6979 /* BTDisTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 738710761CF449B5007D6979 /* BTDisTableViewCell.xib */; };
 		7387107A1CF46B85007D6979 /* BTTopicItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 738710791CF46B85007D6979 /* BTTopicItem.swift */; };
+		7387107C1CF47B4B007D6979 /* BTTopicUserItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7387107B1CF47B4B007D6979 /* BTTopicUserItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,7 +44,7 @@
 		738710641CF2B776007D6979 /* BTAccountViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BTAccountViewController.xib; sourceTree = "<group>"; };
 		738710671CF2DCC6007D6979 /* BTBaseNaviController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BTBaseNaviController.swift; sourceTree = "<group>"; };
 		738710691CF2DF6E007D6979 /* BTTabBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BTTabBar.swift; sourceTree = "<group>"; };
-		7387106D1CF30092007D6979 /* BanTang-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "BanTang-Bridging-Header.h"; path = "Classes/Other/Category/BanTang-Bridging-Header.h"; sourceTree = "<group>"; };
+		7387106D1CF30092007D6979 /* BanTang-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BanTang-Bridging-Header.h"; sourceTree = "<group>"; };
 		7387106E1CF30093007D6979 /* UIBarButtonItem+Item.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+Item.h"; sourceTree = "<group>"; };
 		7387106F1CF30093007D6979 /* UIBarButtonItem+Item.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+Item.m"; sourceTree = "<group>"; };
 		738710711CF40284007D6979 /* BTHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BTHeaderView.swift; sourceTree = "<group>"; };
@@ -51,6 +52,7 @@
 		738710751CF449B5007D6979 /* BTDisTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BTDisTableViewCell.swift; sourceTree = "<group>"; };
 		738710761CF449B5007D6979 /* BTDisTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BTDisTableViewCell.xib; sourceTree = "<group>"; };
 		738710791CF46B85007D6979 /* BTTopicItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BTTopicItem.swift; sourceTree = "<group>"; };
+		7387107B1CF47B4B007D6979 /* BTTopicUserItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BTTopicUserItem.swift; sourceTree = "<group>"; };
 		83010B63906DF58D502F3849 /* Pods-BanTang.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BanTang.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BanTang/Pods-BanTang.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -92,7 +94,6 @@
 				738710371CF2A74A007D6979 /* Assets.xcassets */,
 				738710391CF2A74A007D6979 /* LaunchScreen.storyboard */,
 				7387103C1CF2A74A007D6979 /* Info.plist */,
-				7387106D1CF30092007D6979 /* BanTang-Bridging-Header.h */,
 			);
 			path = BanTang;
 			sourceTree = "<group>";
@@ -262,6 +263,7 @@
 			isa = PBXGroup;
 			children = (
 				738710791CF46B85007D6979 /* BTTopicItem.swift */,
+				7387107B1CF47B4B007D6979 /* BTTopicUserItem.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -322,6 +324,7 @@
 		7387106C1CF3007A007D6979 /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				7387106D1CF30092007D6979 /* BanTang-Bridging-Header.h */,
 				7387106E1CF30093007D6979 /* UIBarButtonItem+Item.h */,
 				7387106F1CF30093007D6979 /* UIBarButtonItem+Item.m */,
 			);
@@ -482,6 +485,7 @@
 				738710601CF2B6D0007D6979 /* BTDiscoverViewController.swift in Sources */,
 				7387105C1CF2B568007D6979 /* BTMainTabBarVC.swift in Sources */,
 				7387105E1CF2B690007D6979 /* BTHomeViewController.swift in Sources */,
+				7387107C1CF47B4B007D6979 /* BTTopicUserItem.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

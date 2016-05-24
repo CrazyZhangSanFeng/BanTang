@@ -21,8 +21,9 @@ class BTTopicItem: NSObject {
     
     //评论数
     var comments : String = ""
-    
-    //三张图片数组
 
     //用户头像//用户名 -> 用户模型
+    var userItem : BTTopicUserItem?
+    
+    //三张图片数组
 }

@@ -9,6 +9,8 @@
 import UIKit
 
 class BTDiscoverViewController: UITableViewController {
+    
+    let cellID = "cellID"
     //下划线属性
     let underLine = UIView()
     //懒加载左侧按钮
@@ -54,27 +56,17 @@ class BTDiscoverViewController: UITableViewController {
         
         //设置Tabl头部视图
         let header = NSBundle.mainBundle().loadNibNamed("BTHeaderView", owner: nil, options: nil).first as! BTHeaderView
-        
         let w = UIScreen.mainScreen().bounds.width
         header.frame = CGRect(x:0, y: 0, width:w,height:44)
-        
-        
-//        let header = UIView(frame: CGRect(x: 0, y: 0, width: 0, height: 44))
-//        
-//        header.backgroundColor = UIColor.redColor()
-        
         tableView.tableHeaderView = header
         
-        
-        
+        //注册cell
+        tableView.registerNib(UINib.init(nibName: "BTDisTableViewCell", bundle: nil), forCellReuseIdentifier: cellID)
+    
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
 
-    // MARK: - Table view 数据源
+    // MARK: - Table view 数据源 代理方法
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         
@@ -87,17 +79,30 @@ class BTDiscoverViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cellID = "cellID"
-        var cell = tableView.dequeueReusableCellWithIdentifier(cellID)
-        if cell == nil {
-            cell = UITableViewCell(style: .Default, reuseIdentifier: cellID)
-        }
         
-        cell?.textLabel?.text = "\(indexPath.row)"
+        let cell = tableView.dequeueReusableCellWithIdentifier(cellID, forIndexPath: indexPath) as! BTDisTableViewCell
         
-        return cell!
+        
+        
+        return cell
+    }
+    
+    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return 210
     }
 
+}
+
+//MARK:- 请求数据
+extension BTDiscoverViewController {
+    func loadData() {
+        //创建会话管理者
+//        let manager = AFHTTPRequestOperationManager()
+        
+        //配置请求参数
+        
+        //发送请求
+    }
 }
 
 //MARK:- 导航栏左右两侧的点击
