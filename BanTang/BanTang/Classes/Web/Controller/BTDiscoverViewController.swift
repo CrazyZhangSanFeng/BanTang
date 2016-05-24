@@ -7,10 +7,15 @@
 //
 
 import UIKit
+import AFNetworking
+import MJExtension
 
+private let cellID = "cellID"
 class BTDiscoverViewController: UITableViewController {
     
-    let cellID = "cellID"
+    //模型数组
+    lazy var topicItems: [BTTopicItem] = [BTTopicItem]()
+    
     //下划线属性
     let underLine = UIView()
     //懒加载左侧按钮
@@ -62,27 +67,25 @@ class BTDiscoverViewController: UITableViewController {
         
         //注册cell
         tableView.registerNib(UINib.init(nibName: "BTDisTableViewCell", bundle: nil), forCellReuseIdentifier: cellID)
+        
+        //加载数据
+        loadData()
     
     }
 
 
     // MARK: - Table view 数据源 代理方法
 
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        
-        return 1
-    }
-
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return 30
+        return topicItems.count
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCellWithIdentifier(cellID, forIndexPath: indexPath) as! BTDisTableViewCell
         
-        
+        cell.topicItem = topicItems[indexPath.row]
         
         return cell
     }
@@ -97,11 +100,27 @@ class BTDiscoverViewController: UITableViewController {
 extension BTDiscoverViewController {
     func loadData() {
         //创建会话管理者
-//        let manager = AFHTTPRequestOperationManager()
+        let manager = AFHTTPSessionManager()
         
         //配置请求参数
         
         //发送请求
+        manager.GET("http://open3.bantangapp.com/topics/topic/listByUsers?app_id=com.jzyd.BanTang&app_installtime=1463934108&app_versions=5.8&channel_name=appStore&client_id=bt_app_ios&client_secret=9c1e6634ce1c5098e056628cd66a17a5&oauth_token=f1d476369a332f4e16f578a6228bd97e&os_versions=9.3.2&page=0&pagesize=20&screensize=640&sort_type=1&track_device_info=iPhone6%2C2&track_deviceid=EAC59F1B-C110-48FA-B013-02A92744278A&track_user_id=2182968&v=13", parameters: nil, success: { (task: NSURLSessionDataTask, responseObject: AnyObject?) in
+            
+            //将AnyObject转化成字典类型
+            guard (responseObject as? [String : NSObject]) != nil else {
+                return
+            }
+            
+            let dictArray = responseObject!["data"] as? [String : NSObject]
+            let resultArray = dictArray!["topic"] as? [[String : NSObject]]
+            self.topicItems = BTTopicItem.mj_objectArrayWithKeyValuesArray(resultArray) as! [BTTopicItem]
+            
+            self.tableView.reloadData()
+            
+        }) { (task: NSURLSessionDataTask?, error: NSError) in
+            
+        }
     }
 }
 

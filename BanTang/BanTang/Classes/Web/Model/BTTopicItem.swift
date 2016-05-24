@@ -23,7 +23,7 @@ class BTTopicItem: NSObject {
     var comments : String = ""
 
     //用户头像//用户名 -> 用户模型
-    var userItem : BTTopicUserItem?
+    var user : BTTopicUserItem?
     
     //三张图片数组
 }
