@@ -9,11 +9,14 @@
 import UIKit
 
 class BTHomeViewController: UIViewController {
+    
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        view.backgroundColor = UIColor.blueColor()
+        
     }
 
     override func didReceiveMemoryWarning() {

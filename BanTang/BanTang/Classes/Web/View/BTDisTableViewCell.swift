@@ -23,6 +23,12 @@ class BTDisTableViewCell: UITableViewCell {
     
     @IBOutlet weak var comments: UILabel!
     
+    @IBOutlet weak var imageView0: UIImageView!
+    
+    @IBOutlet weak var imageView1: UIImageView!
+    
+    @IBOutlet weak var imageView2: UIImageView!
+    
     //设置cell的显示内容
     var topicItem : BTTopicItem? {
         didSet {
@@ -41,22 +47,42 @@ class BTDisTableViewCell: UITableViewCell {
             let url = NSURL(string: (topicItem.user?.avatar)!)
             
             avatar.sd_setImageWithURL(url, placeholderImage: UIImage(named: "default_user_loading_icon_100x100_"))
+            
+            setImageView(0, imageView: imageView0)
+            
+            setImageView(1, imageView: imageView1)
+            
+            setImageView(2, imageView: imageView2)
+            
         }
         
+    }
+    
+    //:MARK- 设置cell中间的图片
+    func setImageView(count: NSInteger, imageView: UIImageView) {
+        if let dict = topicItem!.pics![count] as? [String : String]{
+            let urlStr = dict["url"]!
+                
+            let urlStr0 = (urlStr as NSString).stringByReplacingOccurrencesOfString("!300x300", withString: "")
+                
+            let url = NSURL(string: urlStr0)
+            imageView.sd_setImageWithURL(url)
+            
+        }
     }
     
     override func awakeFromNib() {
         super.awakeFromNib()
         //设置头像圆角
-        
         avatar.layer.cornerRadius = self.avatar.frame.size.width * 0.5;
         avatar.layer.masksToBounds = true;
     }
-
-    override func setSelected(selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
     
+    //重写frame方法,扩大cell间距,造成分割线
+    override var frame: CGRect{
+        didSet{
+            super.frame = CGRect(x: frame.origin.x, y: frame.origin.y, width: frame.size.width, height: frame.size.height - 10)
+        }
+    }
+ 
 }

@@ -19,81 +19,81 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="标题" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XDh-Kk-jQu">
-                        <rect key="frame" x="143" y="17" width="34" height="21"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <rect key="frame" x="145" y="17" width="30" height="18"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="用户名" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zax-2S-vU1">
-                        <rect key="frame" x="119" y="53" width="42" height="17"/>
+                        <rect key="frame" x="119" y="50" width="42" height="17"/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="default_user_loading_icon_100x100_" translatesAutoresizingMaskIntoConstraints="NO" id="sto-Mo-2m5">
-                        <rect key="frame" x="88" y="50" width="23" height="23"/>
+                        <rect key="frame" x="88" y="47" width="23" height="23"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="23" id="NeM-5Z-KvK"/>
                             <constraint firstAttribute="width" constant="23" id="Tbi-Jq-Y6C"/>
                         </constraints>
                     </imageView>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cI2-eA-Eb1">
-                        <rect key="frame" x="169" y="55" width="1" height="13"/>
+                        <rect key="frame" x="169" y="52" width="1" height="13"/>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="1" id="2HY-LF-RHb"/>
                         </constraints>
                     </view>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="时间" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xWU-K4-KtD">
-                        <rect key="frame" x="178" y="53" width="28" height="17"/>
+                        <rect key="frame" x="178" y="50" width="28" height="17"/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="D8z-xS-HMs">
-                        <rect key="frame" x="114" y="78" width="92" height="92"/>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="default_user_icon_75x75_" translatesAutoresizingMaskIntoConstraints="NO" id="D8z-xS-HMs">
+                        <rect key="frame" x="114" y="75" width="92" height="92"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="92" id="1Gb-yE-Epc"/>
                             <constraint firstAttribute="width" constant="92" id="czN-j6-lGT"/>
                         </constraints>
                     </imageView>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Y8n-OH-PUg">
-                        <rect key="frame" x="12" y="78" width="92" height="92"/>
-                    </imageView>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gXb-Q6-PDt">
-                        <rect key="frame" x="216" y="78" width="92" height="92"/>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="default_user_icon_75x75_" translatesAutoresizingMaskIntoConstraints="NO" id="gXb-Q6-PDt">
+                        <rect key="frame" x="216" y="75" width="92" height="92"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="92" id="UqV-Ji-Vtf"/>
                             <constraint firstAttribute="width" constant="92" id="bCI-y5-JPd"/>
                         </constraints>
                     </imageView>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jcZ-UK-dBy">
-                        <rect key="frame" x="180" y="180" width="16" height="16"/>
+                        <rect key="frame" x="180" y="177" width="16" height="16"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="16" id="ZkT-mi-4at"/>
                         </constraints>
                         <state key="normal" backgroundImage="btn_product_comment_18x18_"/>
                     </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="15" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X1H-X8-1Wv">
-                        <rect key="frame" x="206" y="180" width="14" height="16"/>
+                        <rect key="frame" x="206" y="177" width="14" height="16"/>
                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qtf-bL-Xmt">
-                        <rect key="frame" x="127" y="180" width="33" height="16"/>
+                        <rect key="frame" x="127" y="177" width="33" height="16"/>
                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jrb-PV-enF">
-                        <rect key="frame" x="101" y="180" width="16" height="16"/>
+                        <rect key="frame" x="101" y="177" width="16" height="16"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="16" id="DLs-1t-cV4"/>
                             <constraint firstAttribute="height" constant="16" id="q22-Tb-tk6"/>
                         </constraints>
                         <state key="normal" image="home_article_views_17x13_"/>
                     </button>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="default_user_icon_75x75_" translatesAutoresizingMaskIntoConstraints="NO" id="Y8n-OH-PUg">
+                        <rect key="frame" x="12" y="75" width="92" height="92"/>
+                    </imageView>
                 </subviews>
                 <constraints>
                     <constraint firstItem="jcZ-UK-dBy" firstAttribute="top" secondItem="X1H-X8-1Wv" secondAttribute="top" id="2lx-Hf-m6w"/>
@@ -130,16 +130,20 @@
             <connections>
                 <outlet property="avatar" destination="sto-Mo-2m5" id="hJg-4t-H3Y"/>
                 <outlet property="comments" destination="X1H-X8-1Wv" id="nPi-R5-98g"/>
+                <outlet property="imageView0" destination="Y8n-OH-PUg" id="P7P-0y-I7U"/>
+                <outlet property="imageView1" destination="D8z-xS-HMs" id="ISu-hD-0GF"/>
+                <outlet property="imageView2" destination="gXb-Q6-PDt" id="JfE-eL-PD2"/>
                 <outlet property="nickname" destination="Zax-2S-vU1" id="oQQ-wb-jsZ"/>
                 <outlet property="order_time_str" destination="xWU-K4-KtD" id="phT-VU-xuQ"/>
                 <outlet property="title" destination="XDh-Kk-jQu" id="TmT-vK-9zn"/>
                 <outlet property="views" destination="Qtf-bL-Xmt" id="vGR-us-yth"/>
             </connections>
-            <point key="canvasLocation" x="369" y="377"/>
+            <point key="canvasLocation" x="394" y="369"/>
         </tableViewCell>
     </objects>
     <resources>
         <image name="btn_product_comment_18x18_" width="18" height="18"/>
+        <image name="default_user_icon_75x75_" width="75" height="75"/>
         <image name="default_user_loading_icon_100x100_" width="100" height="100"/>
         <image name="home_article_views_17x13_" width="17" height="13"/>
     </resources>

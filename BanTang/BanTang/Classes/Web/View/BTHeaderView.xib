@@ -54,9 +54,19 @@
                         <action selector="hotClick:" destination="NRI-dq-WxP" eventType="touchUpInside" id="Y6I-bI-9at"/>
                     </connections>
                 </button>
+                <view alpha="0.69999999999999996" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WMz-ml-hDA">
+                    <rect key="frame" x="0.0" y="43" width="375" height="1"/>
+                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="1" id="hwy-4f-enK"/>
+                    </constraints>
+                </view>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
+                <constraint firstAttribute="bottom" secondItem="WMz-ml-hDA" secondAttribute="bottom" id="F6f-4P-YNb"/>
+                <constraint firstItem="WMz-ml-hDA" firstAttribute="leading" secondItem="NRI-dq-WxP" secondAttribute="leading" id="GeB-gU-upc"/>
+                <constraint firstAttribute="trailing" secondItem="WMz-ml-hDA" secondAttribute="trailing" id="JtX-ry-LOH"/>
                 <constraint firstItem="BhZ-jK-M2f" firstAttribute="leading" secondItem="POq-R7-vgR" secondAttribute="trailing" constant="20" id="NN4-Nq-5HQ"/>
                 <constraint firstAttribute="trailing" secondItem="BhZ-jK-M2f" secondAttribute="trailing" constant="20" id="QEQ-Lt-YiS"/>
                 <constraint firstItem="GdY-k7-xpV" firstAttribute="top" secondItem="NRI-dq-WxP" secondAttribute="top" constant="15" id="Rsm-Ic-Mmm"/>

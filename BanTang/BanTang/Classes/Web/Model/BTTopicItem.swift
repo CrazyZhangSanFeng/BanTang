@@ -26,4 +26,5 @@ class BTTopicItem: NSObject {
     var user : BTTopicUserItem?
     
     //三张图片数组
+    var pics : [[String : String]]?
 }
