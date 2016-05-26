@@ -7,22 +7,12 @@
 //
 
 import UIKit
-import AFNetworking
-import MJExtension
-import SwiftyJSON
 
-
-private let cellID = "cellID"
-class BTDiscoverViewController: UITableViewController {
-    
-    var page : NSInteger = 0
-    
-    //模型数组
-    lazy var topicItems: [BTTopicItem] = [BTTopicItem]()
+class BTDiscoverViewController: UIViewController {
     
     //下划线属性
     let underLine = UIView()
-    //懒加载左侧按钮
+    //懒加载左侧清单按钮
     lazy var leftButton: UIButton = {
         
         var leftButton = UIButton(type: .Custom)
@@ -37,7 +27,7 @@ class BTDiscoverViewController: UITableViewController {
         return leftButton
     }()
     
-    //懒加载右侧按钮
+    //懒加载右侧单品按钮
     lazy var rightButton: UIButton = {
         
         var rightButton = UIButton(type: .Custom)
@@ -53,11 +43,7 @@ class BTDiscoverViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        //取消系统分割线
-        tableView.separatorStyle = .None
-        tableView.backgroundColor = UIColor(red: 244 / 255.0, green: 244 / 255.0, blue: 244 / 255.0, alpha: 1.0)
-        
+
         //添加左侧关注按钮
         navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "discovey_pop_btn_20x20_"), highlightImage: UIImage(named: "discovey_pop_press_btn_20x20_"), target: self, action: #selector(BTDiscoverViewController.attentation))
         
@@ -67,92 +53,15 @@ class BTDiscoverViewController: UITableViewController {
         //添加导航栏中间的按钮
         setupTitleView()
         
+        //添加所有子控制器
+        setupAllChildVC()
         
-        //设置Tabl头部视图
-        let header = NSBundle.mainBundle().loadNibNamed("BTHeaderView", owner: nil, options: nil).first as! BTHeaderView
-        let w = UIScreen.mainScreen().bounds.width
-        header.frame = CGRect(x:0, y: 0, width:w,height:44)
-        tableView.tableHeaderView = header
-        
-        //注册cell
-        tableView.registerNib(UINib.init(nibName: "BTDisTableViewCell", bundle: nil), forCellReuseIdentifier: cellID)
-        
-        //加载数据
-        loadData(page)
-    
-    }
+        //默认加载清单
+        loadChildVC(0)
 
-
-    // MARK: - Table view 数据源 代理方法
-
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
-        return topicItems.count
-    }
-    
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        
-        let cell = tableView.dequeueReusableCellWithIdentifier(cellID, forIndexPath: indexPath) as! BTDisTableViewCell
-        
-        cell.topicItem = topicItems[indexPath.row]
-        
-        cell.selectionStyle = .None
-        
-        // 3.判断是否是最后一个cell即将出现
-        if indexPath.row == topicItems.count - 1 {
-            if page < 3 {
-                
-                page += 1
-                loadData(page)
-            }
-            
-        }
-        
-        return cell
-    }
-    
-    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return 220
     }
 
 }
-
-//MARK:- 请求数据
-extension BTDiscoverViewController {
-    func loadData(page : NSInteger) {
-        //创建会话管理者
-        let manager = AFHTTPSessionManager()
-        
-        //配置请求参数
-        
-        //发送请求
-        manager.GET("http://open3.bantangapp.com/topics/topic/listByUsers?app_id=com.jzyd.BanTang&app_installtime=1463934108&app_versions=5.8&channel_name=appStore&client_id=bt_app_ios&client_secret=9c1e6634ce1c5098e056628cd66a17a5&oauth_token=f1d476369a332f4e16f578a6228bd97e&os_versions=9.3.2&page=\(page)&pagesize=20&screensize=640&sort_type=1&track_device_info=iPhone6%2C2&track_deviceid=EAC59F1B-C110-48FA-B013-02A92744278A&track_user_id=2182968&v=13", parameters: nil, progress: nil, success: { (_, responseObject) in
-            
-            //将AnyObject转化成字典类型
-            guard (responseObject as? [String : NSObject]) != nil else {
-                return
-            }
-            
-            let dictArray = responseObject!["data"] as? [String : NSObject]
-            let resultArray = dictArray!["topic"] as? [[String : NSObject]]
-            
-            var tempArrs = []
-            tempArrs = BTTopicItem.mj_objectArrayWithKeyValuesArray(resultArray) as![BTTopicItem]
-            
-            
-            for item in tempArrs {
-                self.topicItems.append(item as! BTTopicItem)
-            }
-            
-            self.tableView.reloadData()
-            
-            }) { (_, error) in
-                //请求失败调用
-        }
-        
-    }
-}
-
 //MARK:- 导航栏左右两侧的点击
 extension BTDiscoverViewController {
     //MARK:- 关注点击
@@ -219,6 +128,8 @@ extension BTDiscoverViewController {
         
         //添加右侧创建按钮
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "discover_write_article_icon_18x20_"), highlightImage: UIImage(named: "discover_write_article_highlisht_icon_19x20_"), target: self, action: #selector(BTDiscoverViewController.creatText))
+        loadChildVC(0)
+        
     }
     
     //MARK:- 单品点击
@@ -234,6 +145,8 @@ extension BTDiscoverViewController {
         
         //加载照相按钮
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "discovey_camera_btn_24x19_"), highlightImage: UIImage(named: ""), target: self, action: #selector(BTDiscoverViewController.photoClick))
+        
+        loadChildVC(1)
     }
     
     //MARK:- photo点击
@@ -241,4 +154,31 @@ extension BTDiscoverViewController {
         print("点击照片")
     }
     
+}
+
+//MARK:- 添加所有子控制器
+extension BTDiscoverViewController {
+    func setupAllChildVC() {
+        //清单
+        let listVC = BTListViewController()
+        self.addChildViewController(listVC)
+        
+        //单品
+        let danpinVC = BTDanpinViewController()
+        self.addChildViewController(danpinVC)
+    }
+}
+
+
+//MARK:- 加载按钮对应的控制器给
+extension BTDiscoverViewController {
+    func loadChildVC(tag : NSInteger) {
+        view.subviews.last?.removeFromSuperview()
+        let vc = self.childViewControllers[tag]
+        if (vc.view.superview != nil) {
+            return
+        }
+        vc.view.frame = CGRect(x: 0, y: 0, width: view.frame.size.width, height: view.frame.size.height)
+        view.addSubview(vc.view)
+    }
 }

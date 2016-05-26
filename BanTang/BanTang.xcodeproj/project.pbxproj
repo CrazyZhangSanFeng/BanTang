@@ -26,6 +26,8 @@
 		738710781CF449B5007D6979 /* BTDisTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 738710761CF449B5007D6979 /* BTDisTableViewCell.xib */; };
 		7387107A1CF46B85007D6979 /* BTTopicItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 738710791CF46B85007D6979 /* BTTopicItem.swift */; };
 		7387107C1CF47B4B007D6979 /* BTTopicUserItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7387107B1CF47B4B007D6979 /* BTTopicUserItem.swift */; };
+		73D12F9F1CF741AB008A4719 /* BTListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D12F9E1CF741AB008A4719 /* BTListViewController.swift */; };
+		73D12FA11CF744B6008A4719 /* BTDanpinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D12FA01CF744B6008A4719 /* BTDanpinViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,6 +55,8 @@
 		738710761CF449B5007D6979 /* BTDisTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BTDisTableViewCell.xib; sourceTree = "<group>"; };
 		738710791CF46B85007D6979 /* BTTopicItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BTTopicItem.swift; sourceTree = "<group>"; };
 		7387107B1CF47B4B007D6979 /* BTTopicUserItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BTTopicUserItem.swift; sourceTree = "<group>"; };
+		73D12F9E1CF741AB008A4719 /* BTListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BTListViewController.swift; sourceTree = "<group>"; };
+		73D12FA01CF744B6008A4719 /* BTDanpinViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BTDanpinViewController.swift; sourceTree = "<group>"; };
 		83010B63906DF58D502F3849 /* Pods-BanTang.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BanTang.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BanTang/Pods-BanTang.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -255,6 +259,8 @@
 			isa = PBXGroup;
 			children = (
 				7387105F1CF2B6D0007D6979 /* BTDiscoverViewController.swift */,
+				73D12F9E1CF741AB008A4719 /* BTListViewController.swift */,
+				73D12FA01CF744B6008A4719 /* BTDanpinViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -473,6 +479,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				73D12F9F1CF741AB008A4719 /* BTListViewController.swift in Sources */,
 				738710681CF2DCC6007D6979 /* BTBaseNaviController.swift in Sources */,
 				738710701CF30093007D6979 /* UIBarButtonItem+Item.m in Sources */,
 				738710651CF2B776007D6979 /* BTAccountViewController.swift in Sources */,
@@ -484,6 +491,7 @@
 				7387107A1CF46B85007D6979 /* BTTopicItem.swift in Sources */,
 				738710601CF2B6D0007D6979 /* BTDiscoverViewController.swift in Sources */,
 				7387105C1CF2B568007D6979 /* BTMainTabBarVC.swift in Sources */,
+				73D12FA11CF744B6008A4719 /* BTDanpinViewController.swift in Sources */,
 				7387105E1CF2B690007D6979 /* BTHomeViewController.swift in Sources */,
 				7387107C1CF47B4B007D6979 /* BTTopicUserItem.swift in Sources */,
 			);
