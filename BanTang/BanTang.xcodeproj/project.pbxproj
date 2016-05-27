@@ -28,6 +28,11 @@
 		7387107C1CF47B4B007D6979 /* BTTopicUserItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7387107B1CF47B4B007D6979 /* BTTopicUserItem.swift */; };
 		73D12F9F1CF741AB008A4719 /* BTListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D12F9E1CF741AB008A4719 /* BTListViewController.swift */; };
 		73D12FA11CF744B6008A4719 /* BTDanpinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D12FA01CF744B6008A4719 /* BTDanpinViewController.swift */; };
+		73D12FA41CF7D7E1008A4719 /* BTCategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D12FA21CF7D7E1008A4719 /* BTCategoryCell.swift */; };
+		73D12FA51CF7D7E1008A4719 /* BTCategoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73D12FA31CF7D7E1008A4719 /* BTCategoryCell.xib */; };
+		73D12FAA1CF7E750008A4719 /* BTCategoryCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D12FA81CF7E750008A4719 /* BTCategoryCollectionCell.swift */; };
+		73D12FAB1CF7E750008A4719 /* BTCategoryCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73D12FA91CF7E750008A4719 /* BTCategoryCollectionCell.xib */; };
+		73D12FAF1CF80E21008A4719 /* BTCategoryItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D12FAE1CF80E21008A4719 /* BTCategoryItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,14 +54,19 @@
 		7387106D1CF30092007D6979 /* BanTang-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BanTang-Bridging-Header.h"; sourceTree = "<group>"; };
 		7387106E1CF30093007D6979 /* UIBarButtonItem+Item.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+Item.h"; sourceTree = "<group>"; };
 		7387106F1CF30093007D6979 /* UIBarButtonItem+Item.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+Item.m"; sourceTree = "<group>"; };
-		738710711CF40284007D6979 /* BTHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BTHeaderView.swift; sourceTree = "<group>"; };
-		738710731CF40299007D6979 /* BTHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BTHeaderView.xib; sourceTree = "<group>"; };
-		738710751CF449B5007D6979 /* BTDisTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BTDisTableViewCell.swift; sourceTree = "<group>"; };
-		738710761CF449B5007D6979 /* BTDisTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BTDisTableViewCell.xib; sourceTree = "<group>"; };
+		738710711CF40284007D6979 /* BTHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BTHeaderView.swift; path = ../BTHeaderView.swift; sourceTree = "<group>"; };
+		738710731CF40299007D6979 /* BTHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = BTHeaderView.xib; path = ../BTHeaderView.xib; sourceTree = "<group>"; };
+		738710751CF449B5007D6979 /* BTDisTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BTDisTableViewCell.swift; path = ../BTDisTableViewCell.swift; sourceTree = "<group>"; };
+		738710761CF449B5007D6979 /* BTDisTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = BTDisTableViewCell.xib; path = ../BTDisTableViewCell.xib; sourceTree = "<group>"; };
 		738710791CF46B85007D6979 /* BTTopicItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BTTopicItem.swift; sourceTree = "<group>"; };
 		7387107B1CF47B4B007D6979 /* BTTopicUserItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BTTopicUserItem.swift; sourceTree = "<group>"; };
 		73D12F9E1CF741AB008A4719 /* BTListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BTListViewController.swift; sourceTree = "<group>"; };
 		73D12FA01CF744B6008A4719 /* BTDanpinViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BTDanpinViewController.swift; sourceTree = "<group>"; };
+		73D12FA21CF7D7E1008A4719 /* BTCategoryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BTCategoryCell.swift; path = ../../Controller/BTCategoryCell.swift; sourceTree = "<group>"; };
+		73D12FA31CF7D7E1008A4719 /* BTCategoryCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = BTCategoryCell.xib; path = ../../Controller/BTCategoryCell.xib; sourceTree = "<group>"; };
+		73D12FA81CF7E750008A4719 /* BTCategoryCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BTCategoryCollectionCell.swift; path = ../BTCategoryCollectionCell.swift; sourceTree = "<group>"; };
+		73D12FA91CF7E750008A4719 /* BTCategoryCollectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = BTCategoryCollectionCell.xib; path = ../BTCategoryCollectionCell.xib; sourceTree = "<group>"; };
+		73D12FAE1CF80E21008A4719 /* BTCategoryItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BTCategoryItem.swift; sourceTree = "<group>"; };
 		83010B63906DF58D502F3849 /* Pods-BanTang.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BanTang.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BanTang/Pods-BanTang.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -107,22 +117,23 @@
 			children = (
 				7387106B1CF3007A007D6979 /* Other */,
 				738710571CF2AE0A007D6979 /* Main */,
-				738710471CF2A8FC007D6979 /* Home */,
-				738710531CF2A8FC007D6979 /* Discover */,
-				7387104F1CF2A8FC007D6979 /* Photo */,
-				7387104B1CF2A8FC007D6979 /* Message */,
-				738710431CF2A8FC007D6979 /* Account */,
+				738710471CF2A8FC007D6979 /* Home主页 */,
+				738710531CF2A8FC007D6979 /* Discover发现 */,
+				7387104F1CF2A8FC007D6979 /* Photo照片 */,
+				7387104B1CF2A8FC007D6979 /* Message消息 */,
+				738710431CF2A8FC007D6979 /* Account账号 */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
 		};
-		738710431CF2A8FC007D6979 /* Account */ = {
+		738710431CF2A8FC007D6979 /* Account账号 */ = {
 			isa = PBXGroup;
 			children = (
 				738710441CF2A8FC007D6979 /* Controller */,
 				738710451CF2A8FC007D6979 /* Model */,
 				738710461CF2A8FC007D6979 /* View */,
 			);
+			name = "Account账号";
 			path = Account;
 			sourceTree = "<group>";
 		};
@@ -149,13 +160,14 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		738710471CF2A8FC007D6979 /* Home */ = {
+		738710471CF2A8FC007D6979 /* Home主页 */ = {
 			isa = PBXGroup;
 			children = (
 				738710481CF2A8FC007D6979 /* Controller */,
 				738710491CF2A8FC007D6979 /* Model */,
 				7387104A1CF2A8FC007D6979 /* View */,
 			);
+			name = "Home主页";
 			path = Home;
 			sourceTree = "<group>";
 		};
@@ -181,13 +193,14 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		7387104B1CF2A8FC007D6979 /* Message */ = {
+		7387104B1CF2A8FC007D6979 /* Message消息 */ = {
 			isa = PBXGroup;
 			children = (
 				7387104C1CF2A8FC007D6979 /* Controller */,
 				7387104D1CF2A8FC007D6979 /* Model */,
 				7387104E1CF2A8FC007D6979 /* View */,
 			);
+			name = "Message消息";
 			path = Message;
 			sourceTree = "<group>";
 		};
@@ -213,13 +226,14 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		7387104F1CF2A8FC007D6979 /* Photo */ = {
+		7387104F1CF2A8FC007D6979 /* Photo照片 */ = {
 			isa = PBXGroup;
 			children = (
 				738710501CF2A8FC007D6979 /* Controller */,
 				738710511CF2A8FC007D6979 /* Model */,
 				738710521CF2A8FC007D6979 /* View */,
 			);
+			name = "Photo照片";
 			path = Photo;
 			sourceTree = "<group>";
 		};
@@ -244,14 +258,14 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		738710531CF2A8FC007D6979 /* Discover */ = {
+		738710531CF2A8FC007D6979 /* Discover发现 */ = {
 			isa = PBXGroup;
 			children = (
 				738710541CF2A8FC007D6979 /* Controller */,
 				738710551CF2A8FC007D6979 /* Model */,
 				738710561CF2A8FC007D6979 /* View */,
 			);
-			name = Discover;
+			name = "Discover发现";
 			path = Web;
 			sourceTree = "<group>";
 		};
@@ -270,6 +284,7 @@
 			children = (
 				738710791CF46B85007D6979 /* BTTopicItem.swift */,
 				7387107B1CF47B4B007D6979 /* BTTopicUserItem.swift */,
+				73D12FAE1CF80E21008A4719 /* BTCategoryItem.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -277,10 +292,8 @@
 		738710561CF2A8FC007D6979 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				738710711CF40284007D6979 /* BTHeaderView.swift */,
-				738710731CF40299007D6979 /* BTHeaderView.xib */,
-				738710751CF449B5007D6979 /* BTDisTableViewCell.swift */,
-				738710761CF449B5007D6979 /* BTDisTableViewCell.xib */,
+				73D12FAC1CF80D68008A4719 /* Danpin单品 */,
+				73D12FAD1CF80D68008A4719 /* List清单 */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -335,6 +348,30 @@
 				7387106F1CF30093007D6979 /* UIBarButtonItem+Item.m */,
 			);
 			path = Category;
+			sourceTree = "<group>";
+		};
+		73D12FAC1CF80D68008A4719 /* Danpin单品 */ = {
+			isa = PBXGroup;
+			children = (
+				73D12FA21CF7D7E1008A4719 /* BTCategoryCell.swift */,
+				73D12FA31CF7D7E1008A4719 /* BTCategoryCell.xib */,
+				73D12FA81CF7E750008A4719 /* BTCategoryCollectionCell.swift */,
+				73D12FA91CF7E750008A4719 /* BTCategoryCollectionCell.xib */,
+			);
+			name = "Danpin单品";
+			path = Danpin;
+			sourceTree = "<group>";
+		};
+		73D12FAD1CF80D68008A4719 /* List清单 */ = {
+			isa = PBXGroup;
+			children = (
+				738710711CF40284007D6979 /* BTHeaderView.swift */,
+				738710731CF40299007D6979 /* BTHeaderView.xib */,
+				738710751CF449B5007D6979 /* BTDisTableViewCell.swift */,
+				738710761CF449B5007D6979 /* BTDisTableViewCell.xib */,
+			);
+			name = "List清单";
+			path = List;
 			sourceTree = "<group>";
 		};
 		8D5ED11B9233C156C6C22687 /* Frameworks */ = {
@@ -419,8 +456,10 @@
 				738710781CF449B5007D6979 /* BTDisTableViewCell.xib in Resources */,
 				7387103B1CF2A74A007D6979 /* LaunchScreen.storyboard in Resources */,
 				738710381CF2A74A007D6979 /* Assets.xcassets in Resources */,
+				73D12FA51CF7D7E1008A4719 /* BTCategoryCell.xib in Resources */,
 				738710661CF2B776007D6979 /* BTAccountViewController.xib in Resources */,
 				738710741CF40299007D6979 /* BTHeaderView.xib in Resources */,
+				73D12FAB1CF7E750008A4719 /* BTCategoryCollectionCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -479,9 +518,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				73D12FAA1CF7E750008A4719 /* BTCategoryCollectionCell.swift in Sources */,
 				73D12F9F1CF741AB008A4719 /* BTListViewController.swift in Sources */,
 				738710681CF2DCC6007D6979 /* BTBaseNaviController.swift in Sources */,
 				738710701CF30093007D6979 /* UIBarButtonItem+Item.m in Sources */,
+				73D12FAF1CF80E21008A4719 /* BTCategoryItem.swift in Sources */,
+				73D12FA41CF7D7E1008A4719 /* BTCategoryCell.swift in Sources */,
 				738710651CF2B776007D6979 /* BTAccountViewController.swift in Sources */,
 				738710721CF40284007D6979 /* BTHeaderView.swift in Sources */,
 				738710771CF449B5007D6979 /* BTDisTableViewCell.swift in Sources */,

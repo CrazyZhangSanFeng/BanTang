@@ -43,7 +43,10 @@ class BTDiscoverViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+//        view.backgroundColor = UIColor.blueColor()
+        
+        edgesForExtendedLayout = .None
         //添加左侧关注按钮
         navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "discovey_pop_btn_20x20_"), highlightImage: UIImage(named: "discovey_pop_press_btn_20x20_"), target: self, action: #selector(BTDiscoverViewController.attentation))
         
@@ -60,7 +63,7 @@ class BTDiscoverViewController: UIViewController {
         loadChildVC(0)
 
     }
-
+    
 }
 //MARK:- 导航栏左右两侧的点击
 extension BTDiscoverViewController {
@@ -128,7 +131,8 @@ extension BTDiscoverViewController {
         
         //添加右侧创建按钮
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "discover_write_article_icon_18x20_"), highlightImage: UIImage(named: "discover_write_article_highlisht_icon_19x20_"), target: self, action: #selector(BTDiscoverViewController.creatText))
-        loadChildVC(0)
+        
+            loadChildVC(0)
         
     }
     
@@ -146,7 +150,8 @@ extension BTDiscoverViewController {
         //加载照相按钮
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "discovey_camera_btn_24x19_"), highlightImage: UIImage(named: ""), target: self, action: #selector(BTDiscoverViewController.photoClick))
         
-        loadChildVC(1)
+            loadChildVC(1)
+        
     }
     
     //MARK:- photo点击
@@ -170,15 +175,18 @@ extension BTDiscoverViewController {
 }
 
 
-//MARK:- 加载按钮对应的控制器给
+//MARK:- 点击按钮切换控制器
 extension BTDiscoverViewController {
     func loadChildVC(tag : NSInteger) {
         view.subviews.last?.removeFromSuperview()
+        
         let vc = self.childViewControllers[tag]
-        if (vc.view.superview != nil) {
-            return
-        }
+        
+        if (vc.view.superview != nil) {return}
+        
         vc.view.frame = CGRect(x: 0, y: 0, width: view.frame.size.width, height: view.frame.size.height)
+        
         view.addSubview(vc.view)
+       
     }
 }

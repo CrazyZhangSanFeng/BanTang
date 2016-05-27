@@ -80,6 +80,8 @@ import SwiftyJSON
             //加载数据
             loadData(page)
             
+            
+            
         }
         
         
@@ -107,6 +109,8 @@ import SwiftyJSON
                 }
                 
             }
+            
+            
             
             return cell
         }
@@ -143,6 +147,7 @@ import SwiftyJSON
                 for item in tempArrs {
                     self.topicItems.append(item as! BTTopicItem)
                 }
+                
                 
                 self.tableView.reloadData()
                 

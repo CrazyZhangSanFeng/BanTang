@@ -7,84 +7,90 @@
 //
 
 import UIKit
+import MJExtension
+import AFNetworking
+
+private let cell0ID = "cell0"
+
+private let listUrlStr = "http://open3.bantangapp.com/community/post/index?app_id=com.jzyd.BanTang&app_installtime=1463934108&app_versions=5.8&channel_name=appStore&client_id=bt_app_ios&client_secret=9c1e6634ce1c5098e056628cd66a17a5&oauth_token=f1d476369a332f4e16f578a6228bd97e&os_versions=9.3.2&screensize=640&track_device_info=iPhone6%2C2&track_deviceid=EAC59F1B-C110-48FA-B013-02A92744278A&track_user_id=2182968&v=13"
+
 
 class BTDanpinViewController: UITableViewController {
+    
+    //模型数组懒加载
+    lazy var categoryItems : [BTCategoryItem]? = [BTCategoryItem]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //注册cell
+        tableView.registerNib(UINib.init(nibName: "BTCategoryCell", bundle: nil), forCellReuseIdentifier: cell0ID)
+        
         tableView.backgroundColor = UIColor.orangeColor()
+        
+        //加载分类数据
+        loadDanpinData()
+        
+        
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
+}
 
-    // MARK: - Table view data source
-
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
-    }
-
+// MARK: - Table view 数据源
+extension BTDanpinViewController {
+    
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+        return 1
     }
-
-    /*
+    
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
-
-        // Configure the cell...
-
+        
+        
+        let cell = tableView.dequeueReusableCellWithIdentifier(cell0ID, forIndexPath: indexPath) as! BTCategoryCell
+        
+        
+        cell.categoryItems = categoryItems!
+        
+        print("\(categoryItems!.count)分类cell")
+        
+        
         return cell
     }
-    */
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
+    
+    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        
+        return 367
     }
-    */
+    
+}
 
-    /*
-    // Override to support editing the table view.
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if editingStyle == .Delete {
-            // Delete the row from the data source
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-        } else if editingStyle == .Insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+//MARK:- 请求分类数据
+extension BTDanpinViewController {
+    func loadDanpinData() {
+       //创建会话管理者
+        let manager = AFHTTPSessionManager()
+        
+        manager.GET(listUrlStr, parameters: nil, progress: nil, success: { (_, response) in
+            
+            
+//            response?.writeToFile("/Users/zhangcan/Desktop/fenlei.plist", atomically: true)
+            guard (response as? [String : NSObject]) != nil else {
+                return
+            }
+            let dataDict = response!["data"] as? [String : NSObject]
+            let category_listArray = dataDict!["category_list"] as? [[String : NSObject]]
+                    
+            self.categoryItems = BTCategoryItem.mj_objectArrayWithKeyValuesArray(category_listArray) as! [BTCategoryItem]
+                    
+            print("\(self.categoryItems!.count)分类网络请求")
+                    
+            self.tableView.reloadData()
+                
+            
+            
+            }) { (_, error) in
+                
+        }
+    
     }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
