@@ -25,7 +25,7 @@ class BTCategoryCell: UITableViewCell {
     //用来存放创建的分类按钮
     var buttons = [UIButton]()
     
-    //模型数组懒加载
+    //模型数组
     var categoryItems: NSMutableArray!
     
     
@@ -142,13 +142,20 @@ extension BTCategoryCell {
             self.setCategory(self.categoryItems.count)
             
             //给按钮加载图片
-            let btns = self.buttons.map{$0 as UIButton}
-            for i in 0..<btns.count{
-                let btn = btns[i]
+//            let btns = self.buttons.map{$0 as UIButton}
+//            for i in 0..<btns.count{
+//                let btn = btns[i]
+//                let item = (self.categoryItems.map{ $0 as! BTCategoryItem})[i]
+//                btn.sd_setImageWithURL(NSURL(string: item.pic)!, forState: .Normal, placeholderImage: UIImage(named: "default_user_icon_75x75_"))
+//            }
+            
+//            let btns = self.buttons.map{$0 as UIButton}
+            for i in 0..<self.buttons.count{
+                let btn = self.buttons[i]
                 let item = (self.categoryItems.map{ $0 as! BTCategoryItem})[i]
                 btn.sd_setImageWithURL(NSURL(string: item.pic)!, forState: .Normal, placeholderImage: UIImage(named: "default_user_icon_75x75_"))
             }
-                
+            
             
             
         }) { (_, error) in
