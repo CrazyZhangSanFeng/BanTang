@@ -18,6 +18,8 @@ class BTTabBar: UITabBar {
         
         button.sizeToFit()
         
+        button.addTarget(self, action: #selector(photoClick), forControlEvents: .TouchUpInside)
+        
         self.addSubview(button)
         
         return button
@@ -54,6 +56,13 @@ class BTTabBar: UITabBar {
         self.button.center.x = self.bounds.size.width * 0.5
         self.button.center.y = self.bounds.size.height * 0.5
         
+    }
+    
+    func photoClick() {
+        let photoVC = UIImagePickerController()
+        photoVC.sourceType = .PhotoLibrary
+        
+        [self.window?.rootViewController?.presentViewController(photoVC, animated: true, completion: nil)]
     }
 
 

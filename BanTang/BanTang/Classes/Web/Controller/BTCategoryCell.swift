@@ -9,105 +9,113 @@
 import UIKit
 import MJExtension
 import AFNetworking
+import SDWebImage
 
-//private let listUrlStr = "http://open3.bantangapp.com/community/post/index?app_id=com.jzyd.BanTang&app_installtime=1463934108&app_versions=5.8&channel_name=appStore&client_id=bt_app_ios&client_secret=9c1e6634ce1c5098e056628cd66a17a5&oauth_token=f1d476369a332f4e16f578a6228bd97e&os_versions=9.3.2&screensize=640&track_device_info=iPhone6%2C2&track_deviceid=EAC59F1B-C110-48FA-B013-02A92744278A&track_user_id=2182968&v=13"
+private let listUrlStr = "http://open3.bantangapp.com/community/post/index?app_id=com.jzyd.BanTang&app_installtime=1463934108&app_versions=5.8&channel_name=appStore&client_id=bt_app_ios&client_secret=9c1e6634ce1c5098e056628cd66a17a5&oauth_token=f1d476369a332f4e16f578a6228bd97e&os_versions=9.3.2&screensize=640&track_device_info=iPhone6%2C2&track_deviceid=EAC59F1B-C110-48FA-B013-02A92744278A&track_user_id=2182968&v=13"
 
 class BTCategoryCell: UITableViewCell {
 
-    @IBOutlet weak var collectionView: UICollectionView!
+    
+    @IBOutlet weak var scrollerView: UIScrollView!
     
     @IBOutlet weak var page: UIPageControl!
     
+    var imageview = UIImageView()
+    
+    //用来存放创建的分类按钮
+    var buttons = [UIButton]()
+    
     //模型数组懒加载
-    lazy var categoryItems : [BTCategoryItem] = [BTCategoryItem]()
+    var categoryItems: NSMutableArray!
     
     
         
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        self.setupCollectionView()
+        loadDanpinData()
+        
+        scrollerView.pagingEnabled = true
+        scrollerView.showsHorizontalScrollIndicator = false
+        
         
     }
 
 }
 
-//MARK:- 设置collectionView
+//MARK:- 设置分类scrollerView
 extension BTCategoryCell {
-    func setupCollectionView() {
-        //创建布局方式
-        let layout = UICollectionViewFlowLayout()
+    func setCategory(count : NSInteger) {
         
-        layout.minimumLineSpacing = 10
-        layout.minimumInteritemSpacing = 10
+        //设置2列
+        let maxCols: NSInteger = 2
         
+        //设置间距
         let margin: CGFloat = 10
-        let cols: CGFloat = 2
-        let w = (UIScreen.mainScreen().bounds.size.width - (cols + 1) * margin) / cols
         
-        layout.itemSize = CGSize(width: w, height: 90)
+        //设置按钮的宽高,还有坐标
+        let W: CGFloat = (UIScreen.mainScreen().bounds.size.width - CGFloat(maxCols + 1) * margin) / CGFloat(maxCols)
+        let H: CGFloat = 90
+        var X: CGFloat = 0
+        var Y: CGFloat = 0
         
-        
-        layout.scrollDirection = .Horizontal
-        
-        //设置组间距
-        layout.sectionInset = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
-        
-        
-        
-        collectionView.collectionViewLayout = layout
-        
-        //collectionView底部间距
-        collectionView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 25, right: 0)
-        collectionView.pagingEnabled = true
-        collectionView.backgroundColor = UIColor.whiteColor()
-        collectionView.showsHorizontalScrollIndicator = false
-        
-        
-        //注册cell
-        collectionView.registerNib(UINib.init(nibName: "BTCategoryCollectionCell", bundle: nil), forCellWithReuseIdentifier: "categoryCell")
-        
+        for i in 0 ..< count {
+            //行序列号
+            let row: NSInteger = i / maxCols
+            //列序列号
+            let col: NSInteger = i % maxCols
+            let button: UIButton
+            if row >= 3 {
+                X = W * CGFloat(col + 2) + CGFloat(col + 4) * margin
+                Y = H * CGFloat(row - 3) + CGFloat(row - 2) * margin
+                //创建按钮
+                button = UIButton(type: .Custom)
+                
+                button.tag = i
+                
+                button.frame = CGRect(x: X, y: Y, width: W, height: H)
+                
+                //按钮圆角
+                button.layer.cornerRadius = 3
+                button.layer.masksToBounds = true
+                
+                scrollerView.addSubview(button)
+                
+                scrollerView.contentSize = CGSize(width: 2 * UIScreen.mainScreen().bounds.width, height: 317)
+                buttons.append(button)
+            } else{
+                
+                //设置商品的坐标
+                X = W * CGFloat(col) + CGFloat(col + 1) * margin
+                Y = H * CGFloat(row) + CGFloat(row + 1) * margin
+                
+                //创建按钮
+                button = UIButton(type: .Custom)
+                
+                button.tag = i
+                
+                button.frame = CGRect(x: X, y: Y, width: W, height: H)
+                
+                //按钮圆角
+                button.layer.cornerRadius = 3
+                button.layer.masksToBounds = true
+                scrollerView.addSubview(button)
+                
+                scrollerView.contentSize = CGSize(width: UIScreen.mainScreen().bounds.width, height: 317)
+                buttons.append(button)
+            }
+            
+        }
     }
+
 }
 
-//MARK:- collectionview数据源
-
-extension BTCategoryCell: UICollectionViewDataSource, UICollectionViewDelegate {
-    func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
-        
-        return 2
-    }
-    
-    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        
-        return 6
-    }
-    
-    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        
-        
-        
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("categoryCell", forIndexPath: indexPath) as! BTCategoryCollectionCell
-        
-//        if indexPath.section == 0 {
-//            
-//                
-//        cell.categoryItem = categoryItems[0]
-//            
-//        }
-//        let item = categoryItems[indexPath.item]
-//        print(indexPath.item)
-        print("\(self.categoryItems.count)Collectioncell")
-        
-        
-        
-        return cell
-    }
-    
+//MARK:- scrollerView代理 分页设置
+extension BTCategoryCell: UIScrollViewDelegate{
     //设置当前显示页的小圆点
     func scrollViewDidEndDecelerating(scrollView: UIScrollView) {
         
-        let pageNumber = NSInteger(self.collectionView.contentOffset.x / self.collectionView.frame.size.width)
+        let pageNumber = NSInteger(self.scrollerView.contentOffset.x / self.scrollerView.frame.size.width)
         
         page.currentPage = pageNumber
     }
@@ -115,33 +123,42 @@ extension BTCategoryCell: UICollectionViewDataSource, UICollectionViewDelegate {
 }
 
 //MARK:- 请求数据
-//extension BTCategoryCell {
-//    func loadDanpinData() {
-//        //创建会话管理者
-//        let manager = AFHTTPSessionManager()
-//        
-//        manager.GET(listUrlStr, parameters: nil, progress: nil, success: { (_, response) in
-//
-//            guard (response as? [String : NSObject]) != nil else {
-//                return
-//            }
-//            let dataDict = response!["data"] as? [String : NSObject]
-//            let category_listArray = dataDict!["category_list"] as? [[String : NSObject]]
-//                    
-//            self.categoryItems = BTCategoryItem.mj_objectArrayWithKeyValuesArray(category_listArray) as! [BTCategoryItem]
-//                    
-//            print("\(self.categoryItems.count)网络请求")
-//            
-//            self.collectionView.reloadData()
-//                
-//            
-//            
-//        }) { (_, error) in
-//            
-//        }
-//        
-//    }
-//
-//}
+extension BTCategoryCell {
+    func loadDanpinData() {
+        //创建会话管理者
+        let manager = AFHTTPSessionManager()
+        
+        manager.GET(listUrlStr, parameters: nil, progress: nil, success: { (_, response) in
+
+            guard (response as? [String : NSObject]) != nil else {
+                return
+            }
+            let dataDict = response!["data"] as? [String : NSObject]
+            let category_listArray = dataDict!["category_list"] as? [[String : NSObject]]
+                    
+            self.categoryItems = BTCategoryItem.mj_objectArrayWithKeyValuesArray(category_listArray)
+            
+            //设置按钮
+            self.setCategory(self.categoryItems.count)
+            
+            //给按钮加载图片
+            let btns = self.buttons.map{$0 as UIButton}
+            for i in 0..<btns.count{
+                let btn = btns[i]
+                let item = (self.categoryItems.map{ $0 as! BTCategoryItem})[i]
+                btn.sd_setImageWithURL(NSURL(string: item.pic)!, forState: .Normal, placeholderImage: UIImage(named: "default_user_icon_75x75_"))
+            }
+                
+            
+            
+        }) { (_, error) in
+            
+        }
+        
+    }
+
+}
+
+
 
 

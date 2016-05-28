@@ -30,8 +30,6 @@
 		73D12FA11CF744B6008A4719 /* BTDanpinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D12FA01CF744B6008A4719 /* BTDanpinViewController.swift */; };
 		73D12FA41CF7D7E1008A4719 /* BTCategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D12FA21CF7D7E1008A4719 /* BTCategoryCell.swift */; };
 		73D12FA51CF7D7E1008A4719 /* BTCategoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73D12FA31CF7D7E1008A4719 /* BTCategoryCell.xib */; };
-		73D12FAA1CF7E750008A4719 /* BTCategoryCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D12FA81CF7E750008A4719 /* BTCategoryCollectionCell.swift */; };
-		73D12FAB1CF7E750008A4719 /* BTCategoryCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73D12FA91CF7E750008A4719 /* BTCategoryCollectionCell.xib */; };
 		73D12FAF1CF80E21008A4719 /* BTCategoryItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D12FAE1CF80E21008A4719 /* BTCategoryItem.swift */; };
 /* End PBXBuildFile section */
 
@@ -64,8 +62,6 @@
 		73D12FA01CF744B6008A4719 /* BTDanpinViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BTDanpinViewController.swift; sourceTree = "<group>"; };
 		73D12FA21CF7D7E1008A4719 /* BTCategoryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BTCategoryCell.swift; path = ../../Controller/BTCategoryCell.swift; sourceTree = "<group>"; };
 		73D12FA31CF7D7E1008A4719 /* BTCategoryCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = BTCategoryCell.xib; path = ../../Controller/BTCategoryCell.xib; sourceTree = "<group>"; };
-		73D12FA81CF7E750008A4719 /* BTCategoryCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BTCategoryCollectionCell.swift; path = ../BTCategoryCollectionCell.swift; sourceTree = "<group>"; };
-		73D12FA91CF7E750008A4719 /* BTCategoryCollectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = BTCategoryCollectionCell.xib; path = ../BTCategoryCollectionCell.xib; sourceTree = "<group>"; };
 		73D12FAE1CF80E21008A4719 /* BTCategoryItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BTCategoryItem.swift; sourceTree = "<group>"; };
 		83010B63906DF58D502F3849 /* Pods-BanTang.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BanTang.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BanTang/Pods-BanTang.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -355,8 +351,6 @@
 			children = (
 				73D12FA21CF7D7E1008A4719 /* BTCategoryCell.swift */,
 				73D12FA31CF7D7E1008A4719 /* BTCategoryCell.xib */,
-				73D12FA81CF7E750008A4719 /* BTCategoryCollectionCell.swift */,
-				73D12FA91CF7E750008A4719 /* BTCategoryCollectionCell.xib */,
 			);
 			name = "Danpin单品";
 			path = Danpin;
@@ -459,7 +453,6 @@
 				73D12FA51CF7D7E1008A4719 /* BTCategoryCell.xib in Resources */,
 				738710661CF2B776007D6979 /* BTAccountViewController.xib in Resources */,
 				738710741CF40299007D6979 /* BTHeaderView.xib in Resources */,
-				73D12FAB1CF7E750008A4719 /* BTCategoryCollectionCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -518,7 +511,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				73D12FAA1CF7E750008A4719 /* BTCategoryCollectionCell.swift in Sources */,
 				73D12F9F1CF741AB008A4719 /* BTListViewController.swift in Sources */,
 				738710681CF2DCC6007D6979 /* BTBaseNaviController.swift in Sources */,
 				738710701CF30093007D6979 /* UIBarButtonItem+Item.m in Sources */,

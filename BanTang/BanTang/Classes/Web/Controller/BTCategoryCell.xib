@@ -41,19 +41,12 @@
                             <constraint firstItem="tN1-0h-P46" firstAttribute="height" secondItem="jem-n1-qsH" secondAttribute="height" id="vVB-zY-YTo"/>
                         </constraints>
                     </view>
-                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="1WD-Hw-Eb8">
-                        <rect key="frame" x="0.0" y="49" width="320" height="317"/>
-                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Z2t-jl-aRx">
-                            <size key="itemSize" width="50" height="50"/>
-                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                        </collectionViewFlowLayout>
+                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zQc-aH-Du7">
+                        <rect key="frame" x="0.0" y="39" width="320" height="327"/>
                         <connections>
-                            <outlet property="dataSource" destination="KGk-i7-Jjw" id="pN1-yq-F6n"/>
-                            <outlet property="delegate" destination="KGk-i7-Jjw" id="SRP-Qu-Xnz"/>
+                            <outlet property="delegate" destination="KGk-i7-Jjw" id="CfT-Aa-ojG"/>
                         </connections>
-                    </collectionView>
+                    </scrollView>
                     <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" hidesForSinglePage="YES" numberOfPages="2" translatesAutoresizingMaskIntoConstraints="NO" id="cUT-A7-l16">
                         <rect key="frame" x="0.0" y="341" width="320" height="25"/>
                         <constraints>
@@ -64,21 +57,21 @@
                     </pageControl>
                 </subviews>
                 <constraints>
+                    <constraint firstAttribute="trailing" secondItem="zQc-aH-Du7" secondAttribute="trailing" id="7nd-ht-oBR"/>
                     <constraint firstAttribute="trailing" secondItem="udH-1J-x0r" secondAttribute="trailing" id="CBD-l4-8jh"/>
+                    <constraint firstAttribute="bottom" secondItem="zQc-aH-Du7" secondAttribute="bottom" id="LR7-8l-9MU"/>
                     <constraint firstItem="udH-1J-x0r" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="PwR-wh-L11"/>
                     <constraint firstItem="cUT-A7-l16" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="R8Q-V3-NBN"/>
                     <constraint firstAttribute="bottom" secondItem="cUT-A7-l16" secondAttribute="bottom" id="T4L-3l-mt5"/>
-                    <constraint firstAttribute="trailing" secondItem="1WD-Hw-Eb8" secondAttribute="trailing" id="Ysj-L1-0Mx"/>
-                    <constraint firstItem="1WD-Hw-Eb8" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="bnz-BL-gnv"/>
-                    <constraint firstItem="1WD-Hw-Eb8" firstAttribute="top" secondItem="udH-1J-x0r" secondAttribute="bottom" id="drc-o1-yHZ"/>
                     <constraint firstItem="udH-1J-x0r" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="hG3-c5-XlC"/>
+                    <constraint firstItem="zQc-aH-Du7" firstAttribute="top" secondItem="udH-1J-x0r" secondAttribute="bottom" constant="-10" id="tcR-hR-bpw"/>
                     <constraint firstAttribute="trailing" secondItem="cUT-A7-l16" secondAttribute="trailing" id="vRU-rE-8MH"/>
-                    <constraint firstAttribute="bottom" secondItem="1WD-Hw-Eb8" secondAttribute="bottom" id="zSk-aY-oyZ"/>
+                    <constraint firstItem="zQc-aH-Du7" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="ygs-uz-glO"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
-                <outlet property="collectionView" destination="1WD-Hw-Eb8" id="IBy-ce-Bbh"/>
                 <outlet property="page" destination="cUT-A7-l16" id="cQh-bT-WbF"/>
+                <outlet property="scrollerView" destination="zQc-aH-Du7" id="SQM-f7-WMr"/>
             </connections>
             <point key="canvasLocation" x="329" y="377.5"/>
         </tableViewCell>
