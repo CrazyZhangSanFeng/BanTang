@@ -43,9 +43,11 @@ class BTDanpinViewController: UITableViewController {
         //请求数据
         loadHotData(page)
         
-        tableView.backgroundColor = UIColor.orangeColor()
-
+        tableView.backgroundColor = UIColor.lightGrayColor()
+        
     }
+    
+
 
 }
 
@@ -67,6 +69,10 @@ extension BTDanpinViewController {
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         
         return 367
+    }
+    
+    override func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return 10
     }
     
 }

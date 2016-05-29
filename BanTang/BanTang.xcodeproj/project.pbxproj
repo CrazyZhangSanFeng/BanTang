@@ -16,7 +16,6 @@
 		738710601CF2B6D0007D6979 /* BTDiscoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7387105F1CF2B6D0007D6979 /* BTDiscoverViewController.swift */; };
 		738710621CF2B706007D6979 /* BTMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 738710611CF2B706007D6979 /* BTMessageViewController.swift */; };
 		738710651CF2B776007D6979 /* BTAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 738710631CF2B776007D6979 /* BTAccountViewController.swift */; };
-		738710661CF2B776007D6979 /* BTAccountViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 738710641CF2B776007D6979 /* BTAccountViewController.xib */; };
 		738710681CF2DCC6007D6979 /* BTBaseNaviController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 738710671CF2DCC6007D6979 /* BTBaseNaviController.swift */; };
 		7387106A1CF2DF6E007D6979 /* BTTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 738710691CF2DF6E007D6979 /* BTTabBar.swift */; };
 		738710701CF30093007D6979 /* UIBarButtonItem+Item.m in Sources */ = {isa = PBXBuildFile; fileRef = 7387106F1CF30093007D6979 /* UIBarButtonItem+Item.m */; };
@@ -51,7 +50,6 @@
 		7387105F1CF2B6D0007D6979 /* BTDiscoverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BTDiscoverViewController.swift; sourceTree = "<group>"; };
 		738710611CF2B706007D6979 /* BTMessageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BTMessageViewController.swift; sourceTree = "<group>"; };
 		738710631CF2B776007D6979 /* BTAccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BTAccountViewController.swift; sourceTree = "<group>"; };
-		738710641CF2B776007D6979 /* BTAccountViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BTAccountViewController.xib; sourceTree = "<group>"; };
 		738710671CF2DCC6007D6979 /* BTBaseNaviController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BTBaseNaviController.swift; sourceTree = "<group>"; };
 		738710691CF2DF6E007D6979 /* BTTabBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BTTabBar.swift; sourceTree = "<group>"; };
 		7387106D1CF30092007D6979 /* BanTang-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BanTang-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -147,7 +145,6 @@
 			isa = PBXGroup;
 			children = (
 				738710631CF2B776007D6979 /* BTAccountViewController.swift */,
-				738710641CF2B776007D6979 /* BTAccountViewController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -467,7 +464,6 @@
 				73955A421CFAF10400189CA0 /* BTHotView.xib in Resources */,
 				738710381CF2A74A007D6979 /* Assets.xcassets in Resources */,
 				73D12FA51CF7D7E1008A4719 /* BTCategoryCell.xib in Resources */,
-				738710661CF2B776007D6979 /* BTAccountViewController.xib in Resources */,
 				738710741CF40299007D6979 /* BTHeaderView.xib in Resources */,
 				73955A3C1CFAD48700189CA0 /* BTHotCollectionViewCell.xib in Resources */,
 			);

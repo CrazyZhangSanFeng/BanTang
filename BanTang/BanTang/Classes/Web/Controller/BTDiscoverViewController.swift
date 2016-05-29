@@ -170,6 +170,7 @@ extension BTDiscoverViewController {
         
         //单品
         let danpinVC = BTDanpinViewController()
+        
         self.addChildViewController(danpinVC)
     }
 }
