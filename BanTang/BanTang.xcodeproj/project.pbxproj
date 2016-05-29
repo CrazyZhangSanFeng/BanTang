@@ -26,6 +26,9 @@
 		738710781CF449B5007D6979 /* BTDisTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 738710761CF449B5007D6979 /* BTDisTableViewCell.xib */; };
 		7387107A1CF46B85007D6979 /* BTTopicItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 738710791CF46B85007D6979 /* BTTopicItem.swift */; };
 		7387107C1CF47B4B007D6979 /* BTTopicUserItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7387107B1CF47B4B007D6979 /* BTTopicUserItem.swift */; };
+		73955A3B1CFAD48700189CA0 /* BTHotCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73955A391CFAD48700189CA0 /* BTHotCollectionViewCell.swift */; };
+		73955A3C1CFAD48700189CA0 /* BTHotCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73955A3A1CFAD48700189CA0 /* BTHotCollectionViewCell.xib */; };
+		73955A3E1CFAD5A600189CA0 /* BTHotItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73955A3D1CFAD5A600189CA0 /* BTHotItem.swift */; };
 		73D12F9F1CF741AB008A4719 /* BTListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D12F9E1CF741AB008A4719 /* BTListViewController.swift */; };
 		73D12FA11CF744B6008A4719 /* BTDanpinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D12FA01CF744B6008A4719 /* BTDanpinViewController.swift */; };
 		73D12FA41CF7D7E1008A4719 /* BTCategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D12FA21CF7D7E1008A4719 /* BTCategoryCell.swift */; };
@@ -58,6 +61,9 @@
 		738710761CF449B5007D6979 /* BTDisTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = BTDisTableViewCell.xib; path = ../BTDisTableViewCell.xib; sourceTree = "<group>"; };
 		738710791CF46B85007D6979 /* BTTopicItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BTTopicItem.swift; sourceTree = "<group>"; };
 		7387107B1CF47B4B007D6979 /* BTTopicUserItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BTTopicUserItem.swift; sourceTree = "<group>"; };
+		73955A391CFAD48700189CA0 /* BTHotCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BTHotCollectionViewCell.swift; sourceTree = "<group>"; };
+		73955A3A1CFAD48700189CA0 /* BTHotCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BTHotCollectionViewCell.xib; sourceTree = "<group>"; };
+		73955A3D1CFAD5A600189CA0 /* BTHotItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BTHotItem.swift; sourceTree = "<group>"; };
 		73D12F9E1CF741AB008A4719 /* BTListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BTListViewController.swift; sourceTree = "<group>"; };
 		73D12FA01CF744B6008A4719 /* BTDanpinViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BTDanpinViewController.swift; sourceTree = "<group>"; };
 		73D12FA21CF7D7E1008A4719 /* BTCategoryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BTCategoryCell.swift; path = ../../Controller/BTCategoryCell.swift; sourceTree = "<group>"; };
@@ -281,6 +287,7 @@
 				738710791CF46B85007D6979 /* BTTopicItem.swift */,
 				7387107B1CF47B4B007D6979 /* BTTopicUserItem.swift */,
 				73D12FAE1CF80E21008A4719 /* BTCategoryItem.swift */,
+				73955A3D1CFAD5A600189CA0 /* BTHotItem.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -351,6 +358,8 @@
 			children = (
 				73D12FA21CF7D7E1008A4719 /* BTCategoryCell.swift */,
 				73D12FA31CF7D7E1008A4719 /* BTCategoryCell.xib */,
+				73955A391CFAD48700189CA0 /* BTHotCollectionViewCell.swift */,
+				73955A3A1CFAD48700189CA0 /* BTHotCollectionViewCell.xib */,
 			);
 			name = "Danpin单品";
 			path = Danpin;
@@ -453,6 +462,7 @@
 				73D12FA51CF7D7E1008A4719 /* BTCategoryCell.xib in Resources */,
 				738710661CF2B776007D6979 /* BTAccountViewController.xib in Resources */,
 				738710741CF40299007D6979 /* BTHeaderView.xib in Resources */,
+				73955A3C1CFAD48700189CA0 /* BTHotCollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -524,9 +534,11 @@
 				738710311CF2A749007D6979 /* AppDelegate.swift in Sources */,
 				7387107A1CF46B85007D6979 /* BTTopicItem.swift in Sources */,
 				738710601CF2B6D0007D6979 /* BTDiscoverViewController.swift in Sources */,
+				73955A3E1CFAD5A600189CA0 /* BTHotItem.swift in Sources */,
 				7387105C1CF2B568007D6979 /* BTMainTabBarVC.swift in Sources */,
 				73D12FA11CF744B6008A4719 /* BTDanpinViewController.swift in Sources */,
 				7387105E1CF2B690007D6979 /* BTHomeViewController.swift in Sources */,
+				73955A3B1CFAD48700189CA0 /* BTHotCollectionViewCell.swift in Sources */,
 				7387107C1CF47B4B007D6979 /* BTTopicUserItem.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -37,6 +37,8 @@ class BTCategoryCell: UITableViewCell {
         
         scrollerView.pagingEnabled = true
         scrollerView.showsHorizontalScrollIndicator = false
+        //取消多余的scrollsToTop,使得只有一个tableView拥有触顶返回功能
+        scrollerView.scrollsToTop = false
         
         
     }
@@ -75,6 +77,7 @@ extension BTCategoryCell {
                 
                 button.frame = CGRect(x: X, y: Y, width: W, height: H)
                 
+                
                 //按钮圆角
                 button.layer.cornerRadius = 3
                 button.layer.masksToBounds = true
@@ -99,6 +102,7 @@ extension BTCategoryCell {
                 //按钮圆角
                 button.layer.cornerRadius = 3
                 button.layer.masksToBounds = true
+                
                 scrollerView.addSubview(button)
                 
                 scrollerView.contentSize = CGSize(width: UIScreen.mainScreen().bounds.width, height: 317)
