@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="BTHotView" customModule="BanTang" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="344"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HXa-NV-OSB">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="descover_hot_icon_10x12_" translatesAutoresizingMaskIntoConstraints="NO" id="qcY-Hr-ptj">
+                            <rect key="frame" x="10" y="18" width="12" height="12"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="12" id="riQ-Jt-rO4"/>
+                                <constraint firstAttribute="width" constant="12" id="zu8-ny-gu2"/>
+                            </constraints>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="热门推荐" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TvC-UJ-Gog">
+                            <rect key="frame" x="32" y="16" width="52" height="16"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="qcY-Hr-ptj" firstAttribute="top" secondItem="HXa-NV-OSB" secondAttribute="top" constant="18" id="GcD-9H-nrT"/>
+                        <constraint firstItem="TvC-UJ-Gog" firstAttribute="leading" secondItem="qcY-Hr-ptj" secondAttribute="trailing" constant="10" id="NOe-Jf-Mrg"/>
+                        <constraint firstItem="TvC-UJ-Gog" firstAttribute="centerY" secondItem="qcY-Hr-ptj" secondAttribute="centerY" id="iMf-Vf-Mfz"/>
+                        <constraint firstAttribute="height" constant="49" id="uJ2-Rl-lV0"/>
+                        <constraint firstItem="qcY-Hr-ptj" firstAttribute="leading" secondItem="HXa-NV-OSB" secondAttribute="leading" constant="10" id="vXY-C3-YSJ"/>
+                    </constraints>
+                </view>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="tSo-AL-FJg">
+                    <rect key="frame" x="0.0" y="49" width="320" height="295"/>
+                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Jci-28-gCc">
+                        <size key="itemSize" width="50" height="50"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                </collectionView>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="tSo-AL-FJg" secondAttribute="bottom" id="3vl-ad-kHr"/>
+                <constraint firstAttribute="trailing" secondItem="tSo-AL-FJg" secondAttribute="trailing" id="7uB-4k-ZwS"/>
+                <constraint firstItem="tSo-AL-FJg" firstAttribute="top" secondItem="HXa-NV-OSB" secondAttribute="bottom" id="FE0-wE-n6J"/>
+                <constraint firstItem="tSo-AL-FJg" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="J5B-1e-us9"/>
+                <constraint firstAttribute="trailing" secondItem="HXa-NV-OSB" secondAttribute="trailing" id="KGl-Al-fXq"/>
+                <constraint firstItem="HXa-NV-OSB" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="bpq-Q5-stl"/>
+                <constraint firstItem="HXa-NV-OSB" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="qbr-HZ-ACx"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="collectionV" destination="tSo-AL-FJg" id="X3j-PK-Oyk"/>
+            </connections>
+            <point key="canvasLocation" x="349" y="99"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="descover_hot_icon_10x12_" width="10" height="12"/>
+    </resources>
+</document>

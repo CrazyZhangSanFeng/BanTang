@@ -29,6 +29,8 @@
 		73955A3B1CFAD48700189CA0 /* BTHotCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73955A391CFAD48700189CA0 /* BTHotCollectionViewCell.swift */; };
 		73955A3C1CFAD48700189CA0 /* BTHotCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73955A3A1CFAD48700189CA0 /* BTHotCollectionViewCell.xib */; };
 		73955A3E1CFAD5A600189CA0 /* BTHotItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73955A3D1CFAD5A600189CA0 /* BTHotItem.swift */; };
+		73955A401CFAF0F800189CA0 /* BTHotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73955A3F1CFAF0F800189CA0 /* BTHotView.swift */; };
+		73955A421CFAF10400189CA0 /* BTHotView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73955A411CFAF10400189CA0 /* BTHotView.xib */; };
 		73D12F9F1CF741AB008A4719 /* BTListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D12F9E1CF741AB008A4719 /* BTListViewController.swift */; };
 		73D12FA11CF744B6008A4719 /* BTDanpinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D12FA01CF744B6008A4719 /* BTDanpinViewController.swift */; };
 		73D12FA41CF7D7E1008A4719 /* BTCategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D12FA21CF7D7E1008A4719 /* BTCategoryCell.swift */; };
@@ -64,6 +66,8 @@
 		73955A391CFAD48700189CA0 /* BTHotCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BTHotCollectionViewCell.swift; sourceTree = "<group>"; };
 		73955A3A1CFAD48700189CA0 /* BTHotCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BTHotCollectionViewCell.xib; sourceTree = "<group>"; };
 		73955A3D1CFAD5A600189CA0 /* BTHotItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BTHotItem.swift; sourceTree = "<group>"; };
+		73955A3F1CFAF0F800189CA0 /* BTHotView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BTHotView.swift; sourceTree = "<group>"; };
+		73955A411CFAF10400189CA0 /* BTHotView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BTHotView.xib; sourceTree = "<group>"; };
 		73D12F9E1CF741AB008A4719 /* BTListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BTListViewController.swift; sourceTree = "<group>"; };
 		73D12FA01CF744B6008A4719 /* BTDanpinViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BTDanpinViewController.swift; sourceTree = "<group>"; };
 		73D12FA21CF7D7E1008A4719 /* BTCategoryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BTCategoryCell.swift; path = ../../Controller/BTCategoryCell.swift; sourceTree = "<group>"; };
@@ -360,6 +364,8 @@
 				73D12FA31CF7D7E1008A4719 /* BTCategoryCell.xib */,
 				73955A391CFAD48700189CA0 /* BTHotCollectionViewCell.swift */,
 				73955A3A1CFAD48700189CA0 /* BTHotCollectionViewCell.xib */,
+				73955A3F1CFAF0F800189CA0 /* BTHotView.swift */,
+				73955A411CFAF10400189CA0 /* BTHotView.xib */,
 			);
 			name = "Danpin单品";
 			path = Danpin;
@@ -458,6 +464,7 @@
 			files = (
 				738710781CF449B5007D6979 /* BTDisTableViewCell.xib in Resources */,
 				7387103B1CF2A74A007D6979 /* LaunchScreen.storyboard in Resources */,
+				73955A421CFAF10400189CA0 /* BTHotView.xib in Resources */,
 				738710381CF2A74A007D6979 /* Assets.xcassets in Resources */,
 				73D12FA51CF7D7E1008A4719 /* BTCategoryCell.xib in Resources */,
 				738710661CF2B776007D6979 /* BTAccountViewController.xib in Resources */,
@@ -539,6 +546,7 @@
 				73D12FA11CF744B6008A4719 /* BTDanpinViewController.swift in Sources */,
 				7387105E1CF2B690007D6979 /* BTHomeViewController.swift in Sources */,
 				73955A3B1CFAD48700189CA0 /* BTHotCollectionViewCell.swift in Sources */,
+				73955A401CFAF0F800189CA0 /* BTHotView.swift in Sources */,
 				7387107C1CF47B4B007D6979 /* BTTopicUserItem.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
