@@ -30,6 +30,12 @@
 		73955A3E1CFAD5A600189CA0 /* BTHotItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73955A3D1CFAD5A600189CA0 /* BTHotItem.swift */; };
 		73955A401CFAF0F800189CA0 /* BTHotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73955A3F1CFAF0F800189CA0 /* BTHotView.swift */; };
 		73955A421CFAF10400189CA0 /* BTHotView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73955A411CFAF10400189CA0 /* BTHotView.xib */; };
+		7398A5201CFC0B8D00D0B813 /* BTSettingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7398A51F1CFC0B8D00D0B813 /* BTSettingController.swift */; };
+		7398A5221CFC0B9700D0B813 /* BTSettingController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7398A5211CFC0B9700D0B813 /* BTSettingController.storyboard */; };
+		7398A5241CFC363600D0B813 /* BTUserHeadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7398A5231CFC363600D0B813 /* BTUserHeadView.swift */; };
+		7398A5261CFC364300D0B813 /* BTUserHeadView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7398A5251CFC364300D0B813 /* BTUserHeadView.xib */; };
+		7398A5281CFC407B00D0B813 /* BTMiddleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7398A5271CFC407B00D0B813 /* BTMiddleView.swift */; };
+		7398A52A1CFC408300D0B813 /* BTMiddleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7398A5291CFC408300D0B813 /* BTMiddleView.xib */; };
 		73D12F9F1CF741AB008A4719 /* BTListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D12F9E1CF741AB008A4719 /* BTListViewController.swift */; };
 		73D12FA11CF744B6008A4719 /* BTDanpinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D12FA01CF744B6008A4719 /* BTDanpinViewController.swift */; };
 		73D12FA41CF7D7E1008A4719 /* BTCategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D12FA21CF7D7E1008A4719 /* BTCategoryCell.swift */; };
@@ -66,6 +72,12 @@
 		73955A3D1CFAD5A600189CA0 /* BTHotItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BTHotItem.swift; sourceTree = "<group>"; };
 		73955A3F1CFAF0F800189CA0 /* BTHotView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BTHotView.swift; sourceTree = "<group>"; };
 		73955A411CFAF10400189CA0 /* BTHotView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BTHotView.xib; sourceTree = "<group>"; };
+		7398A51F1CFC0B8D00D0B813 /* BTSettingController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BTSettingController.swift; sourceTree = "<group>"; };
+		7398A5211CFC0B9700D0B813 /* BTSettingController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = BTSettingController.storyboard; sourceTree = "<group>"; };
+		7398A5231CFC363600D0B813 /* BTUserHeadView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BTUserHeadView.swift; sourceTree = "<group>"; };
+		7398A5251CFC364300D0B813 /* BTUserHeadView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BTUserHeadView.xib; sourceTree = "<group>"; };
+		7398A5271CFC407B00D0B813 /* BTMiddleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BTMiddleView.swift; sourceTree = "<group>"; };
+		7398A5291CFC408300D0B813 /* BTMiddleView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BTMiddleView.xib; sourceTree = "<group>"; };
 		73D12F9E1CF741AB008A4719 /* BTListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BTListViewController.swift; sourceTree = "<group>"; };
 		73D12FA01CF744B6008A4719 /* BTDanpinViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BTDanpinViewController.swift; sourceTree = "<group>"; };
 		73D12FA21CF7D7E1008A4719 /* BTCategoryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BTCategoryCell.swift; path = ../../Controller/BTCategoryCell.swift; sourceTree = "<group>"; };
@@ -145,6 +157,8 @@
 			isa = PBXGroup;
 			children = (
 				738710631CF2B776007D6979 /* BTAccountViewController.swift */,
+				7398A51F1CFC0B8D00D0B813 /* BTSettingController.swift */,
+				7398A5211CFC0B9700D0B813 /* BTSettingController.storyboard */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -159,6 +173,10 @@
 		738710461CF2A8FC007D6979 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				7398A5231CFC363600D0B813 /* BTUserHeadView.swift */,
+				7398A5251CFC364300D0B813 /* BTUserHeadView.xib */,
+				7398A5271CFC407B00D0B813 /* BTMiddleView.swift */,
+				7398A5291CFC408300D0B813 /* BTMiddleView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -464,6 +482,9 @@
 				73955A421CFAF10400189CA0 /* BTHotView.xib in Resources */,
 				738710381CF2A74A007D6979 /* Assets.xcassets in Resources */,
 				73D12FA51CF7D7E1008A4719 /* BTCategoryCell.xib in Resources */,
+				7398A52A1CFC408300D0B813 /* BTMiddleView.xib in Resources */,
+				7398A5221CFC0B9700D0B813 /* BTSettingController.storyboard in Resources */,
+				7398A5261CFC364300D0B813 /* BTUserHeadView.xib in Resources */,
 				738710741CF40299007D6979 /* BTHeaderView.xib in Resources */,
 				73955A3C1CFAD48700189CA0 /* BTHotCollectionViewCell.xib in Resources */,
 			);
@@ -524,6 +545,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7398A5281CFC407B00D0B813 /* BTMiddleView.swift in Sources */,
 				73D12F9F1CF741AB008A4719 /* BTListViewController.swift in Sources */,
 				738710681CF2DCC6007D6979 /* BTBaseNaviController.swift in Sources */,
 				738710701CF30093007D6979 /* UIBarButtonItem+Item.m in Sources */,
@@ -531,6 +553,7 @@
 				73D12FA41CF7D7E1008A4719 /* BTCategoryCell.swift in Sources */,
 				738710651CF2B776007D6979 /* BTAccountViewController.swift in Sources */,
 				738710721CF40284007D6979 /* BTHeaderView.swift in Sources */,
+				7398A5201CFC0B8D00D0B813 /* BTSettingController.swift in Sources */,
 				738710771CF449B5007D6979 /* BTDisTableViewCell.swift in Sources */,
 				738710621CF2B706007D6979 /* BTMessageViewController.swift in Sources */,
 				7387106A1CF2DF6E007D6979 /* BTTabBar.swift in Sources */,
@@ -538,6 +561,7 @@
 				7387107A1CF46B85007D6979 /* BTTopicItem.swift in Sources */,
 				738710601CF2B6D0007D6979 /* BTDiscoverViewController.swift in Sources */,
 				73955A3E1CFAD5A600189CA0 /* BTHotItem.swift in Sources */,
+				7398A5241CFC363600D0B813 /* BTUserHeadView.swift in Sources */,
 				7387105C1CF2B568007D6979 /* BTMainTabBarVC.swift in Sources */,
 				73D12FA11CF744B6008A4719 /* BTDanpinViewController.swift in Sources */,
 				7387105E1CF2B690007D6979 /* BTHomeViewController.swift in Sources */,

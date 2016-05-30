@@ -43,7 +43,7 @@ class BTDanpinViewController: UITableViewController {
         //请求数据
         loadHotData(page)
         
-        tableView.backgroundColor = UIColor.lightGrayColor()
+        tableView.backgroundColor = UIColor(red: 244 / 255.0, green: 244 / 255.0, blue: 244 / 255.0, alpha: 1.0)
         
     }
     

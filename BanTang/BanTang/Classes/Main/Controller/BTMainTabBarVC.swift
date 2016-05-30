@@ -17,6 +17,8 @@ class BTMainTabBarVC: UITabBarController {
         //自定义tabbar
         setupTabBarButton()
         
+        view.backgroundColor = UIColor.whiteColor()
+        
     }
 
 }
