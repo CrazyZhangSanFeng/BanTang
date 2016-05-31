@@ -16,7 +16,7 @@
                         <sections>
                             <tableViewSection id="pNK-hd-o5y">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="D1c-2N-2YO" imageView="qhC-DE-t5q" style="IBUITableViewCellStyleDefault" id="zTV-jk-Cus">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="D1c-2N-2YO" imageView="qhC-DE-t5q" style="IBUITableViewCellStyleDefault" id="zTV-jk-Cus" customClass="BTReSetCell" customModule="BanTang" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="35" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="zTV-jk-Cus" id="IYG-h6-wiB">
@@ -37,7 +37,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="R5K-JK-0YS" imageView="1KP-B6-aD4" style="IBUITableViewCellStyleDefault" id="9VY-uO-3qi">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="R5K-JK-0YS" imageView="1KP-B6-aD4" style="IBUITableViewCellStyleDefault" id="9VY-uO-3qi" customClass="BTReSetCell" customModule="BanTang" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="79" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="9VY-uO-3qi" id="SzC-IF-LZW">
@@ -58,7 +58,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="RBh-Bj-f62" imageView="ApG-gE-FPt" style="IBUITableViewCellStyleDefault" id="3RZ-qs-3n1">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="RBh-Bj-f62" imageView="ApG-gE-FPt" style="IBUITableViewCellStyleDefault" id="3RZ-qs-3n1" customClass="BTReSetCell" customModule="BanTang" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="123" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="3RZ-qs-3n1" id="Hrd-N5-FFI">
@@ -83,7 +83,7 @@
                             </tableViewSection>
                             <tableViewSection id="MUD-iF-CGa">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="gRt-YJ-DPJ" imageView="ZU7-C7-Cvn" style="IBUITableViewCellStyleDefault" id="oUB-Y3-iKb">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="gRt-YJ-DPJ" imageView="ZU7-C7-Cvn" style="IBUITableViewCellStyleDefault" id="oUB-Y3-iKb" customClass="BTReSetCell" customModule="BanTang" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="177" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="oUB-Y3-iKb" id="MEF-y3-2tj">
@@ -104,7 +104,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="dzr-P1-Qnk" imageView="Tkk-VI-Sbz" style="IBUITableViewCellStyleDefault" id="moe-Qj-YWf">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="dzr-P1-Qnk" imageView="Tkk-VI-Sbz" style="IBUITableViewCellStyleDefault" id="moe-Qj-YWf" customClass="BTReSetCell" customModule="BanTang" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="221" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="moe-Qj-YWf" id="2p6-2y-2hc">
@@ -125,7 +125,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="HZj-Yc-lTc" detailTextLabel="ukH-Dh-uR8" imageView="vZY-yD-uzF" style="IBUITableViewCellStyleValue1" id="tIO-rI-xaK">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="HZj-Yc-lTc" detailTextLabel="ukH-Dh-uR8" imageView="vZY-yD-uzF" style="IBUITableViewCellStyleValue1" id="tIO-rI-xaK" customClass="BTReSetCell" customModule="BanTang" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="265" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="tIO-rI-xaK" id="5ZJ-6H-IRI">
@@ -153,7 +153,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="et0-Au-tX0">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="et0-Au-tX0" customClass="BTReSetCell" customModule="BanTang" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="309" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="et0-Au-tX0" id="MTg-Uv-Cu4">
@@ -202,7 +202,7 @@
                             </tableViewSection>
                             <tableViewSection headerTitle="" id="G84-DV-Mjr">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="FfS-Jn-Kjg" imageView="Wny-rH-9gF" style="IBUITableViewCellStyleDefault" id="ILJ-fw-2PE">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="FfS-Jn-Kjg" imageView="Wny-rH-9gF" style="IBUITableViewCellStyleDefault" id="ILJ-fw-2PE" customClass="BTReSetCell" customModule="BanTang" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="363" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ILJ-fw-2PE" id="Z7m-gN-NbF">
@@ -223,7 +223,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="npc-yX-bWH" imageView="GM6-ew-WjM" style="IBUITableViewCellStyleDefault" id="Xwn-db-IaN">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="npc-yX-bWH" imageView="GM6-ew-WjM" style="IBUITableViewCellStyleDefault" id="Xwn-db-IaN" customClass="BTReSetCell" customModule="BanTang" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="407" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Xwn-db-IaN" id="QAp-rz-IYs">
@@ -244,7 +244,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="si7-Fe-dVJ" imageView="6PB-5q-OgV" style="IBUITableViewCellStyleDefault" id="kVd-ND-4VQ">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="si7-Fe-dVJ" imageView="6PB-5q-OgV" style="IBUITableViewCellStyleDefault" id="kVd-ND-4VQ" customClass="BTReSetCell" customModule="BanTang" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="451" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="kVd-ND-4VQ" id="IYZ-UH-eIy">
@@ -269,7 +269,7 @@
                             </tableViewSection>
                             <tableViewSection headerTitle="" id="2ps-m7-NgE">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="yR1-Ur-Ocp" imageView="iCT-7m-c7X" style="IBUITableViewCellStyleDefault" id="Jdk-LG-RUU">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="yR1-Ur-Ocp" imageView="iCT-7m-c7X" style="IBUITableViewCellStyleDefault" id="Jdk-LG-RUU" customClass="BTReSetCell" customModule="BanTang" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="505" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Jdk-LG-RUU" id="yip-pT-P3X">
@@ -294,7 +294,7 @@
                             </tableViewSection>
                             <tableViewSection headerTitle="" id="3tI-n9-G8Z">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="0Yh-Vh-C0K">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="0Yh-Vh-C0K" customClass="BTReSetCell" customModule="BanTang" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="559" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="0Yh-Vh-C0K" id="lng-Yu-hxs">
@@ -328,7 +328,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FyB-hB-brt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="343" y="368"/>
+            <point key="canvasLocation" x="384" y="343"/>
         </scene>
     </scenes>
     <resources>

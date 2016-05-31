@@ -44,8 +44,6 @@ class BTDiscoverViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        view.backgroundColor = UIColor.blueColor()
-        
         edgesForExtendedLayout = .None
         //添加左侧关注按钮
         navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "discovey_pop_btn_20x20_"), highlightImage: UIImage(named: "discovey_pop_press_btn_20x20_"), target: self, action: #selector(BTDiscoverViewController.attentation))

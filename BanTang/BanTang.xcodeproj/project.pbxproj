@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		35724E10ED634AD0DF12CF74 /* Pods_BanTang.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20C1529032ADECFDBF01B63F /* Pods_BanTang.framework */; };
+		735EC66D1CFD369A00D171EE /* BTReSetCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 735EC66C1CFD369A00D171EE /* BTReSetCell.swift */; };
+		735EC66F1CFD398700D171EE /* BTOrderController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 735EC66E1CFD398700D171EE /* BTOrderController.swift */; };
+		735EC6711CFD399400D171EE /* BTOrderController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 735EC6701CFD399400D171EE /* BTOrderController.storyboard */; };
+		735EC6731CFD3CF900D171EE /* BTOrderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 735EC6721CFD3CF900D171EE /* BTOrderCell.swift */; };
 		738710311CF2A749007D6979 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 738710301CF2A749007D6979 /* AppDelegate.swift */; };
 		738710381CF2A74A007D6979 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 738710371CF2A74A007D6979 /* Assets.xcassets */; };
 		7387103B1CF2A74A007D6979 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 738710391CF2A74A007D6979 /* LaunchScreen.storyboard */; };
@@ -46,6 +50,10 @@
 /* Begin PBXFileReference section */
 		20C1529032ADECFDBF01B63F /* Pods_BanTang.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BanTang.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		67BC2053EB2595D37723139E /* Pods-BanTang.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BanTang.release.xcconfig"; path = "Pods/Target Support Files/Pods-BanTang/Pods-BanTang.release.xcconfig"; sourceTree = "<group>"; };
+		735EC66C1CFD369A00D171EE /* BTReSetCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BTReSetCell.swift; sourceTree = "<group>"; };
+		735EC66E1CFD398700D171EE /* BTOrderController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BTOrderController.swift; sourceTree = "<group>"; };
+		735EC6701CFD399400D171EE /* BTOrderController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = BTOrderController.storyboard; sourceTree = "<group>"; };
+		735EC6721CFD3CF900D171EE /* BTOrderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BTOrderCell.swift; sourceTree = "<group>"; };
 		7387102D1CF2A749007D6979 /* BanTang.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BanTang.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		738710301CF2A749007D6979 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		738710371CF2A74A007D6979 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -159,6 +167,8 @@
 				738710631CF2B776007D6979 /* BTAccountViewController.swift */,
 				7398A51F1CFC0B8D00D0B813 /* BTSettingController.swift */,
 				7398A5211CFC0B9700D0B813 /* BTSettingController.storyboard */,
+				735EC66E1CFD398700D171EE /* BTOrderController.swift */,
+				735EC6701CFD399400D171EE /* BTOrderController.storyboard */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -177,6 +187,8 @@
 				7398A5251CFC364300D0B813 /* BTUserHeadView.xib */,
 				7398A5271CFC407B00D0B813 /* BTMiddleView.swift */,
 				7398A5291CFC408300D0B813 /* BTMiddleView.xib */,
+				735EC66C1CFD369A00D171EE /* BTReSetCell.swift */,
+				735EC6721CFD3CF900D171EE /* BTOrderCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -484,6 +496,7 @@
 				73D12FA51CF7D7E1008A4719 /* BTCategoryCell.xib in Resources */,
 				7398A52A1CFC408300D0B813 /* BTMiddleView.xib in Resources */,
 				7398A5221CFC0B9700D0B813 /* BTSettingController.storyboard in Resources */,
+				735EC6711CFD399400D171EE /* BTOrderController.storyboard in Resources */,
 				7398A5261CFC364300D0B813 /* BTUserHeadView.xib in Resources */,
 				738710741CF40299007D6979 /* BTHeaderView.xib in Resources */,
 				73955A3C1CFAD48700189CA0 /* BTHotCollectionViewCell.xib in Resources */,
@@ -545,6 +558,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				735EC66F1CFD398700D171EE /* BTOrderController.swift in Sources */,
 				7398A5281CFC407B00D0B813 /* BTMiddleView.swift in Sources */,
 				73D12F9F1CF741AB008A4719 /* BTListViewController.swift in Sources */,
 				738710681CF2DCC6007D6979 /* BTBaseNaviController.swift in Sources */,
@@ -552,6 +566,7 @@
 				73D12FAF1CF80E21008A4719 /* BTCategoryItem.swift in Sources */,
 				73D12FA41CF7D7E1008A4719 /* BTCategoryCell.swift in Sources */,
 				738710651CF2B776007D6979 /* BTAccountViewController.swift in Sources */,
+				735EC6731CFD3CF900D171EE /* BTOrderCell.swift in Sources */,
 				738710721CF40284007D6979 /* BTHeaderView.swift in Sources */,
 				7398A5201CFC0B8D00D0B813 /* BTSettingController.swift in Sources */,
 				738710771CF449B5007D6979 /* BTDisTableViewCell.swift in Sources */,
@@ -566,6 +581,7 @@
 				73D12FA11CF744B6008A4719 /* BTDanpinViewController.swift in Sources */,
 				7387105E1CF2B690007D6979 /* BTHomeViewController.swift in Sources */,
 				73955A3B1CFAD48700189CA0 /* BTHotCollectionViewCell.swift in Sources */,
+				735EC66D1CFD369A00D171EE /* BTReSetCell.swift in Sources */,
 				73955A401CFAF0F800189CA0 /* BTHotView.swift in Sources */,
 				7387107C1CF47B4B007D6979 /* BTTopicUserItem.swift in Sources */,
 			);

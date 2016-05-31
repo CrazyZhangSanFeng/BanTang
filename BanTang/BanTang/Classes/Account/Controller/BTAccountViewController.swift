@@ -56,7 +56,7 @@ class BTAccountViewController: UITableViewController {
     //MARK:- 设置悬停view
     override func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let headerSection = NSBundle.mainBundle().loadNibNamed("BTMiddleView", owner: nil, options: nil).first as! BTMiddleView
-        headerSection.frame = CGRect(x: 0, y: 0, width: UIScreen.mainScreen().bounds.size.width, height: 44)
+
         return headerSection
     }
     
@@ -85,7 +85,7 @@ extension BTAccountViewController {
 //MARK:- 导航栏按钮点击
 extension BTAccountViewController {
     func setClick() {
-        debugPrint("点击设置按钮")
+        
         let storyboard = UIStoryboard.init(name: "BTSettingController", bundle: nil)
         
         let setVC = storyboard.instantiateInitialViewController() as! BTSettingController
@@ -94,9 +94,15 @@ extension BTAccountViewController {
         
     }
     
-    
+    //订单点击
     func centerClick() {
-        debugPrint("点击中心按钮")
+        
+        let storyboard = UIStoryboard.init(name: "BTOrderController", bundle: nil)
+        
+        let orderVC = storyboard.instantiateInitialViewController() as! BTOrderController
+        
+        navigationController?.pushViewController(orderVC, animated: true)
+        
     }
 }
 
