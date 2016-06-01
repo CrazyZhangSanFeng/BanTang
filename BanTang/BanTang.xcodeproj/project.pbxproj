@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		35724E10ED634AD0DF12CF74 /* Pods_BanTang.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20C1529032ADECFDBF01B63F /* Pods_BanTang.framework */; };
+		73070A6A1CFE9FE200CBDBF7 /* UIImage+Image.m in Sources */ = {isa = PBXBuildFile; fileRef = 73070A691CFE9FE200CBDBF7 /* UIImage+Image.m */; };
 		735EC66D1CFD369A00D171EE /* BTReSetCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 735EC66C1CFD369A00D171EE /* BTReSetCell.swift */; };
 		735EC66F1CFD398700D171EE /* BTOrderController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 735EC66E1CFD398700D171EE /* BTOrderController.swift */; };
 		735EC6711CFD399400D171EE /* BTOrderController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 735EC6701CFD399400D171EE /* BTOrderController.storyboard */; };
@@ -51,6 +52,8 @@
 /* Begin PBXFileReference section */
 		20C1529032ADECFDBF01B63F /* Pods_BanTang.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BanTang.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		67BC2053EB2595D37723139E /* Pods-BanTang.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BanTang.release.xcconfig"; path = "Pods/Target Support Files/Pods-BanTang/Pods-BanTang.release.xcconfig"; sourceTree = "<group>"; };
+		73070A681CFE9FE200CBDBF7 /* UIImage+Image.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Image.h"; sourceTree = "<group>"; };
+		73070A691CFE9FE200CBDBF7 /* UIImage+Image.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Image.m"; sourceTree = "<group>"; };
 		735EC66C1CFD369A00D171EE /* BTReSetCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BTReSetCell.swift; sourceTree = "<group>"; };
 		735EC66E1CFD398700D171EE /* BTOrderController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BTOrderController.swift; sourceTree = "<group>"; };
 		735EC6701CFD399400D171EE /* BTOrderController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = BTOrderController.storyboard; sourceTree = "<group>"; };
@@ -381,6 +384,8 @@
 		7387106C1CF3007A007D6979 /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				73070A681CFE9FE200CBDBF7 /* UIImage+Image.h */,
+				73070A691CFE9FE200CBDBF7 /* UIImage+Image.m */,
 				7387106D1CF30092007D6979 /* BanTang-Bridging-Header.h */,
 				7387106E1CF30093007D6979 /* UIBarButtonItem+Item.h */,
 				7387106F1CF30093007D6979 /* UIBarButtonItem+Item.m */,
@@ -596,6 +601,7 @@
 				7387105E1CF2B690007D6979 /* BTHomeViewController.swift in Sources */,
 				73955A3B1CFAD48700189CA0 /* BTHotCollectionViewCell.swift in Sources */,
 				735EC66D1CFD369A00D171EE /* BTReSetCell.swift in Sources */,
+				73070A6A1CFE9FE200CBDBF7 /* UIImage+Image.m in Sources */,
 				73955A401CFAF0F800189CA0 /* BTHotView.swift in Sources */,
 				7387107C1CF47B4B007D6979 /* BTTopicUserItem.swift in Sources */,
 			);

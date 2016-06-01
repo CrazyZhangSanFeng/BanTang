@@ -4,3 +4,4 @@
 
 #import "UIBarButtonItem+Item.h"
 #import "ZCFileManager.h"
+#import "UIImage+Image.h"

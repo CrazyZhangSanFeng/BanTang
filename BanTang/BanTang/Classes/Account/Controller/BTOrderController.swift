@@ -17,6 +17,8 @@ class BTOrderController: UITableViewController {
         tableView.backgroundColor = UIColor(red: 244 / 255.0, green: 244 / 255.0, blue: 244 / 255.0, alpha: 1.0)
         //取消系统分割线
         tableView.separatorStyle = .None
+        
+        self.title = "订单中心"
     }
 
 
