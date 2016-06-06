@@ -9,51 +9,338 @@
 import UIKit
 import SDCycleScrollView
 
-private let collCellID = "collCellID"
-class BTHomeViewController: UITableViewController {
-   
-    var collectionView: UICollectionView?
-    var titleView: UIScrollView?
-    var titleButtons: [UIButton]?
+/// 这些常量请根据项目需要修改
+let segmentViewHeight: CGFloat = 44.0
+let naviBarHeight: CGFloat = 64.0
+let headViewHeight: CGFloat = 162.0
+let defaultOffSetY: CGFloat = segmentViewHeight + headViewHeight
 
+class BTHomeViewController: UIViewController, SDCycleScrollViewDelegate {
+    
+    var childVcs:[BTBaseTVC] = []
+    var currentChildVc: BTBaseTVC!
+    
+    var banners: [BTHomeBanner] = [BTHomeBanner]()
+    var muarray: [AnyObject] = [AnyObject]()
+    /// 用来实时记录子控制器的tableView的滚动的offSetY
+    var offSetY: CGFloat = -defaultOffSetY
+    
+    /// 当前的偏移量, 用于处理下拉刷新 或者其他需要和偏移量同步的动画效果
+    var currentOffsetY: CGFloat = 0 {
+        didSet {
+//            print(currentOffsetY)
+        }
+    }
+    // 懒加载 containerView 所有view的容器
+    lazy var containerView: UIView = {
+        let containerView = UIView(frame: self.view.bounds)
+        containerView.backgroundColor = UIColor.whiteColor()
+        return containerView
+    }()
+    
+    // 懒加载 topView 悬停标题
+    lazy var topView: ScrollSegmentView! = {[unowned self] in
+        
+        var style = SegmentStyle()
+        
+        // 颜色渐变
+        style.gradualChangeTitleColor = true
+        // 下划线
+        style.showLine = true
+        
+        style.scrollLineColor = UIColor.redColor()
+        
+        // title正常状态颜色 使用RGB空间值
+        style.normalTitleColor = UIColor(red: 98.0/255.0, green: 98.0/255.0, blue: 98.0/255.0, alpha: 1.0)
+        // title选中状态颜色 使用RGB空间值
+        style.selectedTitleColor = UIColor(red: 235.0/255.0, green: 0.0/255.0, blue: 0.0/255.0, alpha: 1.0)
+        
+        let titles = ["最新", "优惠", "一周最热", "美妆&穿搭", "美食", "设计感", "礼物", "文艺", "学生党"]
+        
+        let topView = ScrollSegmentView(frame: CGRect(x: CGFloat(0.0), y: headViewHeight, width: self.view.bounds.size.width, height: segmentViewHeight), segmentStyle: style, titles: titles)
+        
+        topView.titleBtnOnClick = {[unowned self] (label: UILabel, index: Int) in
+            self.contentView.setContentOffSet(CGPoint(x: self.contentView.bounds.size.width * CGFloat(index), y: 0), animated: false)
+            
+        }
+        topView.backgroundColor = UIColor.whiteColor()
+        return topView
+        
+        }()
+    
+    // 懒加载 contentView
+    lazy var contentView: ContentView! = {[unowned self] in
+        let contentView = ContentView(frame: self.view.bounds, childVcs: self.childVcs, parentViewController: self)
+        contentView.delegate = self // 必须实现代理方法
+        return contentView
+        }()
+    
+    // 懒加载 headView
+    lazy var headView: SDCycleScrollView =  {
+        let headView: SDCycleScrollView = SDCycleScrollView.init(frame: CGRect(x: 0.0, y: 0.0, width: self.view.bounds.size.width, height: headViewHeight), delegate: self, placeholderImage: UIImage(named: "default_user_icon_75x75_"))
+        
+        
+        
+        
+        
+        headView.currentPageDotColor = UIColor.yellowColor()
+        
+        
+        return headView
+    }()
+    
+    // 懒加载 scrollView headView的容器
+    lazy var scrollView: UIScrollView = {
+        let scrollView = UIScrollView(frame:  CGRect(x: 0.0, y: 0.0, width: self.view.bounds.size.width, height: headViewHeight))
+        scrollView.delegate = self
+        scrollView.scrollsToTop = false
+        scrollView.contentSize = CGSize(width: 0.0, height: headViewHeight*2)
+        scrollView.scrollsToTop = false
+        
+        
+        
+        return scrollView
+    }()
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.dataSource = self
-        tableView.delegate = self
-        //设置导航条透明
+//        title = "半糖"
+        view.backgroundColor = UIColor.whiteColor()
+        // 这个是必要的设置, 如果没有设置导致显示内容不正常, 请尝试设置这个属性
+        automaticallyAdjustsScrollViewInsets = false
         setupNaviBar()
+        setChildVcs()
         
-        //设置图片轮播
-        tableView.tableHeaderView = setupCyclePicture()
+        addSubviews()
         
-        self.automaticallyAdjustsScrollViewInsets = false
+        // 添加通知监听每个页面的出现
+        addNotificationObserver()
+        loadBannerData()
+    }
+    
+    //加载轮播图
+    func loadBannerData() {
+        BTHomePageDataTool.getBannerArray { (bannerArray) in
+            self.headView.imageURLStringsGroup = bannerArray
+        }
+  
+    }
+    
+    func addSubviews() {
+        view.addSubview(containerView)
+        // 1. 先添加contentView
+        containerView.addSubview(contentView)
+        scrollView.addSubview(headView)
+        // 2. 再添加scrollView
+        containerView.addSubview(scrollView)
         
-        tableView.scrollsToTop = false
+        // 3. 再添加topView(topView必须添加在contentView的下面才可以实现悬浮效果)
+        containerView.addSubview(topView)
+    }
+    
+    func addNotificationObserver() {
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(self.didSelectIndex(_:)), name: ScrollPageViewDidShowThePageNotification, object: nil)
         
-        //添加所有子控制器
-        setupAllChildVC()
+    }
+    
+    func didSelectIndex(noti: NSNotification) {
+        let userInfo = noti.userInfo!
+        //注意键名是currentIndex
+        // 通知父控制器重新设置tableView的contentOffset.y
+        let currentIndex = userInfo["currentIndex"] as! Int
+        let childVc = childVcs[currentIndex]
+        currentChildVc = childVc
+        childVc.delegate?.setupTableViewOffSetYWhenViewWillAppear(childVc.tableView)
+//        print(userInfo["currentIndex"])
+    }
+    
+    deinit {
+        NSNotificationCenter.defaultCenter().removeObserver(self)
+    }
+    //1. 添加子控制器为PageTableViewController或者继承自他的Controller,
+    //   或者你可以参考PageTableViewController他里面的实现自行实现(可以使用UICollectionView)相关的代理和属性 并且设置delegate为self
+    
+    func setChildVcs() {
+        let vc1 = BTNewController()
         
+        vc1.delegate = self
         
+        let vc2 = BTNewController()
+        vc2.delegate = self
+        
+        let vc3 = BTNewController()
+        vc3.delegate = self
+        
+        let vc4 = BTNewController()
+        vc4.delegate = self
+        
+        let vc5 = BTNewController()
+        vc5.delegate = self
+        
+        let vc6 = BTNewController()
+        vc6.delegate = self
+        
+        let vc7 = BTNewController()
+        vc7.delegate = self
+        
+        let vc8 = BTNewController()
+        vc8.delegate = self
+        
+        let vc9 = BTNewController()
+        vc9.delegate = self
+
+        childVcs = [vc1, vc2, vc3,vc4, vc5, vc6, vc7, vc8, vc9]
+        
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
     }
 
 }
 
-//MARK:- 设置导航条透明
-extension BTHomeViewController {
-    func setupNaviBar() {
-
-        navigationController?.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: .Default)
-        navigationController?.navigationBar.shadowImage = UIImage()
+// MARK:- UIScrollViewDelegate
+extension BTHomeViewController: UIScrollViewDelegate {
+    func scrollViewDidScroll(scrollView: UIScrollView) {
+        currentOffsetY = scrollView.contentOffset.y
+        //        print(scrollView.contentOffset.y)
+        headView.frame.origin.y = currentOffsetY
+        if currentOffsetY < 0 {
+            containerView.frame.origin.y = -currentOffsetY
+            return
+        }
         
-        //签到按钮
-        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "home_sign_icon_33x33_"), highlightImage: UIImage(named: "home_sign_highlight_icon_33x33_"), target: self, action: #selector(signClick))
-        //搜索按钮
-        navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "home_search_icon_33x33_"), highlightImage: nil, target: self, action: #selector(searchClick))
-
+        if currentChildVc.tableView.contentOffset.y == currentOffsetY - defaultOffSetY { return }
+        currentChildVc.tableView.contentOffset.y = currentOffsetY - defaultOffSetY
+        
+        
+//                let offset: CGFloat = scrollView.contentOffset.y
+        
+                var alpha: CGFloat = currentOffsetY * 1 / 98.0
+        
+        
+                if alpha <= 0 {
+        
+                }
+        
+                if alpha >= 1 {
+                    alpha = 0.99
+                    navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "home_sign_top_icon_19x19_"), highlightImage: nil, target: self, action: #selector(signClick))
+                } else {
+                    navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "home_sign_icon_33x33_"), highlightImage: UIImage(named: "home_sign_highlight_icon_33x33_"), target: self, action: #selector(signClick))
+                }
+        
+                navigationController?.navigationBar.setBackgroundImage(UIImage(color: UIColor(white: 1.0, alpha: alpha)), forBarMetrics: .Default)
+        
+        
+        
     }
 }
 
-//导航条按钮点击
+// MARK:- PageTableViewDelegate - 监控子控制器中的tableview的滚动和更新相关的UI
+extension BTHomeViewController: BTBaseTVCDelegate {
+    
+    // 设置将要显示的tableview的contentOffset.y
+    func setupTableViewOffSetYWhenViewWillAppear(scrollView: UIScrollView) {
+        
+        defer {
+            offSetY = scrollView.contentOffset.y
+        }
+        //        print("\(offSetY) -------*\(scrollView.contentOffset.y)-----*\(-(naviBarHeight + segmentViewHeight)))")
+        if offSetY < -(naviBarHeight + segmentViewHeight) {
+            scrollView.contentOffset.y = offSetY
+            return
+        } else {
+            if scrollView.contentOffset.y < -(naviBarHeight + segmentViewHeight) {
+                
+                scrollView.contentOffset.y = -(naviBarHeight + segmentViewHeight)
+                // 使滑块停在navigationBar下面
+                self.scrollView.frame.origin.y = naviBarHeight - headViewHeight
+                topView.frame.origin.y = naviBarHeight
+                return
+            }
+            return
+            
+        }
+        
+        
+    }
+    
+    // 根据子控制器的scrolView的偏移量来调整UI
+    func scrollViewIsScrolling(scrollView: UIScrollView) {
+        offSetY = scrollView.contentOffset.y
+        currentOffsetY = offSetY + defaultOffSetY
+//                print("\(offSetY),tableview")
+        
+        if offSetY < -(defaultOffSetY - headViewHeight + naviBarHeight) {
+            
+            var alpha: CGFloat = currentOffsetY * 1 / 98.0
+            
+            
+            if alpha <= 0 {
+                
+            }
+            
+            if alpha >= 1 {
+                alpha = 0.99
+                navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "home_sign_top_icon_19x19_"), highlightImage: nil, target: self, action: #selector(signClick))
+            } else {
+                navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "home_sign_icon_33x33_"), highlightImage: UIImage(named: "home_sign_highlight_icon_33x33_"), target: self, action: #selector(signClick))
+            }
+            
+            navigationController?.navigationBar.setBackgroundImage(UIImage(color: UIColor(white: 1.0, alpha: alpha)), forBarMetrics: .Default)
+            
+        }
+        
+        
+        if offSetY > -(defaultOffSetY - headViewHeight + naviBarHeight) {
+            if topView.frame.origin.y == naviBarHeight {
+                return
+            }
+            // 使滑块停在navigationBar下面
+            self.scrollView.frame.origin.y = naviBarHeight - headViewHeight
+            topView.frame.origin.y = naviBarHeight
+            navigationController?.navigationBar.setBackgroundImage(UIImage(color: UIColor(white: 1.0, alpha: 1.0)), forBarMetrics: .Default)
+            
+            return
+        } else if offSetY < -defaultOffSetY {
+            
+            topView.frame.origin.y = -offSetY - segmentViewHeight
+            self.scrollView.frame.origin.y = topView.frame.origin.y - headViewHeight
+            return
+        } else {
+            
+            // 这里是让滑块和headView随着上下滚动
+            //这种方式可能会出现同步的偏差问题
+            //            headView.frame.origin.y -= deltaY
+            //            topView.frame.origin.y -= deltaY
+            // 这种方式会准确的同步位置
+            topView.frame.origin.y = -offSetY - segmentViewHeight
+            self.scrollView.frame.origin.y = topView.frame.origin.y - headViewHeight
+            // 不加判断会触发self.scrollView的代理 相当于"递归", 会重复设置为相同的值
+            if self.scrollView.contentOffset.y == currentOffsetY {
+                return
+            }
+            self.scrollView.contentOffset.y = currentOffsetY
+        }
+        
+    }
+    
+}
+
+
+// MARK:- ContentViewDelegate
+extension BTHomeViewController: ContentViewDelegate {
+    var segmentView: ScrollSegmentView {
+        return topView
+    }
+    
+}
+
+
+
+//MARK:- 导航条按钮点击
 extension BTHomeViewController {
     func signClick() {
         debugPrint("签到点击")
@@ -64,212 +351,20 @@ extension BTHomeViewController {
     }
 }
 
-//MARK:- 设置图片轮播
-extension BTHomeViewController: SDCycleScrollViewDelegate {
 
-    func setupCyclePicture() -> SDCycleScrollView {
-        let cycleScrollView: SDCycleScrollView = SDCycleScrollView.init(frame: CGRect(x: 0, y: 0, width: UIScreen.mainScreen().bounds.width, height: 162), delegate: self, placeholderImage: UIImage(named: "default_user_icon_75x75_"))
-//        cycleScrollView.imageURLStringsGroup = ["","",""]
-        cycleScrollView.currentPageDotColor = UIColor.yellowColor()
-        
-        return cycleScrollView
-    }
-    
-}
-
-//MARK:- 设置滚动标题栏
+//MARK:- 设置导航条
 extension BTHomeViewController {
-    override func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        titleView = UIScrollView()
-        titleView!.backgroundColor = UIColor.orangeColor()
-        titleView!.scrollsToTop = false
-        return titleView
-    }
-    
-    override func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 44
-    }
-    
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
-    }
-    
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        // 0.定义标示
-        let cellID = "CellID"
+    func setupNaviBar() {
         
-        // 1.从缓冲池中取出cell
-        var cell = tableView.dequeueReusableCellWithIdentifier(cellID)
+        navigationController?.navigationBar.setBackgroundImage(UIImage(color: UIColor(white: 1.0, alpha: 0.0)), forBarMetrics: .Default)
+        navigationController?.navigationBar.shadowImage = UIImage()
         
-        // 2.判断是否取出cell
-        if cell == nil {
-            cell = UITableViewCell(style: .Default, reuseIdentifier: cellID)
-        }
-        
-        // 3.给cell设置数据
-        cell?.contentView.addSubview(setupBottomView())
-        
-        return cell!
-    }
-    
-    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return UIScreen.mainScreen().bounds.height
-    }
-    
-    
- //MARK:- 透明效果实现
-    override func scrollViewDidScroll(scrollView: UIScrollView) {
-        
-        let offset: CGFloat = tableView.contentOffset.y
-        
-        var alpha: CGFloat = offset * 1 / 98.0
-        
-        if alpha <= 0 {
-            tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
-        }
-        
-        if alpha >= 1 {
-            alpha = 0.99
-            tableView.contentInset = UIEdgeInsets(top: 64, left: 0, bottom: 64, right: 0)
-            navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "home_sign_top_icon_19x19_"), highlightImage: nil, target: self, action: #selector(signClick))
-        } else {
-            navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "home_sign_icon_33x33_"), highlightImage: UIImage(named: "home_sign_highlight_icon_33x33_"), target: self, action: #selector(signClick))
-        }
-        
-        navigationController?.navigationBar.setBackgroundImage(UIImage(color: UIColor(white: 1.0, alpha: alpha)), forBarMetrics: .Default)
-    }
-    
-}
-
- //MARK:- 创建底部视图
-extension BTHomeViewController {
-    func setupBottomView() -> UICollectionView {
-        let layout = UICollectionViewFlowLayout()
-        layout.minimumLineSpacing = 0
-        layout.minimumInteritemSpacing = 0
-        layout.itemSize = CGSize(width: UIScreen.mainScreen().bounds.width, height: UIScreen.mainScreen().bounds.height)
-        layout.scrollDirection = .Horizontal
-        
-        
-        collectionView = UICollectionView(frame: CGRect(x: 0, y: 0, width: UIScreen.mainScreen().bounds.width, height: UIScreen.mainScreen().bounds.height) , collectionViewLayout: layout)
-        
-        collectionView!.scrollsToTop = false
-        collectionView!.dataSource = self
-        collectionView!.delegate = self
-        collectionView!.pagingEnabled = true
-        collectionView!.showsHorizontalScrollIndicator = false
-        
-        collectionView!.registerClass(NSClassFromString("UICollectionViewCell"), forCellWithReuseIdentifier: collCellID)
-        
-        return collectionView!
-    }
-}
-
-//MARK:- collectionView数据源,代理
-extension BTHomeViewController: UICollectionViewDataSource, UICollectionViewDelegate {
-
-    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.childViewControllers.count
-    }
-    
-    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(collCellID, forIndexPath: indexPath)
-        //移除之前的所有控制器
-        cell.contentView.subviews.map{
-            $0.removeFromSuperview()
-        }
-        //获取相对应的控制器
-        let vc = self.childViewControllers[indexPath.row] 
-        
-        vc.view.frame = CGRect(x: 0, y: 0, width: UIScreen.mainScreen().bounds.width, height: UIScreen.mainScreen().bounds.height)
-        cell.contentView.addSubview(vc.view)
-        
-        return cell
-    }
-
-}
-
-//MARK:- 添加所有子控制器
-extension BTHomeViewController {
-    
-    func setupAllChildVC() {
-        //最新
-        let newVC = UITableViewController()
-        newVC.title = "最新"
-        self.addChildViewController(newVC)
-        
-        //用户原创
-        let userVC = UITableViewController()
-        userVC.title = "用户原创"
-        self.addChildViewController(userVC)
-        
-        //一周最热
-        let hotVC = UITableViewController()
-        hotVC.title = "一周最热"
-        self.addChildViewController(hotVC)
-        
-        //美妆&穿搭
-        let wearVC = UITableViewController()
-        wearVC.title = "美妆&穿搭"
-        self.addChildViewController(wearVC)
-        
-        //美食
-        let foodVC = UITableViewController()
-        foodVC.title = "美食"
-        self.addChildViewController(foodVC)
-        
-        //设计感
-        let designVC = UITableViewController()
-        designVC.title = "设计感"
-        self.addChildViewController(designVC)
-        
-        //礼物
-        let giftVC = UITableViewController()
-        giftVC.title = "礼物"
-        self.addChildViewController(giftVC)
+        //签到按钮
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "home_sign_icon_33x33_"), highlightImage: UIImage(named: "home_sign_highlight_icon_33x33_"), target: self, action: #selector(signClick))
+        //搜索按钮
+        navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "home_search_icon_33x33_"), highlightImage: nil, target: self, action: #selector(searchClick))
         
     }
-}
-
-//MARK:- 添加所有标题
-extension BTHomeViewController {
-    func setupAllTitle() {
-        let count = self.childViewControllers.count
-        var x: CGFloat = 0
-        let y: CGFloat = 0
-        let w: CGFloat = UIScreen.mainScreen().bounds.width / 4
-        let h: CGFloat = (titleView?.frame.size.height)!
-        
-        for i in 0..<count {
-            let vc = self.childViewControllers[i]
-            let button = UIButton(type: .Custom)
-            button.setTitle(vc.title, forState: .Normal)
-            button.tag = i
-            button.setTitleColor(UIColor.darkGrayColor(), forState: .Normal)
-            button.setTitleColor(UIColor.redColor(), forState: .Selected)
-            button.titleLabel?.font = UIFont.boldSystemFontOfSize(15)
-            x = CGFloat(i) * w
-            button.frame = CGRect(x: x, y: y, width: w, height: h)
-            button.addTarget(self, action: #selector(BTHomeViewController.buttonClick(_:)), forControlEvents: .TouchUpInside)
-            titleView?.addSubview(button)
-            titleButtons?.append(button)
-            //默认选中第一个
-            if i == 0 {
-                
-            }
-            
-            
-        }
-    }
-}
-
-//MARK:- 按钮点击
-extension BTHomeViewController {
-
-    func buttonClick(button: UIButton) {
-        
-    }
-
 }
 
 
