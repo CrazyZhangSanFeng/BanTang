@@ -84,11 +84,11 @@ extension BTHotView: UICollectionViewDataSource, UICollectionViewDelegate {
             cell.hotItem = hotItems![indexPath.row]
         }
         
-        // 判断是否是最后一个cell即将出现
-//        if indexPath.row == hotItems!.count - 1 {
-//            page += 1
-//            loadHotData(page)
-//        }
+         //判断是否是最后一个cell即将出现
+        if indexPath.row == hotItems!.count - 1 {
+            //发送通知给单品控制器,让他去加载更多数据
+            NSNotificationCenter.defaultCenter().postNotificationName("reloadHotData", object: self)
+        }
         
         return cell
     }

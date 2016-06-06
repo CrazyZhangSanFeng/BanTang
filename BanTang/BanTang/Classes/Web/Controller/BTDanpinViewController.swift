@@ -45,8 +45,20 @@ class BTDanpinViewController: UITableViewController {
         
         tableView.backgroundColor = UIColor(red: 244 / 255.0, green: 244 / 255.0, blue: 244 / 255.0, alpha: 1.0)
         
+        //监听通知
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(BTDanpinViewController.reloadHotData), name: "reloadHotData", object: nil)
+        
     }
     
+    func reloadHotData() {
+        page += 1
+        loadHotData(page)
+    }
+    
+    //销毁通知
+    deinit {
+        NSNotificationCenter.defaultCenter().removeObserver(self)
+    }
 
 
 }
@@ -81,11 +93,10 @@ extension BTDanpinViewController {
 extension BTDanpinViewController {
     func setupFooterView() {
 
-        let footV = NSBundle.mainBundle().loadNibNamed("BTHotView", owner: nil, options: nil).first as! BTHotView
+        footView = NSBundle.mainBundle().loadNibNamed("BTHotView", owner: nil, options: nil).first as? BTHotView
         
-        tableView.tableFooterView = footV
+        tableView.tableFooterView = footView
         
-        footView = footV
     }
 }
 
