@@ -387,7 +387,10 @@ extension ScrollSegmentView {
         }
         
         scrollLine?.frame = CGRect(x: coverX, y: bounds.size.height - segmentStyle.scrollLineHeight, width: coverW, height: segmentStyle.scrollLineHeight)
-        
+//        scrollLine?.center.x = labelsArray[0].center.x
+//        scrollLine?.frame.origin.y = bounds.size.height - segmentStyle.scrollLineHeight
+//        scrollLine?.frame.size.width = 30
+//        scrollLine?.frame.size.height = segmentStyle.scrollLineHeight
         
     }
     
@@ -423,6 +426,7 @@ extension ScrollSegmentView {
             
             // 设置滚动条的位置
             self.scrollLine?.frame.origin.x = currentLabel.frame.origin.x
+//            self.scrollLine?.center.x = currentLabel.center.x
             // 注意, 通过bounds 获取到的width 是没有进行transform之前的 所以使用frame
             self.scrollLine?.frame.size.width = currentLabel.frame.size.width
             
