@@ -215,7 +215,7 @@ extension ContentView: UIScrollViewDelegate {
     //
     final public func scrollViewDidEndDecelerating(scrollView: UIScrollView) {
         let currentIndex = Int(floor(scrollView.contentOffset.x / bounds.size.width))
-        print("减速完成")
+//        print("减速完成")
         if self.currentIndex != currentIndex {
             
             addCurrentShowIndexNotification(currentIndex)
@@ -243,7 +243,7 @@ extension ContentView: UIScrollViewDelegate {
         let currentIndex = Int(floor(scrollView.contentOffset.x / bounds.size.width))
 
         delegate?.contentViewDidEndDrag(scrollView)
-        print(scrollView.contentOffset.x)
+//        print(scrollView.contentOffset.x)
         //快速滚动的时候第一页和最后一页滚动代理方法里面可能progress不能准确的设置为0 或 1
         if scrollView.contentOffset.x == 0 || scrollView.contentOffset.x == scrollView.contentSize.width - scrollView.bounds.width{
             delegate?.contentViewDidEndMoveToIndex(self.currentIndex, toIndex: currentIndex)

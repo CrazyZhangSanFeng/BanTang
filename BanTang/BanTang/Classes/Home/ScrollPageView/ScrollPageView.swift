@@ -87,7 +87,7 @@ public class ScrollPageView: UIView {
     
     deinit {
         parentViewController = nil
-        print("\(self.debugDescription) --- 销毁")
+//        print("\(self.debugDescription) --- 销毁")
     }
 
  

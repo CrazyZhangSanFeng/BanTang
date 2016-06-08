@@ -20,6 +20,9 @@ private let wh = (UIScreen.mainScreen().bounds.width - (cols - 1) * margin) / co
 
 class BTDanpinViewController: UITableViewController {
     
+    //加载动画
+    var loadingView: BTLoadingView?
+    
     //分类模型数组
     lazy var categoryItems : [BTCategoryItem]? = [BTCategoryItem]()
     
@@ -39,6 +42,11 @@ class BTDanpinViewController: UITableViewController {
         
         //加载底部collectionView
         setupFooterView()
+        
+        
+        loadingView = BTLoadingView.shareInstance.loadingViewToView(self.view) as? BTLoadingView
+        loadingView?.startAnimation()
+        view.addSubview(loadingView!)
         
         //请求数据
         loadHotData(page)
@@ -107,6 +115,8 @@ extension BTDanpinViewController {
         let manager = AFHTTPSessionManager()
         
         manager.GET("http://open3.bantangapp.com/community/post/hotRecommend?app_id=com.jzyd.BanTang&app_installtime=1463934108&app_versions=5.8&channel_name=appStore&client_id=bt_app_ios&client_secret=9c1e6634ce1c5098e056628cd66a17a5&oauth_token=f1d476369a332f4e16f578a6228bd97e&os_versions=9.3.2&page=\(page)&pagesize=18&screensize=640&track_device_info=iPhone6%2C2&track_deviceid=EAC59F1B-C110-48FA-B013-02A92744278A&track_user_id=2182968&v=13", parameters: nil, progress: nil, success: { (_, response) in
+            
+            self.loadingView?.hideAnimation()
             //将AnyObject转化成字典类型
             guard (response as? [String : NSObject]) != nil else {
                 return
@@ -134,6 +144,7 @@ extension BTDanpinViewController {
             
             }) { (_, error) in
                 //请求失败调用
+                self.loadingView?.hideAnimation()
         }
     }
 }

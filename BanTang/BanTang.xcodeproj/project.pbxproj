@@ -56,6 +56,7 @@
 		7398A5261CFC364300D0B813 /* BTUserHeadView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7398A5251CFC364300D0B813 /* BTUserHeadView.xib */; };
 		7398A5281CFC407B00D0B813 /* BTMiddleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7398A5271CFC407B00D0B813 /* BTMiddleView.swift */; };
 		7398A52A1CFC408300D0B813 /* BTMiddleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7398A5291CFC408300D0B813 /* BTMiddleView.xib */; };
+		73AAC9C71D085D8F00AE5751 /* BTLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73AAC9C61D085D8F00AE5751 /* BTLoadingView.swift */; };
 		73C1BCD01CFDB8ED004A8952 /* ZCFileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 73C1BCCF1CFDB8ED004A8952 /* ZCFileManager.m */; };
 		73D12F9F1CF741AB008A4719 /* BTListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D12F9E1CF741AB008A4719 /* BTListViewController.swift */; };
 		73D12FA11CF744B6008A4719 /* BTDanpinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D12FA01CF744B6008A4719 /* BTDanpinViewController.swift */; };
@@ -120,6 +121,7 @@
 		7398A5251CFC364300D0B813 /* BTUserHeadView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BTUserHeadView.xib; sourceTree = "<group>"; };
 		7398A5271CFC407B00D0B813 /* BTMiddleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BTMiddleView.swift; sourceTree = "<group>"; };
 		7398A5291CFC408300D0B813 /* BTMiddleView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BTMiddleView.xib; sourceTree = "<group>"; };
+		73AAC9C61D085D8F00AE5751 /* BTLoadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BTLoadingView.swift; sourceTree = "<group>"; };
 		73C1BCCE1CFDB8ED004A8952 /* ZCFileManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZCFileManager.h; sourceTree = "<group>"; };
 		73C1BCCF1CFDB8ED004A8952 /* ZCFileManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZCFileManager.m; sourceTree = "<group>"; };
 		73D12F9E1CF741AB008A4719 /* BTListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BTListViewController.swift; sourceTree = "<group>"; };
@@ -437,6 +439,7 @@
 			isa = PBXGroup;
 			children = (
 				738710691CF2DF6E007D6979 /* BTTabBar.swift */,
+				73AAC9C61D085D8F00AE5751 /* BTLoadingView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -651,6 +654,7 @@
 				73D12F9F1CF741AB008A4719 /* BTListViewController.swift in Sources */,
 				73070A6D1CFFD6C000CBDBF7 /* BTNewController.swift in Sources */,
 				738710681CF2DCC6007D6979 /* BTBaseNaviController.swift in Sources */,
+				73AAC9C71D085D8F00AE5751 /* BTLoadingView.swift in Sources */,
 				738710701CF30093007D6979 /* UIBarButtonItem+Item.m in Sources */,
 				73D12FAF1CF80E21008A4719 /* BTCategoryItem.swift in Sources */,
 				731D59D11D056BDF00B3502C /* BTHomePageDataTool.swift in Sources */,

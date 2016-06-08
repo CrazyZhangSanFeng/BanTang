@@ -16,9 +16,9 @@ class BTMessageChildBaseTVC: UITableViewController {
         tableView.separatorStyle = .None
         tableView.backgroundColor = UIColor(red: 244 / 255.0, green: 244 / 255.0, blue: 244 / 255.0, alpha: 1.0)
         
-        let imageview = UIImageView(image: UIImage(named: "bg_message_empty_127x127_"))
+        //设置tableView的背景图片(没有消息)
+        setupBackgroundView()
         
-        tableView.backgroundView = imageview
     }
 
     override func didReceiveMemoryWarning() {
@@ -47,50 +47,30 @@ class BTMessageChildBaseTVC: UITableViewController {
         return cell
     }
     */
+}
 
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
+//MARK:- 设置tableView的背景图片(没有消息)
+extension BTMessageChildBaseTVC {
+    func setupBackgroundView() {
+        let backgroundV = UIView(frame: CGRect(x: 95, y: 170, width: 127, height: 164))
+        backgroundV.backgroundColor = UIColor.clearColor()
+        
+        let label = UILabel()
+        label.text = "没有收到任何消息"
+        label.frame = CGRect(x: 0, y: 147, width: 127, height: 17)
+        label.textColor = UIColor.lightGrayColor()
+        label.font = UIFont.systemFontOfSize(15)
+        backgroundV.addSubview(label)
+        
+        
+        let imageview = UIImageView(image: UIImage(named: "bg_message_empty_127x127_"))
+        imageview.frame = CGRect(x: 0, y: 0, width: 127, height: 127)
+        backgroundV.addSubview(imageview)
+        
+        let contentV = UIView()
+        
+        contentV.addSubview(backgroundV)
+        
+        tableView.backgroundView = contentV
     }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if editingStyle == .Delete {
-            // Delete the row from the data source
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-        } else if editingStyle == .Insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

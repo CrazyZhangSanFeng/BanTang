@@ -17,6 +17,7 @@ let defaultOffSetY: CGFloat = segmentViewHeight + headViewHeight
 
 class BTHomeViewController: UIViewController, SDCycleScrollViewDelegate {
     
+    var loadingView: BTLoadingView?
     var childVcs:[BTBaseTVC] = []
     var currentChildVc: BTBaseTVC!
     
@@ -31,6 +32,8 @@ class BTHomeViewController: UIViewController, SDCycleScrollViewDelegate {
 //            print(currentOffsetY)
         }
     }
+
+    
     // 懒加载 containerView 所有view的容器
     lazy var containerView: UIView = {
         let containerView = UIView(frame: self.view.bounds)
@@ -122,6 +125,7 @@ class BTHomeViewController: UIViewController, SDCycleScrollViewDelegate {
     //加载轮播图
     func loadBannerData() {
         BTHomePageDataTool.getBannerArray { (bannerArray) in
+            self.loadingView?.hideAnimation()
             self.headView.imageURLStringsGroup = bannerArray
         }
   
@@ -137,6 +141,10 @@ class BTHomeViewController: UIViewController, SDCycleScrollViewDelegate {
         
         // 3. 再添加topView(topView必须添加在contentView的下面才可以实现悬浮效果)
         containerView.addSubview(topView)
+        
+        loadingView = BTLoadingView.shareInstance.loadingViewToView(self.view) as? BTLoadingView
+        loadingView?.startAnimation()
+        view.addSubview(loadingView!)
     }
     
     func addNotificationObserver() {
