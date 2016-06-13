@@ -66,6 +66,8 @@ class BTProductDetailVC: UIViewController, UINavigationControllerDelegate {
         
     }
     
+    
+    
 }
 //MARK:- 设置导航栏
 extension BTProductDetailVC {
@@ -93,6 +95,23 @@ extension BTProductDetailVC {
     }
     
     func shareBtnClick(btn: UIButton) {
+        //遮盖
+        let cover = BTCoverView.show()
+        
+        let shareV = BTShareView.shareView()
+        shareV.frame.size.width = BTscreenW
+        weak var weakself: BTCoverView? = cover
+        
+        cover.click = {
+            
+            UIView.animateWithDuration(0.25, animations: { 
+                shareV.frame.origin.y = BTscreenH
+                }, completion: { (_) in
+                 shareV.removeFromSuperview()
+                 weakself!.removeFromSuperview()
+            })
+            
+        }
         
     }
 }
