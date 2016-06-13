@@ -9,7 +9,7 @@
 import UIKit
 import SDCycleScrollView
 
-/// 这些常量请根据项目需要修改
+//常用参数设置
 let segmentViewHeight: CGFloat = 44.0
 let naviBarHeight: CGFloat = 64.0
 let headViewHeight: CGFloat = 162.0

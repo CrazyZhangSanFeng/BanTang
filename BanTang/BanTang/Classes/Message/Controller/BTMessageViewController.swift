@@ -64,7 +64,7 @@ class BTMessageViewController: UIViewController {
 
 extension BTMessageViewController: UIScrollViewDelegate {
     
-    //设置两个滚动
+    //设置两个滚动代理
     func setupScrollView() {
         titleScrollView.delegate = self
         view.addSubview(titleScrollView)
@@ -183,7 +183,7 @@ extension BTMessageViewController: UIScrollViewDelegate {
     func scrollViewDidScroll(scrollView: UIScrollView) {
         let page = contentScrollView.contentOffset.x / UIScreen.mainScreen().bounds.width
 
-        underLine?.center.x =  53 + page * 106
+        underLine?.center.x =  BTscreenW / CGFloat(titleBtns.count) * 0.5 + page * BTscreenW / CGFloat(titleBtns.count)
         
     }
 }

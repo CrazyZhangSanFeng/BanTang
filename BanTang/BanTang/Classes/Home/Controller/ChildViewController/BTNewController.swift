@@ -63,5 +63,13 @@ class BTNewController: BTBaseTVC {
         
         return cell
     }
+    
+    //MARK: - 点击跳转
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        
+        let vc = BTProductDetailVC()
+        vc.extenID = "\(homeTopicItems[indexPath.row].ID)"
+        navigationController?.pushViewController(vc, animated: true)
+    }
 
 }

@@ -75,5 +75,32 @@ class BTHomePageDataTool: NSObject {
         
         
     }
+    
+    //根据id获取详情页数据
+    class func getTopicData(infoId: String!, resultCallBack: (productModel: BTProductModel?, error: NSError?) -> ()) {
+        
+        let parmas: NSMutableDictionary = BTBaseRequestParmas.parmas().mj_keyValues()
+        parmas["id"] = infoId
+        parmas["statistics_uv"] = 0
+        parmas.removeObjectForKey("pagesize")
+        let url: String = kBaseUrl + "topic/newInfo?"
+        let manager = AFHTTPSessionManager()
+        manager.GET(url, parameters: parmas, progress: nil, success: { (_, jsonData) in
+            
+            //将AnyObject转化成字典类型
+            guard (jsonData as? [String : NSObject]) != nil else {
+                return
+            }
+            
+            let data: BTProductModel = BTProductModel.mj_objectWithKeyValues(jsonData!["data"])
+            
+            resultCallBack(productModel: data, error: nil)
+            
+            }) { (_, error) in
+            resultCallBack(productModel: nil, error: error)
+        }
+        
+        
+    }
 
 }

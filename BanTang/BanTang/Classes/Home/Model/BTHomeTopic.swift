@@ -8,9 +8,13 @@
 
 
 import UIKit
+import MJExtension
 
 class BTHomeTopic:  NSObject {
     
+    /** id */
+    var ID: String = ""
+
     /** 标题 */
     var title: String = ""
     
@@ -31,4 +35,10 @@ class BTHomeTopic:  NSObject {
     
     /** 用户模型 */
     var user : BTTopicUserItem?
+    
+    override static func mj_replacedKeyFromPropertyName() -> [NSObject : AnyObject]! {
+        return ["ID": "id"]
+    }
+    
+    
 }

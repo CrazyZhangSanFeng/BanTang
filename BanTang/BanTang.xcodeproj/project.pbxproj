@@ -57,6 +57,17 @@
 		7398A5281CFC407B00D0B813 /* BTMiddleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7398A5271CFC407B00D0B813 /* BTMiddleView.swift */; };
 		7398A52A1CFC408300D0B813 /* BTMiddleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7398A5291CFC408300D0B813 /* BTMiddleView.xib */; };
 		73AAC9C71D085D8F00AE5751 /* BTLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73AAC9C61D085D8F00AE5751 /* BTLoadingView.swift */; };
+		73AAC9C91D09569E00AE5751 /* BTTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73AAC9C81D09569E00AE5751 /* BTTitleView.swift */; };
+		73AAC9CD1D09598500AE5751 /* BTTitleBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73AAC9CC1D09598500AE5751 /* BTTitleBtn.swift */; };
+		73AAC9CF1D096A6600AE5751 /* BTProductDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73AAC9CE1D096A6600AE5751 /* BTProductDetailVC.swift */; };
+		73AAC9D11D09727800AE5751 /* BTProductModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73AAC9D01D09727800AE5751 /* BTProductModel.swift */; };
+		73AAC9D61D09ACB900AE5751 /* UINavigationBar+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 73AAC9D51D09ACB900AE5751 /* UINavigationBar+Extension.m */; };
+		73AAC9D91D09AD0A00AE5751 /* UIColor+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 73AAC9D81D09AD0A00AE5751 /* UIColor+Extension.m */; };
+		73AAC9DB1D09B56700AE5751 /* BTTopicDesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73AAC9DA1D09B56700AE5751 /* BTTopicDesView.swift */; };
+		73AAC9E21D0AF77E00AE5751 /* BTProductCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73AAC9E11D0AF77E00AE5751 /* BTProductCell.swift */; };
+		73AAC9E41D0BB0DB00AE5751 /* BTProductPicView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73AAC9E31D0BB0DB00AE5751 /* BTProductPicView.swift */; };
+		73AAC9E61D0BF6C000AE5751 /* BTProductLikeListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73AAC9E51D0BF6C000AE5751 /* BTProductLikeListView.swift */; };
+		73AAC9E81D0C239500AE5751 /* BTProductBottomBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73AAC9E71D0C239500AE5751 /* BTProductBottomBar.swift */; };
 		73C1BCD01CFDB8ED004A8952 /* ZCFileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 73C1BCCF1CFDB8ED004A8952 /* ZCFileManager.m */; };
 		73D12F9F1CF741AB008A4719 /* BTListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D12F9E1CF741AB008A4719 /* BTListViewController.swift */; };
 		73D12FA11CF744B6008A4719 /* BTDanpinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D12FA01CF744B6008A4719 /* BTDanpinViewController.swift */; };
@@ -122,6 +133,19 @@
 		7398A5271CFC407B00D0B813 /* BTMiddleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BTMiddleView.swift; sourceTree = "<group>"; };
 		7398A5291CFC408300D0B813 /* BTMiddleView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BTMiddleView.xib; sourceTree = "<group>"; };
 		73AAC9C61D085D8F00AE5751 /* BTLoadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BTLoadingView.swift; sourceTree = "<group>"; };
+		73AAC9C81D09569E00AE5751 /* BTTitleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BTTitleView.swift; sourceTree = "<group>"; };
+		73AAC9CC1D09598500AE5751 /* BTTitleBtn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BTTitleBtn.swift; sourceTree = "<group>"; };
+		73AAC9CE1D096A6600AE5751 /* BTProductDetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BTProductDetailVC.swift; sourceTree = "<group>"; };
+		73AAC9D01D09727800AE5751 /* BTProductModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BTProductModel.swift; sourceTree = "<group>"; };
+		73AAC9D41D09ACB900AE5751 /* UINavigationBar+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationBar+Extension.h"; sourceTree = "<group>"; };
+		73AAC9D51D09ACB900AE5751 /* UINavigationBar+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationBar+Extension.m"; sourceTree = "<group>"; };
+		73AAC9D71D09AD0A00AE5751 /* UIColor+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Extension.h"; sourceTree = "<group>"; };
+		73AAC9D81D09AD0A00AE5751 /* UIColor+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Extension.m"; sourceTree = "<group>"; };
+		73AAC9DA1D09B56700AE5751 /* BTTopicDesView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BTTopicDesView.swift; sourceTree = "<group>"; };
+		73AAC9E11D0AF77E00AE5751 /* BTProductCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BTProductCell.swift; sourceTree = "<group>"; };
+		73AAC9E31D0BB0DB00AE5751 /* BTProductPicView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BTProductPicView.swift; sourceTree = "<group>"; };
+		73AAC9E51D0BF6C000AE5751 /* BTProductLikeListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BTProductLikeListView.swift; sourceTree = "<group>"; };
+		73AAC9E71D0C239500AE5751 /* BTProductBottomBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BTProductBottomBar.swift; sourceTree = "<group>"; };
 		73C1BCCE1CFDB8ED004A8952 /* ZCFileManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZCFileManager.h; sourceTree = "<group>"; };
 		73C1BCCF1CFDB8ED004A8952 /* ZCFileManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZCFileManager.m; sourceTree = "<group>"; };
 		73D12F9E1CF741AB008A4719 /* BTListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BTListViewController.swift; sourceTree = "<group>"; };
@@ -277,6 +301,7 @@
 			children = (
 				73070A6B1CFFD69E00CBDBF7 /* ChildViewController */,
 				7387105D1CF2B690007D6979 /* BTHomeViewController.swift */,
+				73AAC9CE1D096A6600AE5751 /* BTProductDetailVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -289,6 +314,7 @@
 				731D59CA1D05652400B3502C /* BTHomeTopic.swift */,
 				731D59CC1D05675700B3502C /* BTHomeBanner.swift */,
 				731D59CE1D0567E900B3502C /* BTCategoryElement.swift */,
+				73AAC9D01D09727800AE5751 /* BTProductModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -296,8 +322,12 @@
 		7387104A1CF2A8FC007D6979 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				73AAC9E01D0AF74500AE5751 /* 购物清单cell */,
 				731D59D21D059CCE00B3502C /* BTHomeTopicCell.swift */,
 				731D59D31D059CCE00B3502C /* BTHomeTopicCell.xib */,
+				73AAC9C81D09569E00AE5751 /* BTTitleView.swift */,
+				73AAC9CC1D09598500AE5751 /* BTTitleBtn.swift */,
+				73AAC9DA1D09B56700AE5751 /* BTTopicDesView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -455,13 +485,28 @@
 		7387106C1CF3007A007D6979 /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				7387106D1CF30092007D6979 /* BanTang-Bridging-Header.h */,
 				73070A681CFE9FE200CBDBF7 /* UIImage+Image.h */,
 				73070A691CFE9FE200CBDBF7 /* UIImage+Image.m */,
-				7387106D1CF30092007D6979 /* BanTang-Bridging-Header.h */,
 				7387106E1CF30093007D6979 /* UIBarButtonItem+Item.h */,
 				7387106F1CF30093007D6979 /* UIBarButtonItem+Item.m */,
+				73AAC9D41D09ACB900AE5751 /* UINavigationBar+Extension.h */,
+				73AAC9D51D09ACB900AE5751 /* UINavigationBar+Extension.m */,
+				73AAC9D71D09AD0A00AE5751 /* UIColor+Extension.h */,
+				73AAC9D81D09AD0A00AE5751 /* UIColor+Extension.m */,
 			);
 			path = Category;
+			sourceTree = "<group>";
+		};
+		73AAC9E01D0AF74500AE5751 /* 购物清单cell */ = {
+			isa = PBXGroup;
+			children = (
+				73AAC9E11D0AF77E00AE5751 /* BTProductCell.swift */,
+				73AAC9E31D0BB0DB00AE5751 /* BTProductPicView.swift */,
+				73AAC9E51D0BF6C000AE5751 /* BTProductLikeListView.swift */,
+				73AAC9E71D0C239500AE5751 /* BTProductBottomBar.swift */,
+			);
+			path = "购物清单cell";
 			sourceTree = "<group>";
 		};
 		73C1BCCB1CFDB3A1004A8952 /* Tool */ = {
@@ -650,6 +695,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				735EC66F1CFD398700D171EE /* BTOrderController.swift in Sources */,
+				73AAC9DB1D09B56700AE5751 /* BTTopicDesView.swift in Sources */,
+				73AAC9CF1D096A6600AE5751 /* BTProductDetailVC.swift in Sources */,
 				7398A5281CFC407B00D0B813 /* BTMiddleView.swift in Sources */,
 				73D12F9F1CF741AB008A4719 /* BTListViewController.swift in Sources */,
 				73070A6D1CFFD6C000CBDBF7 /* BTNewController.swift in Sources */,
@@ -658,6 +705,7 @@
 				738710701CF30093007D6979 /* UIBarButtonItem+Item.m in Sources */,
 				73D12FAF1CF80E21008A4719 /* BTCategoryItem.swift in Sources */,
 				731D59D11D056BDF00B3502C /* BTHomePageDataTool.swift in Sources */,
+				73AAC9E41D0BB0DB00AE5751 /* BTProductPicView.swift in Sources */,
 				73D12FA41CF7D7E1008A4719 /* BTCategoryCell.swift in Sources */,
 				738710651CF2B776007D6979 /* BTAccountViewController.swift in Sources */,
 				735EC6731CFD3CF900D171EE /* BTOrderCell.swift in Sources */,
@@ -674,23 +722,31 @@
 				731D59D41D059CCE00B3502C /* BTHomeTopicCell.swift in Sources */,
 				731D59C91D055F4800B3502C /* BTHomePageData.swift in Sources */,
 				738710311CF2A749007D6979 /* AppDelegate.swift in Sources */,
+				73AAC9E81D0C239500AE5751 /* BTProductBottomBar.swift in Sources */,
 				73C1BCD01CFDB8ED004A8952 /* ZCFileManager.m in Sources */,
 				7387107A1CF46B85007D6979 /* BTTopicItem.swift in Sources */,
 				731D59C31D046CC300B3502C /* SegmentStyle.swift in Sources */,
 				738710601CF2B6D0007D6979 /* BTDiscoverViewController.swift in Sources */,
 				73955A3E1CFAD5A600189CA0 /* BTHotItem.swift in Sources */,
 				7398A5241CFC363600D0B813 /* BTUserHeadView.swift in Sources */,
+				73AAC9C91D09569E00AE5751 /* BTTitleView.swift in Sources */,
+				73AAC9D61D09ACB900AE5751 /* UINavigationBar+Extension.m in Sources */,
 				7387105C1CF2B568007D6979 /* BTMainTabBarVC.swift in Sources */,
 				73D12FA11CF744B6008A4719 /* BTDanpinViewController.swift in Sources */,
 				7387105E1CF2B690007D6979 /* BTHomeViewController.swift in Sources */,
+				73AAC9E61D0BF6C000AE5751 /* BTProductLikeListView.swift in Sources */,
+				73AAC9CD1D09598500AE5751 /* BTTitleBtn.swift in Sources */,
+				73AAC9D91D09AD0A00AE5751 /* UIColor+Extension.m in Sources */,
 				73955A3B1CFAD48700189CA0 /* BTHotCollectionViewCell.swift in Sources */,
 				731D59C11D046CC300B3502C /* ScrollPageView.swift in Sources */,
 				735EC66D1CFD369A00D171EE /* BTReSetCell.swift in Sources */,
 				731D59C01D046CC300B3502C /* ContentView.swift in Sources */,
 				73043C7D1D07E6E800D71114 /* BTMessageChildBaseTVC.swift in Sources */,
 				731D59C51D04700E00B3502C /* BTBaseTVC.swift in Sources */,
+				73AAC9D11D09727800AE5751 /* BTProductModel.swift in Sources */,
 				73070A6A1CFE9FE200CBDBF7 /* UIImage+Image.m in Sources */,
 				73955A401CFAF0F800189CA0 /* BTHotView.swift in Sources */,
+				73AAC9E21D0AF77E00AE5751 /* BTProductCell.swift in Sources */,
 				7387107C1CF47B4B007D6979 /* BTTopicUserItem.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
