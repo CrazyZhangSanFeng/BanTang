@@ -8,10 +8,11 @@
 
 import UIKit
 
-class BTNewController: BTBaseTVC {
+class BTNewController: BTBaseTVC{
     
     var page: NSInteger = 0
     
+    var currentTableView: UITableView?
     //模型数组
     var homeTopicItems: [BTHomeTopic] = [BTHomeTopic]() {
         didSet {
@@ -24,6 +25,7 @@ class BTNewController: BTBaseTVC {
         super.viewDidLoad()
         
         loadData(page)
+        currentTableView = self.tableView
 
     }
     
@@ -56,6 +58,7 @@ class BTNewController: BTBaseTVC {
         cell.homeTopicItem = homeTopicItems[indexPath.row]
         cell.selectionStyle = .None
         
+        //自动加载更多
         if indexPath.row == homeTopicItems.count - 1 {
             page += 1
             loadData(page)
@@ -71,5 +74,6 @@ class BTNewController: BTBaseTVC {
         vc.extenID = "\(homeTopicItems[indexPath.row].ID)"
         navigationController?.pushViewController(vc, animated: true)
     }
+    
 
 }

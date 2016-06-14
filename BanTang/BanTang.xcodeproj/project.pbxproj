@@ -71,6 +71,7 @@
 		73AAC9EA1D0EEE2C00AE5751 /* BTCoverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73AAC9E91D0EEE2C00AE5751 /* BTCoverView.swift */; };
 		73AAC9EC1D0EF90000AE5751 /* BTShareView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73AAC9EB1D0EF90000AE5751 /* BTShareView.swift */; };
 		73AAC9EE1D0EF91400AE5751 /* BTShareView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73AAC9ED1D0EF91400AE5751 /* BTShareView.xib */; };
+		73AAC9F11D0FC8DF00AE5751 /* BTPushTransitionAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73AAC9F01D0FC8DF00AE5751 /* BTPushTransitionAnimator.swift */; };
 		73C1BCD01CFDB8ED004A8952 /* ZCFileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 73C1BCCF1CFDB8ED004A8952 /* ZCFileManager.m */; };
 		73D12F9F1CF741AB008A4719 /* BTListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D12F9E1CF741AB008A4719 /* BTListViewController.swift */; };
 		73D12FA11CF744B6008A4719 /* BTDanpinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D12FA01CF744B6008A4719 /* BTDanpinViewController.swift */; };
@@ -152,6 +153,7 @@
 		73AAC9E91D0EEE2C00AE5751 /* BTCoverView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BTCoverView.swift; sourceTree = "<group>"; };
 		73AAC9EB1D0EF90000AE5751 /* BTShareView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BTShareView.swift; sourceTree = "<group>"; };
 		73AAC9ED1D0EF91400AE5751 /* BTShareView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BTShareView.xib; sourceTree = "<group>"; };
+		73AAC9F01D0FC8DF00AE5751 /* BTPushTransitionAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BTPushTransitionAnimator.swift; sourceTree = "<group>"; };
 		73C1BCCE1CFDB8ED004A8952 /* ZCFileManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZCFileManager.h; sourceTree = "<group>"; };
 		73C1BCCF1CFDB8ED004A8952 /* ZCFileManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZCFileManager.m; sourceTree = "<group>"; };
 		73D12F9E1CF741AB008A4719 /* BTListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BTListViewController.swift; sourceTree = "<group>"; };
@@ -305,6 +307,7 @@
 		738710481CF2A8FC007D6979 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				73AAC9EF1D0FC8BE00AE5751 /* Animator转场动画 */,
 				73070A6B1CFFD69E00CBDBF7 /* ChildViewController */,
 				7387105D1CF2B690007D6979 /* BTHomeViewController.swift */,
 				73AAC9CE1D096A6600AE5751 /* BTProductDetailVC.swift */,
@@ -518,6 +521,14 @@
 			path = "购物清单cell";
 			sourceTree = "<group>";
 		};
+		73AAC9EF1D0FC8BE00AE5751 /* Animator转场动画 */ = {
+			isa = PBXGroup;
+			children = (
+				73AAC9F01D0FC8DF00AE5751 /* BTPushTransitionAnimator.swift */,
+			);
+			path = "Animator转场动画";
+			sourceTree = "<group>";
+		};
 		73C1BCCB1CFDB3A1004A8952 /* Tool */ = {
 			isa = PBXGroup;
 			children = (
@@ -708,6 +719,7 @@
 				735EC66F1CFD398700D171EE /* BTOrderController.swift in Sources */,
 				73AAC9DB1D09B56700AE5751 /* BTTopicDesView.swift in Sources */,
 				73AAC9CF1D096A6600AE5751 /* BTProductDetailVC.swift in Sources */,
+				73AAC9F11D0FC8DF00AE5751 /* BTPushTransitionAnimator.swift in Sources */,
 				7398A5281CFC407B00D0B813 /* BTMiddleView.swift in Sources */,
 				73D12F9F1CF741AB008A4719 /* BTListViewController.swift in Sources */,
 				73070A6D1CFFD6C000CBDBF7 /* BTNewController.swift in Sources */,

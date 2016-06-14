@@ -15,7 +15,7 @@ let naviBarHeight: CGFloat = 64.0
 let headViewHeight: CGFloat = 162.0
 let defaultOffSetY: CGFloat = segmentViewHeight + headViewHeight
 
-class BTHomeViewController: UIViewController, SDCycleScrollViewDelegate {
+class BTHomeViewController: UIViewController, SDCycleScrollViewDelegate{
     
     var loadingView: BTLoadingView?
     var childVcs:[BTBaseTVC] = []
@@ -120,6 +120,7 @@ class BTHomeViewController: UIViewController, SDCycleScrollViewDelegate {
         // 添加通知监听每个页面的出现
         addNotificationObserver()
         loadBannerData()
+        
     }
     
     //加载轮播图
@@ -142,6 +143,7 @@ class BTHomeViewController: UIViewController, SDCycleScrollViewDelegate {
         // 3. 再添加topView(topView必须添加在contentView的下面才可以实现悬浮效果)
         containerView.addSubview(topView)
         
+        //加载动画
         loadingView = BTLoadingView.shareInstance.loadingViewToView(self.view) as? BTLoadingView
         loadingView?.startAnimation()
         view.addSubview(loadingView!)
@@ -208,7 +210,7 @@ class BTHomeViewController: UIViewController, SDCycleScrollViewDelegate {
 
 }
 
-// MARK:- UIScrollViewDelegate
+// MARK:- UIScrollViewDelegate 主页拖拽滑动核心代码!!!
 extension BTHomeViewController: UIScrollViewDelegate {
     func scrollViewDidScroll(scrollView: UIScrollView) {
         currentOffsetY = scrollView.contentOffset.y
@@ -373,6 +375,7 @@ extension BTHomeViewController {
         navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "home_search_icon_33x33_"), highlightImage: nil, target: self, action: #selector(searchClick))
         
     }
+    
 }
 
 

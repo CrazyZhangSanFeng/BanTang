@@ -35,7 +35,16 @@ class BTProductDetailVC: UIViewController, UINavigationControllerDelegate {
     var titleView: BTTitleView?
     
     /** 模型 */
-    var productModel: BTProductModel?
+    var productModel: BTProductModel? {
+        didSet {
+            guard let productModel = productModel else {
+                return
+            }
+                
+            topImageView?.sd_setImageWithURL(NSURL(string: productModel.pic))
+
+        }
+    }
     
     /** 用户推荐 */
 //    var userRecomendList: [UserRecomend] = [UserRecomend]()
@@ -97,11 +106,13 @@ extension BTProductDetailVC {
     func shareBtnClick(btn: UIButton) {
         //遮盖
         let cover = BTCoverView.show()
-        
+        //分享
         let shareV = BTShareView.shareView()
         shareV.frame.size.width = BTscreenW
+        
         weak var weakself: BTCoverView? = cover
         
+        //点击屏幕,做动画并且移除遮盖
         cover.click = {
             
             UIView.animateWithDuration(0.25, animations: { 
