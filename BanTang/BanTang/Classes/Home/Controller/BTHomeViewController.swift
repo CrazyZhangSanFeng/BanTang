@@ -17,6 +17,9 @@ let defaultOffSetY: CGFloat = segmentViewHeight + headViewHeight
 
 class BTHomeViewController: UIViewController, SDCycleScrollViewDelegate{
     
+    //导航条透明值
+    var navigationBarAlpha: CGFloat = 0.0
+    
     var loadingView: BTLoadingView?
     var childVcs:[BTBaseTVC] = []
     var currentChildVc: BTBaseTVC!
@@ -29,7 +32,7 @@ class BTHomeViewController: UIViewController, SDCycleScrollViewDelegate{
     /// 当前的偏移量, 用于处理下拉刷新 或者其他需要和偏移量同步的动画效果
     var currentOffsetY: CGFloat = 0 {
         didSet {
-//            print(currentOffsetY)
+            print(currentOffsetY)
         }
     }
 
@@ -80,11 +83,8 @@ class BTHomeViewController: UIViewController, SDCycleScrollViewDelegate{
     
     // 懒加载 headView
     lazy var headView: SDCycleScrollView =  {
+        
         let headView: SDCycleScrollView = SDCycleScrollView.init(frame: CGRect(x: 0.0, y: 0.0, width: self.view.bounds.size.width, height: headViewHeight), delegate: self, placeholderImage: UIImage(named: "default_user_icon_75x75_"))
-        
-        
-        
-        
         
         headView.currentPageDotColor = UIColor.yellowColor()
         
@@ -105,14 +105,17 @@ class BTHomeViewController: UIViewController, SDCycleScrollViewDelegate{
         return scrollView
     }()
     
-    
+    //MARK: - 视图加载
     override func viewDidLoad() {
         super.viewDidLoad()
-//        title = "半糖"
+        
         view.backgroundColor = UIColor.whiteColor()
         // 这个是必要的设置, 如果没有设置导致显示内容不正常, 请尝试设置这个属性
         automaticallyAdjustsScrollViewInsets = false
         setupNaviBar()
+        
+        
+        
         setChildVcs()
         
         addSubviews()
@@ -121,6 +124,21 @@ class BTHomeViewController: UIViewController, SDCycleScrollViewDelegate{
         addNotificationObserver()
         loadBannerData()
         
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+
+        navigationController?.navigationBar.zz_setBackgroundColor(UIColor.whiteColor().colorWithAlphaComponent(navigationBarAlpha))
+        navigationController?.navigationBar.zz_setElementAlpha(navigationBarAlpha)
+        
+        
+
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationController?.navigationBar.zz_reset()
     }
     
     //加载轮播图
@@ -214,7 +232,7 @@ class BTHomeViewController: UIViewController, SDCycleScrollViewDelegate{
 extension BTHomeViewController: UIScrollViewDelegate {
     func scrollViewDidScroll(scrollView: UIScrollView) {
         currentOffsetY = scrollView.contentOffset.y
-        //        print(scrollView.contentOffset.y)
+        
         headView.frame.origin.y = currentOffsetY
         if currentOffsetY < 0 {
             containerView.frame.origin.y = -currentOffsetY
@@ -225,23 +243,24 @@ extension BTHomeViewController: UIScrollViewDelegate {
         currentChildVc.tableView.contentOffset.y = currentOffsetY - defaultOffSetY
         
         
-//                let offset: CGFloat = scrollView.contentOffset.y
+
+            navigationBarAlpha = currentOffsetY * 1 / 98.0
         
-                var alpha: CGFloat = currentOffsetY * 1 / 98.0
         
-        
-                if alpha <= 0 {
+                if navigationBarAlpha <= 0 {
         
                 }
         
-                if alpha >= 1 {
-                    alpha = 0.99
+                if navigationBarAlpha >= 1 {
+
                     navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "home_sign_top_icon_19x19_"), highlightImage: nil, target: self, action: #selector(signClick))
                 } else {
                     navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "home_sign_icon_33x33_"), highlightImage: UIImage(named: "home_sign_highlight_icon_33x33_"), target: self, action: #selector(signClick))
                 }
         
-                navigationController?.navigationBar.setBackgroundImage(UIImage(color: UIColor(white: 1.0, alpha: alpha)), forBarMetrics: .Default)
+        navigationController?.navigationBar.zz_setBackgroundColor(UIColor.whiteColor().colorWithAlphaComponent(navigationBarAlpha))
+        navigationController?.navigationBar.zz_setElementAlpha(navigationBarAlpha)
+        
         
         
         
@@ -285,33 +304,39 @@ extension BTHomeViewController: BTBaseTVCDelegate {
         
         if offSetY < -(defaultOffSetY - headViewHeight + naviBarHeight) {
             
-            var alpha: CGFloat = currentOffsetY * 1 / 98.0
+
+            navigationBarAlpha = currentOffsetY * 1 / 98.0
             
             
-            if alpha <= 0 {
+            if navigationBarAlpha <= 0 {
                 
             }
             
-            if alpha >= 1 {
-                alpha = 0.99
+            if navigationBarAlpha >= 1 {
+
                 navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "home_sign_top_icon_19x19_"), highlightImage: nil, target: self, action: #selector(signClick))
             } else {
                 navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "home_sign_icon_33x33_"), highlightImage: UIImage(named: "home_sign_highlight_icon_33x33_"), target: self, action: #selector(signClick))
             }
-            
-            navigationController?.navigationBar.setBackgroundImage(UIImage(color: UIColor(white: 1.0, alpha: alpha)), forBarMetrics: .Default)
+
+            navigationController?.navigationBar.zz_setBackgroundColor(UIColor.whiteColor().colorWithAlphaComponent(navigationBarAlpha))
+            navigationController?.navigationBar.zz_setElementAlpha(navigationBarAlpha)
             
         }
         
         
         if offSetY > -(defaultOffSetY - headViewHeight + naviBarHeight) {
             if topView.frame.origin.y == naviBarHeight {
+                navigationBarAlpha = 1.0
+                navigationController?.navigationBar.zz_setBackgroundColor(UIColor.whiteColor().colorWithAlphaComponent(navigationBarAlpha))
                 return
             }
             // 使滑块停在navigationBar下面
             self.scrollView.frame.origin.y = naviBarHeight - headViewHeight
             topView.frame.origin.y = naviBarHeight
-            navigationController?.navigationBar.setBackgroundImage(UIImage(color: UIColor(white: 1.0, alpha: 1.0)), forBarMetrics: .Default)
+
+            navigationBarAlpha = 1.0
+        navigationController?.navigationBar.zz_setBackgroundColor(UIColor.whiteColor().colorWithAlphaComponent(navigationBarAlpha))
             
             return
         } else if offSetY < -defaultOffSetY {
@@ -365,10 +390,7 @@ extension BTHomeViewController {
 //MARK:- 设置导航条
 extension BTHomeViewController {
     func setupNaviBar() {
-        
-        navigationController?.navigationBar.setBackgroundImage(UIImage(color: UIColor(white: 1.0, alpha: 0.0)), forBarMetrics: .Default)
-        navigationController?.navigationBar.shadowImage = UIImage()
-        
+
         //签到按钮
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "home_sign_icon_33x33_"), highlightImage: UIImage(named: "home_sign_highlight_icon_33x33_"), target: self, action: #selector(signClick))
         //搜索按钮
