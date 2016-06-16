@@ -18,8 +18,8 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="209"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="标题" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XDh-Kk-jQu">
-                        <rect key="frame" x="145" y="17" width="30" height="18"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="标题" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XDh-Kk-jQu">
+                        <rect key="frame" x="10" y="17" width="300" height="18"/>
                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
@@ -96,6 +96,7 @@
                     </imageView>
                 </subviews>
                 <constraints>
+                    <constraint firstItem="XDh-Kk-jQu" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="0tz-Hg-06G"/>
                     <constraint firstItem="jcZ-UK-dBy" firstAttribute="top" secondItem="X1H-X8-1Wv" secondAttribute="top" id="2lx-Hf-m6w"/>
                     <constraint firstItem="Zax-2S-vU1" firstAttribute="leading" secondItem="sto-Mo-2m5" secondAttribute="trailing" constant="8" id="3eg-aT-Egp"/>
                     <constraint firstAttribute="trailingMargin" secondItem="X1H-X8-1Wv" secondAttribute="trailing" constant="92" id="7CB-KG-zgB"/>
@@ -112,6 +113,7 @@
                     <constraint firstItem="Zax-2S-vU1" firstAttribute="top" secondItem="XDh-Kk-jQu" secondAttribute="bottom" constant="15" id="MUV-Ux-JWj"/>
                     <constraint firstItem="X1H-X8-1Wv" firstAttribute="centerY" secondItem="jcZ-UK-dBy" secondAttribute="centerY" id="Ry1-wW-Tp9"/>
                     <constraint firstItem="cI2-eA-Eb1" firstAttribute="leading" secondItem="Zax-2S-vU1" secondAttribute="trailing" constant="8" id="TIc-Zy-V7D"/>
+                    <constraint firstAttribute="trailing" secondItem="XDh-Kk-jQu" secondAttribute="trailing" constant="10" id="U9B-LY-YgN"/>
                     <constraint firstItem="X1H-X8-1Wv" firstAttribute="leading" secondItem="jcZ-UK-dBy" secondAttribute="trailing" constant="10" id="VtW-az-0Qf"/>
                     <constraint firstItem="X1H-X8-1Wv" firstAttribute="firstBaseline" secondItem="Qtf-bL-Xmt" secondAttribute="baseline" id="X4l-OY-bVP"/>
                     <constraint firstItem="sto-Mo-2m5" firstAttribute="centerY" secondItem="Zax-2S-vU1" secondAttribute="centerY" id="Y2h-bM-3LP"/>

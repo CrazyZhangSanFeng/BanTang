@@ -32,7 +32,7 @@ class BTHomeViewController: UIViewController, SDCycleScrollViewDelegate{
     /// 当前的偏移量, 用于处理下拉刷新 或者其他需要和偏移量同步的动画效果
     var currentOffsetY: CGFloat = 0 {
         didSet {
-            print(currentOffsetY)
+//            print(currentOffsetY)
         }
     }
 
@@ -88,19 +88,17 @@ class BTHomeViewController: UIViewController, SDCycleScrollViewDelegate{
         
         headView.currentPageDotColor = UIColor.yellowColor()
         
-        
         return headView
     }()
     
     // 懒加载 scrollView headView的容器
     lazy var scrollView: UIScrollView = {
+        
         let scrollView = UIScrollView(frame:  CGRect(x: 0.0, y: 0.0, width: self.view.bounds.size.width, height: headViewHeight))
         scrollView.delegate = self
         scrollView.scrollsToTop = false
         scrollView.contentSize = CGSize(width: 0.0, height: headViewHeight*2)
         scrollView.scrollsToTop = false
-        
-        
         
         return scrollView
     }()
@@ -112,9 +110,8 @@ class BTHomeViewController: UIViewController, SDCycleScrollViewDelegate{
         view.backgroundColor = UIColor.whiteColor()
         // 这个是必要的设置, 如果没有设置导致显示内容不正常, 请尝试设置这个属性
         automaticallyAdjustsScrollViewInsets = false
+        
         setupNaviBar()
-        
-        
         
         setChildVcs()
         
