@@ -24,6 +24,16 @@ class BTCoverView: UIView {
         return cover
     }
     
+    /** popShow, */
+    class func popShow() -> BTCoverView {
+        let cover = BTCoverView()
+        cover.frame = CGRect(x: 0, y: 64, width: BTscreenW, height: BTscreenH - 64 - 49)
+        cover.backgroundColor = UIColor.blackColor()
+        cover.alpha = 0.4
+        UIApplication.sharedApplication().keyWindow?.addSubview(cover)
+        return cover
+    }
+    
     //点击屏幕调用闭包,类似代理
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         self.click()

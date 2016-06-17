@@ -10,6 +10,9 @@ import UIKit
 
 class BTDiscoverViewController: UIViewController {
     
+    //用来记录关注按钮的选中状态,方便跳转的时候修改状态
+    var attentationBtn: UIButton?
+    
     //下划线属性
     let underLine = UIView()
     //懒加载左侧清单按钮
@@ -46,7 +49,10 @@ class BTDiscoverViewController: UIViewController {
         
         edgesForExtendedLayout = .None
         //添加左侧关注按钮
-        navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "discovey_pop_btn_20x20_"), highlightImage: UIImage(named: "discovey_pop_press_btn_20x20_"), target: self, action: #selector(BTDiscoverViewController.attentation))
+        navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "discovey_pop_btn_20x20_"), highlightImage: UIImage(named: "discovey_pop_press_btn_20x20_"), target: self, action: #selector(BTDiscoverViewController.attentation(_:)))
+        
+        
+        
         
         //添加右侧创建按钮
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "discover_write_article_icon_18x20_"), highlightImage: UIImage(named: "discover_write_article_highlisht_icon_19x20_"), target: self, action: #selector(BTDiscoverViewController.creatText))
@@ -64,14 +70,74 @@ class BTDiscoverViewController: UIViewController {
     
 }
 //MARK:- 导航栏左右两侧的点击
-extension BTDiscoverViewController {
+extension BTDiscoverViewController: BTPopupViewDelegate {
     //MARK:- 关注点击
-    func attentation() {
-        print("关注")
+    func attentation(sender: UIButton) {
+        
+        attentationBtn = sender
+        
+        if attentationBtn!.selected == false {
+          
+            let cover = BTCoverView.popShow()
+            
+            let popupView = BTPopupView().popupView()
+            popupView.delegate = self
+            
+            weak var weakself: BTCoverView? = cover
+            
+            //点击屏幕,做动画并且移除遮盖
+            cover.click = {
+                
+                UIView.animateWithDuration(0.25, animations: {
+                    
+                    }, completion: { (_) in
+                        popupView.removeFromSuperview()
+                        weakself!.removeFromSuperview()
+                        self.attentationBtn!.selected = !self.attentationBtn!.selected
+
+                })
+                
+            }
+            sender.selected = !sender.selected
+        } else {
+            
+            UIApplication.sharedApplication().keyWindow?.subviews.last?.removeFromSuperview()
+            UIApplication.sharedApplication().keyWindow?.subviews.last?.removeFromSuperview()
+            self.attentationBtn!.selected = !self.attentationBtn!.selected
+
+        }
+        
+        
+        
     }
     //MARK:- 创建文章点击
     func creatText() {
         print("创建文章")
+    }
+    
+    //MARK:- 左侧pop按钮点击代理实现
+    func topClick() {
+            //移除弹出的遮盖还有按钮
+            UIApplication.sharedApplication().keyWindow?.subviews.last?.removeFromSuperview()
+        UIApplication.sharedApplication().keyWindow?.subviews.last?.removeFromSuperview()
+            attentationBtn?.selected = !(attentationBtn?.selected)!
+        
+        let attationVC = UITableViewController()
+        attationVC.title = "关注"
+        navigationController?.pushViewController(attationVC, animated: true)
+        
+    }
+    
+    func bottomClick() {
+            //移除弹出的遮盖还有按钮
+            UIApplication.sharedApplication().keyWindow?.subviews.last?.removeFromSuperview()
+        UIApplication.sharedApplication().keyWindow?.subviews.last?.removeFromSuperview()
+        attentationBtn?.selected = !(attentationBtn?.selected)!
+        
+        let zhongcaoVC = UITableViewController()
+        zhongcaoVC.title = "种草小分队"
+        navigationController?.pushViewController(zhongcaoVC, animated: true)
+        
     }
 }
 
