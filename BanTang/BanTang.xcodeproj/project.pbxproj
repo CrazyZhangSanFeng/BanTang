@@ -74,6 +74,14 @@
 		73AAC9EE1D0EF91400AE5751 /* BTShareView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73AAC9ED1D0EF91400AE5751 /* BTShareView.xib */; };
 		73AAC9F11D0FC8DF00AE5751 /* BTPushTransitionAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73AAC9F01D0FC8DF00AE5751 /* BTPushTransitionAnimator.swift */; };
 		73C1BCD01CFDB8ED004A8952 /* ZCFileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 73C1BCCF1CFDB8ED004A8952 /* ZCFileManager.m */; };
+		73CCC7ED1D165F45007E688C /* BTZhongcaoQueueTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73CCC7EC1D165F45007E688C /* BTZhongcaoQueueTVC.swift */; };
+		73CCC7F01D1660F1007E688C /* BTZhongcaoHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73CCC7EF1D1660F1007E688C /* BTZhongcaoHeaderView.swift */; };
+		73CCC7F21D166100007E688C /* BTZhongcaoFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73CCC7F11D166100007E688C /* BTZhongcaoFooterView.swift */; };
+		73CCC7F51D16611E007E688C /* BTZhongcaoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73CCC7F31D16611E007E688C /* BTZhongcaoCell.swift */; };
+		73CCC7F61D16611E007E688C /* BTZhongcaoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73CCC7F41D16611E007E688C /* BTZhongcaoCell.xib */; };
+		73CCC7F81D166535007E688C /* BTZhongcaoItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73CCC7F71D166535007E688C /* BTZhongcaoItem.swift */; };
+		73CCC7FA1D1680F9007E688C /* BTZhongcaoHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73CCC7F91D1680F9007E688C /* BTZhongcaoHeaderView.xib */; };
+		73CCC7FC1D168467007E688C /* BTZhongcaoFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73CCC7FB1D168467007E688C /* BTZhongcaoFooterView.xib */; };
 		73D12F9F1CF741AB008A4719 /* BTListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D12F9E1CF741AB008A4719 /* BTListViewController.swift */; };
 		73D12FA11CF744B6008A4719 /* BTDanpinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D12FA01CF744B6008A4719 /* BTDanpinViewController.swift */; };
 		73D12FA41CF7D7E1008A4719 /* BTCategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D12FA21CF7D7E1008A4719 /* BTCategoryCell.swift */; };
@@ -158,6 +166,14 @@
 		73AAC9F01D0FC8DF00AE5751 /* BTPushTransitionAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BTPushTransitionAnimator.swift; sourceTree = "<group>"; };
 		73C1BCCE1CFDB8ED004A8952 /* ZCFileManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZCFileManager.h; sourceTree = "<group>"; };
 		73C1BCCF1CFDB8ED004A8952 /* ZCFileManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZCFileManager.m; sourceTree = "<group>"; };
+		73CCC7EC1D165F45007E688C /* BTZhongcaoQueueTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BTZhongcaoQueueTVC.swift; sourceTree = "<group>"; };
+		73CCC7EF1D1660F1007E688C /* BTZhongcaoHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BTZhongcaoHeaderView.swift; sourceTree = "<group>"; };
+		73CCC7F11D166100007E688C /* BTZhongcaoFooterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BTZhongcaoFooterView.swift; sourceTree = "<group>"; };
+		73CCC7F31D16611E007E688C /* BTZhongcaoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BTZhongcaoCell.swift; sourceTree = "<group>"; };
+		73CCC7F41D16611E007E688C /* BTZhongcaoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BTZhongcaoCell.xib; sourceTree = "<group>"; };
+		73CCC7F71D166535007E688C /* BTZhongcaoItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BTZhongcaoItem.swift; sourceTree = "<group>"; };
+		73CCC7F91D1680F9007E688C /* BTZhongcaoHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BTZhongcaoHeaderView.xib; sourceTree = "<group>"; };
+		73CCC7FB1D168467007E688C /* BTZhongcaoFooterView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BTZhongcaoFooterView.xib; sourceTree = "<group>"; };
 		73D12F9E1CF741AB008A4719 /* BTListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BTListViewController.swift; sourceTree = "<group>"; };
 		73D12FA01CF744B6008A4719 /* BTDanpinViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BTDanpinViewController.swift; sourceTree = "<group>"; };
 		73D12FA21CF7D7E1008A4719 /* BTCategoryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BTCategoryCell.swift; path = ../../Controller/BTCategoryCell.swift; sourceTree = "<group>"; };
@@ -429,6 +445,7 @@
 				7387105F1CF2B6D0007D6979 /* BTDiscoverViewController.swift */,
 				73D12F9E1CF741AB008A4719 /* BTListViewController.swift */,
 				73D12FA01CF744B6008A4719 /* BTDanpinViewController.swift */,
+				73CCC7EC1D165F45007E688C /* BTZhongcaoQueueTVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -440,6 +457,7 @@
 				7387107B1CF47B4B007D6979 /* BTTopicUserItem.swift */,
 				73D12FAE1CF80E21008A4719 /* BTCategoryItem.swift */,
 				73955A3D1CFAD5A600189CA0 /* BTHotItem.swift */,
+				73CCC7F71D166535007E688C /* BTZhongcaoItem.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -447,6 +465,7 @@
 		738710561CF2A8FC007D6979 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				73CCC7EE1D1660C7007E688C /* zhongcao种草小分队 */,
 				73D12FAC1CF80D68008A4719 /* Danpin单品 */,
 				73D12FAD1CF80D68008A4719 /* List清单 */,
 				7329582C1D141E3500D2018C /* BTPopupView.swift */,
@@ -540,6 +559,19 @@
 				731D59D01D056BDF00B3502C /* BTHomePageDataTool.swift */,
 			);
 			path = Tool;
+			sourceTree = "<group>";
+		};
+		73CCC7EE1D1660C7007E688C /* zhongcao种草小分队 */ = {
+			isa = PBXGroup;
+			children = (
+				73CCC7EF1D1660F1007E688C /* BTZhongcaoHeaderView.swift */,
+				73CCC7F91D1680F9007E688C /* BTZhongcaoHeaderView.xib */,
+				73CCC7F11D166100007E688C /* BTZhongcaoFooterView.swift */,
+				73CCC7FB1D168467007E688C /* BTZhongcaoFooterView.xib */,
+				73CCC7F31D16611E007E688C /* BTZhongcaoCell.swift */,
+				73CCC7F41D16611E007E688C /* BTZhongcaoCell.xib */,
+			);
+			path = "zhongcao种草小分队";
 			sourceTree = "<group>";
 		};
 		73D12FAC1CF80D68008A4719 /* Danpin单品 */ = {
@@ -647,7 +679,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				73CCC7F61D16611E007E688C /* BTZhongcaoCell.xib in Resources */,
 				738710781CF449B5007D6979 /* BTDisTableViewCell.xib in Resources */,
+				73CCC7FC1D168467007E688C /* BTZhongcaoFooterView.xib in Resources */,
 				7387103B1CF2A74A007D6979 /* LaunchScreen.storyboard in Resources */,
 				73955A421CFAF10400189CA0 /* BTHotView.xib in Resources */,
 				738710381CF2A74A007D6979 /* Assets.xcassets in Resources */,
@@ -659,6 +693,7 @@
 				7398A5261CFC364300D0B813 /* BTUserHeadView.xib in Resources */,
 				738710741CF40299007D6979 /* BTHeaderView.xib in Resources */,
 				731D59D51D059CCE00B3502C /* BTHomeTopicCell.xib in Resources */,
+				73CCC7FA1D1680F9007E688C /* BTZhongcaoHeaderView.xib in Resources */,
 				73955A3C1CFAD48700189CA0 /* BTHotCollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -724,6 +759,7 @@
 				73AAC9CF1D096A6600AE5751 /* BTProductDetailVC.swift in Sources */,
 				73AAC9F11D0FC8DF00AE5751 /* BTPushTransitionAnimator.swift in Sources */,
 				7398A5281CFC407B00D0B813 /* BTMiddleView.swift in Sources */,
+				73CCC7F81D166535007E688C /* BTZhongcaoItem.swift in Sources */,
 				73D12F9F1CF741AB008A4719 /* BTListViewController.swift in Sources */,
 				73070A6D1CFFD6C000CBDBF7 /* BTNewController.swift in Sources */,
 				738710681CF2DCC6007D6979 /* BTBaseNaviController.swift in Sources */,
@@ -741,9 +777,11 @@
 				7398A5201CFC0B8D00D0B813 /* BTSettingController.swift in Sources */,
 				731D59CD1D05675700B3502C /* BTHomeBanner.swift in Sources */,
 				738710771CF449B5007D6979 /* BTDisTableViewCell.swift in Sources */,
+				73CCC7F21D166100007E688C /* BTZhongcaoFooterView.swift in Sources */,
 				738710621CF2B706007D6979 /* BTMessageViewController.swift in Sources */,
 				7387106A1CF2DF6E007D6979 /* BTTabBar.swift in Sources */,
 				731D59CB1D05652400B3502C /* BTHomeTopic.swift in Sources */,
+				73CCC7ED1D165F45007E688C /* BTZhongcaoQueueTVC.swift in Sources */,
 				731D59C21D046CC300B3502C /* ScrollSegmentView.swift in Sources */,
 				731D59C71D05542800B3502C /* BTBaseRequestParmas.swift in Sources */,
 				731D59D41D059CCE00B3502C /* BTHomeTopicCell.swift in Sources */,
@@ -766,6 +804,7 @@
 				73AAC9CD1D09598500AE5751 /* BTTitleBtn.swift in Sources */,
 				73AAC9D91D09AD0A00AE5751 /* UIColor+Extension.m in Sources */,
 				73955A3B1CFAD48700189CA0 /* BTHotCollectionViewCell.swift in Sources */,
+				73CCC7F51D16611E007E688C /* BTZhongcaoCell.swift in Sources */,
 				731D59C11D046CC300B3502C /* ScrollPageView.swift in Sources */,
 				735EC66D1CFD369A00D171EE /* BTReSetCell.swift in Sources */,
 				731D59C01D046CC300B3502C /* ContentView.swift in Sources */,
@@ -773,6 +812,7 @@
 				731D59C51D04700E00B3502C /* BTBaseTVC.swift in Sources */,
 				73AAC9D11D09727800AE5751 /* BTProductModel.swift in Sources */,
 				73070A6A1CFE9FE200CBDBF7 /* UIImage+Image.m in Sources */,
+				73CCC7F01D1660F1007E688C /* BTZhongcaoHeaderView.swift in Sources */,
 				73955A401CFAF0F800189CA0 /* BTHotView.swift in Sources */,
 				73AAC9E21D0AF77E00AE5751 /* BTProductCell.swift in Sources */,
 				7387107C1CF47B4B007D6979 /* BTTopicUserItem.swift in Sources */,

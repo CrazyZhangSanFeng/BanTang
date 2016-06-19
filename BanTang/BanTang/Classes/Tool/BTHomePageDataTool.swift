@@ -102,5 +102,45 @@ class BTHomePageDataTool: NSObject {
         
         
     }
+    
+    //获取种草小分队数据 返回一个模型数组
+    class func getZhongcaoQueueData(resultCallBack: (zhongcaoItems: [BTZhongcaoItem]?, error: NSError?) -> ()) {
+        
+        let parmas: NSMutableDictionary = BTBaseRequestParmas.parmas().mj_keyValues()
+        parmas.removeObjectForKey("page")
+        parmas.removeObjectForKey("pagesize")
+        let url = kBaseUrl + "community/post/communityHome?"
+        let manager = AFHTTPSessionManager()
+        manager.GET(url, parameters: parmas, progress: nil, success: { (_, jsonData) in
+            
+            //将AnyObject转化成字典类型
+            guard (jsonData as? [String : NSObject]) != nil else {
+                return
+            }
+            
+            let data = jsonData!["data"] as! [String: NSObject]
+            
+            //获取字典数组
+            let rec_groups = data["rec_groups"] as! [[String: NSObject]]
+            
+            //字典数组转模型数组
+            let zhongcaos = BTZhongcaoItem.mj_objectArrayWithKeyValuesArray(rec_groups)
+            
+            var itemArr: [BTZhongcaoItem] = [BTZhongcaoItem]()
+            
+            for zhaongcaoItem in zhongcaos {
+                
+                itemArr.append(zhaongcaoItem as! BTZhongcaoItem)
+            }
+            
+            resultCallBack(zhongcaoItems: itemArr, error: nil)
+            
+            }) { (_, error) in
+                //错误回调
+                resultCallBack(zhongcaoItems: nil, error: error)
+        }
+        
+        
+    }
 
 }

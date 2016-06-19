@@ -117,7 +117,7 @@ extension BTDiscoverViewController: BTPopupViewDelegate {
     
     //MARK:- 左侧pop按钮点击代理实现
     func topClick() {
-            //移除弹出的遮盖还有按钮
+            //移除弹出的遮盖还有popupView
             UIApplication.sharedApplication().keyWindow?.subviews.last?.removeFromSuperview()
         UIApplication.sharedApplication().keyWindow?.subviews.last?.removeFromSuperview()
             attentationBtn?.selected = !(attentationBtn?.selected)!
@@ -129,12 +129,12 @@ extension BTDiscoverViewController: BTPopupViewDelegate {
     }
     
     func bottomClick() {
-            //移除弹出的遮盖还有按钮
+            //移除弹出的遮盖还有popupView
             UIApplication.sharedApplication().keyWindow?.subviews.last?.removeFromSuperview()
         UIApplication.sharedApplication().keyWindow?.subviews.last?.removeFromSuperview()
         attentationBtn?.selected = !(attentationBtn?.selected)!
         
-        let zhongcaoVC = UITableViewController()
+        let zhongcaoVC = BTZhongcaoQueueTVC(style: .Grouped)
         zhongcaoVC.title = "种草小分队"
         navigationController?.pushViewController(zhongcaoVC, animated: true)
         
