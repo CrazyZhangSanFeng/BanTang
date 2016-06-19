@@ -113,6 +113,9 @@ extension BTDiscoverViewController: BTPopupViewDelegate {
     //MARK:- 创建文章点击
     func creatText() {
         print("创建文章")
+        let creatTextVC = BTCreatTextVC()
+
+        self.presentViewController(creatTextVC, animated: true, completion: nil)
     }
     
     //MARK:- 左侧pop按钮点击代理实现

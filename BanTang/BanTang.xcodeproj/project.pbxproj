@@ -82,6 +82,8 @@
 		73CCC7F81D166535007E688C /* BTZhongcaoItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73CCC7F71D166535007E688C /* BTZhongcaoItem.swift */; };
 		73CCC7FA1D1680F9007E688C /* BTZhongcaoHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73CCC7F91D1680F9007E688C /* BTZhongcaoHeaderView.xib */; };
 		73CCC7FC1D168467007E688C /* BTZhongcaoFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73CCC7FB1D168467007E688C /* BTZhongcaoFooterView.xib */; };
+		73CCC7FF1D16A6BB007E688C /* BTCreatTextVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73CCC7FD1D16A6BB007E688C /* BTCreatTextVC.swift */; };
+		73CCC8001D16A6BB007E688C /* BTCreatTextVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73CCC7FE1D16A6BB007E688C /* BTCreatTextVC.xib */; };
 		73D12F9F1CF741AB008A4719 /* BTListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D12F9E1CF741AB008A4719 /* BTListViewController.swift */; };
 		73D12FA11CF744B6008A4719 /* BTDanpinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D12FA01CF744B6008A4719 /* BTDanpinViewController.swift */; };
 		73D12FA41CF7D7E1008A4719 /* BTCategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D12FA21CF7D7E1008A4719 /* BTCategoryCell.swift */; };
@@ -174,6 +176,8 @@
 		73CCC7F71D166535007E688C /* BTZhongcaoItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BTZhongcaoItem.swift; sourceTree = "<group>"; };
 		73CCC7F91D1680F9007E688C /* BTZhongcaoHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BTZhongcaoHeaderView.xib; sourceTree = "<group>"; };
 		73CCC7FB1D168467007E688C /* BTZhongcaoFooterView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BTZhongcaoFooterView.xib; sourceTree = "<group>"; };
+		73CCC7FD1D16A6BB007E688C /* BTCreatTextVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BTCreatTextVC.swift; sourceTree = "<group>"; };
+		73CCC7FE1D16A6BB007E688C /* BTCreatTextVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BTCreatTextVC.xib; sourceTree = "<group>"; };
 		73D12F9E1CF741AB008A4719 /* BTListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BTListViewController.swift; sourceTree = "<group>"; };
 		73D12FA01CF744B6008A4719 /* BTDanpinViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BTDanpinViewController.swift; sourceTree = "<group>"; };
 		73D12FA21CF7D7E1008A4719 /* BTCategoryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BTCategoryCell.swift; path = ../../Controller/BTCategoryCell.swift; sourceTree = "<group>"; };
@@ -446,6 +450,8 @@
 				73D12F9E1CF741AB008A4719 /* BTListViewController.swift */,
 				73D12FA01CF744B6008A4719 /* BTDanpinViewController.swift */,
 				73CCC7EC1D165F45007E688C /* BTZhongcaoQueueTVC.swift */,
+				73CCC7FD1D16A6BB007E688C /* BTCreatTextVC.swift */,
+				73CCC7FE1D16A6BB007E688C /* BTCreatTextVC.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -683,6 +689,7 @@
 				738710781CF449B5007D6979 /* BTDisTableViewCell.xib in Resources */,
 				73CCC7FC1D168467007E688C /* BTZhongcaoFooterView.xib in Resources */,
 				7387103B1CF2A74A007D6979 /* LaunchScreen.storyboard in Resources */,
+				73CCC8001D16A6BB007E688C /* BTCreatTextVC.xib in Resources */,
 				73955A421CFAF10400189CA0 /* BTHotView.xib in Resources */,
 				738710381CF2A74A007D6979 /* Assets.xcassets in Resources */,
 				73D12FA51CF7D7E1008A4719 /* BTCategoryCell.xib in Resources */,
@@ -802,6 +809,7 @@
 				7387105E1CF2B690007D6979 /* BTHomeViewController.swift in Sources */,
 				73AAC9E61D0BF6C000AE5751 /* BTProductLikeListView.swift in Sources */,
 				73AAC9CD1D09598500AE5751 /* BTTitleBtn.swift in Sources */,
+				73CCC7FF1D16A6BB007E688C /* BTCreatTextVC.swift in Sources */,
 				73AAC9D91D09AD0A00AE5751 /* UIColor+Extension.m in Sources */,
 				73955A3B1CFAD48700189CA0 /* BTHotCollectionViewCell.swift in Sources */,
 				73CCC7F51D16611E007E688C /* BTZhongcaoCell.swift in Sources */,
