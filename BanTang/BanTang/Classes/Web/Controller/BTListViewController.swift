@@ -106,7 +106,8 @@ import SwiftyJSON
                 let resultArray = dictArray!["topic"] as? [[String : NSObject]]
                 
                 var tempArrs = []
-                tempArrs = BTTopicItem.mj_objectArrayWithKeyValuesArray(resultArray) as![BTTopicItem]
+                
+                tempArrs = BTTopicItem.mj_objectArrayWithKeyValuesArray(resultArray)
                 
                 
                 for item in tempArrs {

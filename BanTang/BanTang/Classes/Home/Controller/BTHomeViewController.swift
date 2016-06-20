@@ -380,6 +380,9 @@ extension BTHomeViewController {
     
     func searchClick() {
         debugPrint("搜索点击")
+        let searchVC = BTSearchViewController()
+        navigationController?.pushViewController(searchVC, animated: true)
+        
     }
 }
 

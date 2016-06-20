@@ -60,7 +60,7 @@ class BTDisTableViewCell: UITableViewCell {
     
     //:MARK- 设置cell中间的图片
     func setImageView(count: NSInteger, imageView: UIImageView) {
-        if let dict = topicItem!.pics![count] as? [String : String] {
+        if let dict: [String: String] = topicItem!.pics![count] {
             let urlStr = dict["url"]!
                 
             let urlStr0 = (urlStr as NSString).stringByReplacingOccurrencesOfString("!300x300", withString: "")

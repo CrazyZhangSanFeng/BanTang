@@ -142,5 +142,83 @@ class BTHomePageDataTool: NSObject {
         
         
     }
+    
+    /** 获取搜索界面单品数据 */
+    class func getSearchDanpinData(resultCallBack: (danpinModels: [BTSearchDanpinModel]?, error: NSError?) -> ()) {
+        let parmas: NSMutableDictionary = BTBaseRequestParmas.parmas().mj_keyValues()
+        parmas.removeObjectForKey("page")
+        parmas.removeObjectForKey("pagesize")
+        parmas.removeObjectForKey("last_get_time")
+        parmas["is_new"] = 1
+        let url = kBaseUrl + "category/list"
+        let manager = AFHTTPSessionManager()
+        
+        manager.POST(url, parameters: parmas, progress: nil, success: { (_, jsonData) in
+            
+            //将AnyObject转化成字典类型
+            guard (jsonData as? [String : NSObject]) != nil else {
+                return
+            }
+            
+            //字典数组 转 模型数组
+            let data = BTSearchDanpinModel.mj_objectArrayWithKeyValuesArray(jsonData!["data"])
+            
+            var itemArr: [BTSearchDanpinModel] = [BTSearchDanpinModel]()
+            
+            //将所有子元素 转换成 模型类型
+            for danpinModel in data {
+                
+                itemArr.append(danpinModel as! BTSearchDanpinModel)
+            }
+            
+            //成功回调
+            resultCallBack(danpinModels: itemArr, error: nil)
+            
+            
+            }) { (_, error) in
+                //错误回调
+                resultCallBack(danpinModels: nil, error: error)
+        }
+        
+    }
+    
+    /** 获取搜索界面 清单 数据 */
+    class func getSearchListData(resultCallBack: (listModels: [BTSearchListModel]?, error: NSError?) -> ()) {
+        
+        let parmas: NSMutableDictionary = BTBaseRequestParmas.parmas().mj_keyValues()
+        parmas.removeObjectForKey("page")
+        parmas.removeObjectForKey("pagesize")
+        parmas.removeObjectForKey("last_get_time")
+        let url = kBaseUrl + "category/scene"
+        let manager = AFHTTPSessionManager()
+        
+        manager.POST(url, parameters: parmas, progress: nil, success: { (_, jsonData) in
+            
+            //将AnyObject转化成字典类型
+            guard (jsonData as? [String : NSObject]) != nil else {
+                return
+            }
+            
+            //字典数组 转 模型数组
+            let data = BTSearchListModel.mj_objectArrayWithKeyValuesArray(jsonData!["data"])
+            
+            var itemArr: [BTSearchListModel] = [BTSearchListModel]()
+            
+            //将所有子元素 转换成 模型类型
+            for listModel in data {
+                
+                itemArr.append(listModel as! BTSearchListModel)
+            }
+            
+            //成功回调
+            resultCallBack(listModels: itemArr, error: nil)
+            
+            }) { (_, error) in
+                
+                //错误回调
+                resultCallBack(listModels: nil, error: error)
+        }
+        
+    }
 
 }

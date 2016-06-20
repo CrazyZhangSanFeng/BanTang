@@ -112,7 +112,7 @@ extension BTDiscoverViewController: BTPopupViewDelegate {
     }
     //MARK:- 创建文章点击
     func creatText() {
-        print("创建文章")
+        
         let creatTextVC = BTCreatTextVC()
 
         self.presentViewController(creatTextVC, animated: true, completion: nil)
@@ -187,7 +187,7 @@ extension BTDiscoverViewController {
     
     //MARK:- 清单点击
     func clickLeft() {
-        print("点击清单")
+        
         rightButton.selected = false
         leftButton.selected = true
         
@@ -205,7 +205,7 @@ extension BTDiscoverViewController {
     
     //MARK:- 单品点击
     func clickRight() {
-        print("点击单品")
+        
         leftButton.selected = false
         rightButton.selected = true
         

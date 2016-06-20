@@ -126,10 +126,11 @@ extension BTDanpinViewController {
             
             
             
-            let arrs = BTHotItem.mj_objectArrayWithKeyValuesArray(dictArray) as! [BTHotItem]
+            let arrs = BTHotItem.mj_objectArrayWithKeyValuesArray(dictArray)
             
-            for item:BTHotItem in arrs {
-                self.hotItems?.append(item)
+            
+            for item in arrs {
+                self.hotItems?.append(item as! BTHotItem)
             }
             
             self.footView?.hotItems = self.hotItems

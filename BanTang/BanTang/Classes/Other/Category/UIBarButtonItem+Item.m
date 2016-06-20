@@ -15,11 +15,11 @@
     [btn setImage:image forState:UIControlStateNormal];
     [btn setImage:highImage forState:UIControlStateHighlighted];
     [btn sizeToFit];
-    UIView *contentV = [[UIView alloc] initWithFrame:btn.bounds];
-    [contentV addSubview:btn];
+//    UIView *contentV = [[UIView alloc] initWithFrame:btn.bounds];
+//    [contentV addSubview:btn];
     [btn addTarget:target action:action forControlEvents:UIControlEventTouchUpInside];
     
-    return [[UIBarButtonItem alloc] initWithCustomView:contentV];
+    return [[UIBarButtonItem alloc] initWithCustomView:btn];
 }
 
 + (instancetype)itemWithImage:(UIImage *)image selImage:(UIImage *)selImage Target:(id)target action:(SEL)action
