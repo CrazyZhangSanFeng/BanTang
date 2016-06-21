@@ -35,6 +35,9 @@
                     </constraints>
                     <state key="normal" backgroundImage="朋友圈_48x48_"/>
                     <state key="highlighted" backgroundImage="朋友圈_48x48_"/>
+                    <connections>
+                        <action selector="friendCircleClick:" destination="iN0-l3-epB" eventType="touchUpInside" id="d9C-6r-y7W"/>
+                    </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="朋友圈" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ztR-Il-r5k">
                     <rect key="frame" x="25" y="137" width="48" height="15"/>
@@ -46,11 +49,17 @@
                     <rect key="frame" x="136" y="79" width="48" height="48"/>
                     <state key="normal" backgroundImage="微信好友_48x48_"/>
                     <state key="highlighted" backgroundImage="微信好友_48x48_"/>
+                    <connections>
+                        <action selector="weChatFriendClick:" destination="iN0-l3-epB" eventType="touchUpInside" id="uyW-0R-HFs"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2bH-Dj-uiR">
                     <rect key="frame" x="247" y="79" width="48" height="48"/>
                     <state key="normal" backgroundImage="新浪微博_48x48_"/>
                     <state key="highlighted" backgroundImage="新浪微博_48x48_"/>
+                    <connections>
+                        <action selector="sinaClick:" destination="iN0-l3-epB" eventType="touchUpInside" id="Fch-Jy-0ws"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LdB-Rj-Ac8">
                     <rect key="frame" x="25" y="167" width="48" height="48"/>
@@ -61,6 +70,9 @@
                     <rect key="frame" x="136" y="167" width="48" height="48"/>
                     <state key="normal" backgroundImage="QQ好友_48x48_"/>
                     <state key="highlighted" backgroundImage="QQ好友_48x48_"/>
+                    <connections>
+                        <action selector="QQfriendClick:" destination="iN0-l3-epB" eventType="touchUpInside" id="9FE-NZ-uYB"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U7v-6c-cbF">
                     <rect key="frame" x="247" y="167" width="48" height="48"/>

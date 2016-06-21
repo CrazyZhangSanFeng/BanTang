@@ -7,3 +7,18 @@
 #import "UIImage+Image.h"
 #import "UINavigationBar+Extension.h"
 #import "UIColor+Extension.h"
+// 友盟
+#import "UMSocial.h"
+
+// 微信的
+#import "UMSocialWechatHandler.h"
+
+// 微博
+#import "UMSocialSinaSSOHandler.h"
+
+// QQ
+#import "UMSocialQQHandler.h"
+
+#import "UMSocialDataService.h"
+
+#import <CoreLocation/CoreLocation.h>

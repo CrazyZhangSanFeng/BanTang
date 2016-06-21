@@ -103,11 +103,13 @@ extension BTProductDetailVC {
         
     }
     
+    ///分享点击
     func shareBtnClick(btn: UIButton) {
         //遮盖
         let cover = BTCoverView.show()
         //分享
         let shareV = BTShareView.shareView()
+        shareV.productModel = self.productModel
         shareV.frame.size.width = BTscreenW
         
         weak var weakself: BTCoverView? = cover
