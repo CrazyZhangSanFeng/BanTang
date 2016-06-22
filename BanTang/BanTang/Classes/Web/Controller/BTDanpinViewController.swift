@@ -11,7 +11,7 @@ import MJExtension
 import AFNetworking
 
 private let cell0ID = "cell0"
-private let hotUrl = "http://open3.bantangapp.com/community/post/hotRecommend?app_id=com.jzyd.BanTang&app_installtime=1463934108&app_versions=5.8&channel_name=appStore&client_id=bt_app_ios&client_secret=9c1e6634ce1c5098e056628cd66a17a5&oauth_token=f1d476369a332f4e16f578a6228bd97e&os_versions=9.3.2&page=0&pagesize=18&screensize=640&track_device_info=iPhone6%2C2&track_deviceid=EAC59F1B-C110-48FA-B013-02A92744278A&track_user_id=2182968&v=13"
+
 //列
 private let cols: CGFloat = 3
 //间距
@@ -43,7 +43,7 @@ class BTDanpinViewController: UITableViewController {
         //加载底部collectionView
         setupFooterView()
         
-        
+        //加载动画
         loadingView = BTLoadingView.shareInstance.loadingViewToView(self.view) as? BTLoadingView
         loadingView?.startAnimation()
         view.addSubview(loadingView!)
@@ -54,7 +54,7 @@ class BTDanpinViewController: UITableViewController {
         tableView.backgroundColor = UIColor(red: 244 / 255.0, green: 244 / 255.0, blue: 244 / 255.0, alpha: 1.0)
         
         //监听通知
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(BTDanpinViewController.reloadHotData), name: "reloadHotData", object: nil)
+//        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(BTDanpinViewController.reloadHotData), name: "reloadHotData", object: nil)
         
     }
     
@@ -64,9 +64,11 @@ class BTDanpinViewController: UITableViewController {
     }
     
     //销毁通知
-    deinit {
-        NSNotificationCenter.defaultCenter().removeObserver(self)
-    }
+//    deinit {
+//        print("销毁通知")
+//        NSNotificationCenter.defaultCenter().removeObserver(self)
+//        
+//    }
 
 
 }
@@ -140,6 +142,7 @@ extension BTDanpinViewController {
             let h: CGFloat = CGFloat(maxRows) * wh + CGFloat(maxRows) * margin
             self.footView?.frame.size.height = h + 49
             self.tableView.tableFooterView = self.footView
+            print("又计算了高度!!!")
             
             self.tableView.reloadData()
             

@@ -27,10 +27,12 @@ class BTHotView: UIView {
                 return
             }
             //重新设置collectionView高度
-            let maxRows = (hotItems.count - 1) / 3 + 1
-            let h: CGFloat = CGFloat(maxRows) * wh + CGFloat(maxRows) * margin
-            
-            self.collectionV?.frame.size.height = h
+//            let maxRows = (hotItems.count - 1) / 3 + 1
+//            let h: CGFloat = CGFloat(maxRows) * wh + CGFloat(maxRows) * margin
+//            
+//            self.collectionV?.frame.size.height = h
+//            
+//            print("有计算了一遍collectionview高度")
             
             self.collectionV.reloadData()
             
@@ -86,8 +88,10 @@ extension BTHotView: UICollectionViewDataSource, UICollectionViewDelegate {
         
          //判断是否是最后一个cell即将出现
         if indexPath.row == hotItems!.count - 1 {
+            
             //发送通知给单品控制器,让他去加载更多数据
-            NSNotificationCenter.defaultCenter().postNotificationName("reloadHotData", object: self)
+//            NSNotificationCenter.defaultCenter().postNotificationName("reloadHotData", object: self)
+//            print("发送了通知")
         }
         
         return cell

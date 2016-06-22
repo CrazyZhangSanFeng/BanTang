@@ -224,6 +224,10 @@ extension BTDiscoverViewController {
     //MARK:- photo点击
     func photoClick() {
         print("点击照片")
+        let photoVC = UIImagePickerController()
+        photoVC.sourceType = .PhotoLibrary
+        
+        UIApplication.sharedApplication().keyWindow?.rootViewController?.presentViewController(photoVC, animated: true, completion: nil)
     }
     
 }
