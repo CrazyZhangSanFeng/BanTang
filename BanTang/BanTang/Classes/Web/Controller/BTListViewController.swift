@@ -83,6 +83,15 @@ import SwiftyJSON
             return 220
         }
         
+        override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+            //创建详情页
+            let articleVC = BTArticleVC()
+            
+            //push出来
+            navigationController?.pushViewController(articleVC, animated: true)
+            
+        }
+        
     }
     
     //MARK:- 请求数据

@@ -18,7 +18,7 @@ private let cols: CGFloat = 3
 private let margin: CGFloat = 2
 private let wh = (UIScreen.mainScreen().bounds.width - (cols - 1) * margin) / cols
 
-class BTDanpinViewController: UITableViewController {
+class BTDanpinViewController: UITableViewController, BTHotViewDelegate {
     
     //加载动画
     var loadingView: BTLoadingView?
@@ -63,6 +63,11 @@ class BTDanpinViewController: UITableViewController {
         loadHotData(page)
     }
     
+    func BTHotViewLastCellWillAppear() {
+        reloadHotData()
+        print("调用代理方法")
+    }
+    
     //销毁通知
 //    deinit {
 //        print("销毁通知")
@@ -105,6 +110,8 @@ extension BTDanpinViewController {
 
         footView = NSBundle.mainBundle().loadNibNamed("BTHotView", owner: nil, options: nil).first as? BTHotView
         
+        footView?.delegate = self
+        
         tableView.tableFooterView = footView
         
     }
@@ -132,16 +139,20 @@ extension BTDanpinViewController {
             
             
             for item in arrs {
+                
                 self.hotItems?.append(item as! BTHotItem)
+                
             }
             
             self.footView?.hotItems = self.hotItems
+            
             
             //重新设置collectionView高度
             let maxRows = (self.hotItems!.count - 1) / 3 + 1
             let h: CGFloat = CGFloat(maxRows) * wh + CGFloat(maxRows) * margin
             self.footView?.frame.size.height = h + 49
             self.tableView.tableFooterView = self.footView
+            
             print("又计算了高度!!!")
             
             self.tableView.reloadData()

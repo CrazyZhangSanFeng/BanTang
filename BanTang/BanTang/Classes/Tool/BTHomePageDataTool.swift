@@ -220,5 +220,28 @@ class BTHomePageDataTool: NSObject {
         }
         
     }
+    
+    //发现界面文章cell详情内容   死数据
+    class func getArticalData(resultCallBack: (listModel: BTArticleModel?, error: NSError?) -> ()) {
+
+        let url = "http://open3.bantangapp.com/topic/newInfo?app_id=com.jzyd.BanTang&app_installtime=1463934108&app_versions=5.8.2&channel_name=appStore&client_id=bt_app_ios&client_secret=9c1e6634ce1c5098e056628cd66a17a5&id=4858&is_night=0&oauth_token=1e4dd1de95a179d017efa7502fd6515a&os_versions=9.3.2&screensize=640&statistics_uv=0&track_device_info=iPhone6%2C2&track_deviceid=EAC59F1B-C110-48FA-B013-02A92744278A&track_user_id=2182968&type_id=1&v=14"
+        let manager = AFHTTPSessionManager()
+        
+        manager.GET(url, parameters: nil, progress: nil, success: { (_, jsonData) in
+            //将AnyObject转化成字典类型
+            guard (jsonData as? [String : NSObject]) != nil else {
+                return
+            }
+            
+            let data: BTArticleModel = BTArticleModel.mj_objectWithKeyValues(jsonData!["data"])
+            
+            resultCallBack(listModel: data, error: nil)
+            
+            
+            }) { (_, error) in
+                resultCallBack(listModel: nil, error: error)
+        }
+        
+    }
 
 }

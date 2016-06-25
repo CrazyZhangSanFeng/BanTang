@@ -69,6 +69,9 @@
 		735EC66F1CFD398700D171EE /* BTOrderController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 735EC66E1CFD398700D171EE /* BTOrderController.swift */; };
 		735EC6711CFD399400D171EE /* BTOrderController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 735EC6701CFD399400D171EE /* BTOrderController.storyboard */; };
 		735EC6731CFD3CF900D171EE /* BTOrderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 735EC6721CFD3CF900D171EE /* BTOrderCell.swift */; };
+		7386F0891D1EDB2C00F29256 /* BTArticleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7386F0881D1EDB2C00F29256 /* BTArticleModel.swift */; };
+		7386F08C1D1EDD3A00F29256 /* BTArticleVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7386F08A1D1EDD3A00F29256 /* BTArticleVC.swift */; };
+		7386F08D1D1EDD3A00F29256 /* BTArticleVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7386F08B1D1EDD3A00F29256 /* BTArticleVC.xib */; };
 		738710311CF2A749007D6979 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 738710301CF2A749007D6979 /* AppDelegate.swift */; };
 		738710381CF2A74A007D6979 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 738710371CF2A74A007D6979 /* Assets.xcassets */; };
 		7387103B1CF2A74A007D6979 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 738710391CF2A74A007D6979 /* LaunchScreen.storyboard */; };
@@ -226,6 +229,9 @@
 		735EC66E1CFD398700D171EE /* BTOrderController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BTOrderController.swift; sourceTree = "<group>"; };
 		735EC6701CFD399400D171EE /* BTOrderController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = BTOrderController.storyboard; sourceTree = "<group>"; };
 		735EC6721CFD3CF900D171EE /* BTOrderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BTOrderCell.swift; sourceTree = "<group>"; };
+		7386F0881D1EDB2C00F29256 /* BTArticleModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BTArticleModel.swift; sourceTree = "<group>"; };
+		7386F08A1D1EDD3A00F29256 /* BTArticleVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BTArticleVC.swift; sourceTree = "<group>"; };
+		7386F08B1D1EDD3A00F29256 /* BTArticleVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BTArticleVC.xib; sourceTree = "<group>"; };
 		7387102D1CF2A749007D6979 /* BanTang.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BanTang.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		738710301CF2A749007D6979 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		738710371CF2A74A007D6979 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -721,6 +727,8 @@
 				73CCC7EC1D165F45007E688C /* BTZhongcaoQueueTVC.swift */,
 				73CCC7FD1D16A6BB007E688C /* BTCreatTextVC.swift */,
 				73CCC7FE1D16A6BB007E688C /* BTCreatTextVC.xib */,
+				7386F08A1D1EDD3A00F29256 /* BTArticleVC.swift */,
+				7386F08B1D1EDD3A00F29256 /* BTArticleVC.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -733,6 +741,7 @@
 				73D12FAE1CF80E21008A4719 /* BTCategoryItem.swift */,
 				73955A3D1CFAD5A600189CA0 /* BTHotItem.swift */,
 				73CCC7F71D166535007E688C /* BTZhongcaoItem.swift */,
+				7386F0881D1EDB2C00F29256 /* BTArticleModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -964,6 +973,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7301C2BA1D194762009D91EF /* WeiboSDK.bundle in Resources */,
+				7386F08D1D1EDD3A00F29256 /* BTArticleVC.xib in Resources */,
 				73CCC7F61D16611E007E688C /* BTZhongcaoCell.xib in Resources */,
 				7301C25F1D17E364009D91EF /* BTSearchListCell.xib in Resources */,
 				738710781CF449B5007D6979 /* BTDisTableViewCell.xib in Resources */,
@@ -1055,6 +1065,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				73AAC9EC1D0EF90000AE5751 /* BTShareView.swift in Sources */,
+				7386F0891D1EDB2C00F29256 /* BTArticleModel.swift in Sources */,
 				735EC66F1CFD398700D171EE /* BTOrderController.swift in Sources */,
 				73AAC9DB1D09B56700AE5751 /* BTTopicDesView.swift in Sources */,
 				73AAC9CF1D096A6600AE5751 /* BTProductDetailVC.swift in Sources */,
@@ -1092,6 +1103,7 @@
 				731D59C71D05542800B3502C /* BTBaseRequestParmas.swift in Sources */,
 				731D59D41D059CCE00B3502C /* BTHomeTopicCell.swift in Sources */,
 				731D59C91D055F4800B3502C /* BTHomePageData.swift in Sources */,
+				7386F08C1D1EDD3A00F29256 /* BTArticleVC.swift in Sources */,
 				738710311CF2A749007D6979 /* AppDelegate.swift in Sources */,
 				73AAC9E81D0C239500AE5751 /* BTProductBottomBar.swift in Sources */,
 				73C1BCD01CFDB8ED004A8952 /* ZCFileManager.m in Sources */,
