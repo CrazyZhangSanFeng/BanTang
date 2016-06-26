@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="reuseIdentifier" id="KGk-i7-Jjw" customClass="BTSingNumberCell" customModule="BanTang" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="我的积分:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eTa-UV-r5a">
+                        <rect key="frame" x="8" y="13" width="61" height="17"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="50" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="00b-bU-tzx">
+                        <rect key="frame" x="71" y="13" width="18" height="17"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OiZ-Xj-sKB">
+                        <rect key="frame" x="224" y="8" width="86" height="27"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="86" id="0SG-JC-224"/>
+                            <constraint firstAttribute="height" constant="27" id="1He-C3-r0g"/>
+                        </constraints>
+                        <state key="normal" title="去兑换" backgroundImage="sign_duihuan_btn_34x27_"/>
+                        <connections>
+                            <action selector="duihuanBtn:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="e22-8n-gCb"/>
+                        </connections>
+                    </button>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="00b-bU-tzx" firstAttribute="leading" secondItem="eTa-UV-r5a" secondAttribute="trailing" constant="2" id="7p4-lf-Vns"/>
+                    <constraint firstAttribute="trailing" secondItem="OiZ-Xj-sKB" secondAttribute="trailing" constant="10" id="XUI-Gw-ZjF"/>
+                    <constraint firstItem="00b-bU-tzx" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="hYg-fM-DMb"/>
+                    <constraint firstItem="OiZ-Xj-sKB" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="kQK-CI-tnh"/>
+                    <constraint firstItem="eTa-UV-r5a" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="lIg-6m-ETx"/>
+                    <constraint firstItem="eTa-UV-r5a" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="sp1-YW-QnJ"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="numLabel" destination="00b-bU-tzx" id="hCs-YM-S0Q"/>
+            </connections>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="sign_duihuan_btn_34x27_" width="27" height="20"/>
+    </resources>
+</document>

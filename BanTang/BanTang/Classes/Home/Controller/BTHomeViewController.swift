@@ -376,10 +376,13 @@ extension BTHomeViewController: ContentViewDelegate {
 extension BTHomeViewController {
     func signClick() {
         debugPrint("签到点击")
+        let singInVC = BTSingInTVC()
+        singInVC.title = "签到"
+        navigationController?.pushViewController(singInVC, animated: true)
     }
     
     func searchClick() {
-        debugPrint("搜索点击")
+        
         let searchVC = BTSearchViewController()
         navigationController?.pushViewController(searchVC, animated: true)
         

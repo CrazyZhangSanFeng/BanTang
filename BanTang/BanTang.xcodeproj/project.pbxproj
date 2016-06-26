@@ -51,6 +51,11 @@
 		73043C7D1D07E6E800D71114 /* BTMessageChildBaseTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73043C7C1D07E6E800D71114 /* BTMessageChildBaseTVC.swift */; };
 		73070A6A1CFE9FE200CBDBF7 /* UIImage+Image.m in Sources */ = {isa = PBXBuildFile; fileRef = 73070A691CFE9FE200CBDBF7 /* UIImage+Image.m */; };
 		73070A6D1CFFD6C000CBDBF7 /* BTNewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73070A6C1CFFD6C000CBDBF7 /* BTNewController.swift */; };
+		731692871D1F69F100809C97 /* BTSingInTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 731692861D1F69F100809C97 /* BTSingInTVC.swift */; };
+		7316928A1D1F6C1000809C97 /* sign_background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 731692891D1F6C1000809C97 /* sign_background.jpg */; };
+		7316928D1D1F6C7F00809C97 /* BTSingTopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7316928C1D1F6C7F00809C97 /* BTSingTopView.swift */; };
+		731692901D1F91DB00809C97 /* BTSingNumberCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7316928E1D1F91DB00809C97 /* BTSingNumberCell.swift */; };
+		731692911D1F91DB00809C97 /* BTSingNumberCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7316928F1D1F91DB00809C97 /* BTSingNumberCell.xib */; };
 		731D59C01D046CC300B3502C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 731D59BC1D046CC300B3502C /* ContentView.swift */; };
 		731D59C11D046CC300B3502C /* ScrollPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 731D59BD1D046CC300B3502C /* ScrollPageView.swift */; };
 		731D59C21D046CC300B3502C /* ScrollSegmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 731D59BE1D046CC300B3502C /* ScrollSegmentView.swift */; };
@@ -211,6 +216,11 @@
 		73070A681CFE9FE200CBDBF7 /* UIImage+Image.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Image.h"; sourceTree = "<group>"; };
 		73070A691CFE9FE200CBDBF7 /* UIImage+Image.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Image.m"; sourceTree = "<group>"; };
 		73070A6C1CFFD6C000CBDBF7 /* BTNewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BTNewController.swift; sourceTree = "<group>"; };
+		731692861D1F69F100809C97 /* BTSingInTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BTSingInTVC.swift; sourceTree = "<group>"; };
+		731692891D1F6C1000809C97 /* sign_background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = sign_background.jpg; sourceTree = "<group>"; };
+		7316928C1D1F6C7F00809C97 /* BTSingTopView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BTSingTopView.swift; sourceTree = "<group>"; };
+		7316928E1D1F91DB00809C97 /* BTSingNumberCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BTSingNumberCell.swift; sourceTree = "<group>"; };
+		7316928F1D1F91DB00809C97 /* BTSingNumberCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BTSingNumberCell.xib; sourceTree = "<group>"; };
 		731D59BC1D046CC300B3502C /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		731D59BD1D046CC300B3502C /* ScrollPageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollPageView.swift; sourceTree = "<group>"; };
 		731D59BE1D046CC300B3502C /* ScrollSegmentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollSegmentView.swift; sourceTree = "<group>"; };
@@ -483,6 +493,24 @@
 			path = ChildViewController;
 			sourceTree = "<group>";
 		};
+		731692881D1F6C0100809C97 /* 图片资源 */ = {
+			isa = PBXGroup;
+			children = (
+				731692891D1F6C1000809C97 /* sign_background.jpg */,
+			);
+			path = "图片资源";
+			sourceTree = "<group>";
+		};
+		7316928B1D1F6C3D00809C97 /* 签到界面 */ = {
+			isa = PBXGroup;
+			children = (
+				7316928C1D1F6C7F00809C97 /* BTSingTopView.swift */,
+				7316928E1D1F91DB00809C97 /* BTSingNumberCell.swift */,
+				7316928F1D1F91DB00809C97 /* BTSingNumberCell.xib */,
+			);
+			path = "签到界面";
+			sourceTree = "<group>";
+		};
 		731D59BB1D046CC300B3502C /* ScrollPageView */ = {
 			isa = PBXGroup;
 			children = (
@@ -515,12 +543,13 @@
 		7387102F1CF2A749007D6979 /* BanTang */ = {
 			isa = PBXGroup;
 			children = (
+				738710301CF2A749007D6979 /* AppDelegate.swift */,
+				7387106D1CF30092007D6979 /* BanTang-Bridging-Header.h */,
 				7301C29A1D194762009D91EF /* UMSocial_Sdk_Extra_Frameworks */,
 				7301C2721D1946D8009D91EF /* UMSocial_Sdk_5.2.1 */,
 				738710421CF2A8FC007D6979 /* Classes */,
-				738710301CF2A749007D6979 /* AppDelegate.swift */,
-				7387106D1CF30092007D6979 /* BanTang-Bridging-Header.h */,
 				738710371CF2A74A007D6979 /* Assets.xcassets */,
+				731692881D1F6C0100809C97 /* 图片资源 */,
 				738710391CF2A74A007D6979 /* LaunchScreen.storyboard */,
 				7387103C1CF2A74A007D6979 /* Info.plist */,
 			);
@@ -606,6 +635,7 @@
 				7387105D1CF2B690007D6979 /* BTHomeViewController.swift */,
 				73AAC9CE1D096A6600AE5751 /* BTProductDetailVC.swift */,
 				73CCC8011D16D9F0007E688C /* BTSearchViewController.swift */,
+				731692861D1F69F100809C97 /* BTSingInTVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -627,6 +657,7 @@
 		7387104A1CF2A8FC007D6979 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				7316928B1D1F6C3D00809C97 /* 签到界面 */,
 				7301C2511D17B11D009D91EF /* 搜索Cell */,
 				73AAC9E01D0AF74500AE5751 /* 购物清单cell */,
 				731D59D21D059CCE00B3502C /* BTHomeTopicCell.swift */,
@@ -987,11 +1018,13 @@
 				7301C2921D1946D8009D91EF /* UMSCommentInputController.xib in Resources */,
 				73D12FA51CF7D7E1008A4719 /* BTCategoryCell.xib in Resources */,
 				7301C2C01D194762009D91EF /* README.txt in Resources */,
+				7316928A1D1F6C1000809C97 /* sign_background.jpg in Resources */,
 				7398A52A1CFC408300D0B813 /* BTMiddleView.xib in Resources */,
 				7301C2971D1946D8009D91EF /* UMSnsAccountViewController.xib in Resources */,
 				7301C2931D1946D8009D91EF /* UMSCommentInputControlleriPad.xib in Resources */,
 				7301C2BD1D194762009D91EF /* TencentOpenApi_IOS_Bundle.bundle in Resources */,
 				7301C2591D17BD0F009D91EF /* BTSearchCategoryRightCell.xib in Resources */,
+				731692911D1F91DB00809C97 /* BTSingNumberCell.xib in Resources */,
 				73AAC9EE1D0EF91400AE5751 /* BTShareView.xib in Resources */,
 				7398A5221CFC0B9700D0B813 /* BTSettingController.storyboard in Resources */,
 				735EC6711CFD399400D171EE /* BTOrderController.storyboard in Resources */,
@@ -1065,6 +1098,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				73AAC9EC1D0EF90000AE5751 /* BTShareView.swift in Sources */,
+				731692871D1F69F100809C97 /* BTSingInTVC.swift in Sources */,
 				7386F0891D1EDB2C00F29256 /* BTArticleModel.swift in Sources */,
 				735EC66F1CFD398700D171EE /* BTOrderController.swift in Sources */,
 				73AAC9DB1D09B56700AE5751 /* BTTopicDesView.swift in Sources */,
@@ -1096,6 +1130,7 @@
 				73CCC7F21D166100007E688C /* BTZhongcaoFooterView.swift in Sources */,
 				738710621CF2B706007D6979 /* BTMessageViewController.swift in Sources */,
 				7387106A1CF2DF6E007D6979 /* BTTabBar.swift in Sources */,
+				731692901D1F91DB00809C97 /* BTSingNumberCell.swift in Sources */,
 				731D59CB1D05652400B3502C /* BTHomeTopic.swift in Sources */,
 				73CCC8021D16D9F0007E688C /* BTSearchViewController.swift in Sources */,
 				73CCC7ED1D165F45007E688C /* BTZhongcaoQueueTVC.swift in Sources */,
@@ -1118,6 +1153,7 @@
 				7301C25E1D17E364009D91EF /* BTSearchListCell.swift in Sources */,
 				73AAC9EA1D0EEE2C00AE5751 /* BTCoverView.swift in Sources */,
 				7387105C1CF2B568007D6979 /* BTMainTabBarVC.swift in Sources */,
+				7316928D1D1F6C7F00809C97 /* BTSingTopView.swift in Sources */,
 				73D12FA11CF744B6008A4719 /* BTDanpinViewController.swift in Sources */,
 				7387105E1CF2B690007D6979 /* BTHomeViewController.swift in Sources */,
 				73AAC9E61D0BF6C000AE5751 /* BTProductLikeListView.swift in Sources */,

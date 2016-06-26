@@ -4,7 +4,7 @@
 //
 //  Created by 张灿 on 16/6/8.
 //  Copyright © 2016年 张灿. All rights reserved.
-//
+// 加载动画
 
 import UIKit
 

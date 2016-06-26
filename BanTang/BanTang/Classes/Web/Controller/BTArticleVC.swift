@@ -12,6 +12,8 @@ class BTArticleVC: UIViewController {
 
     @IBOutlet weak var webView: UIWebView!
     
+    var loadingView: BTLoadingView?
+    
     //模型
     var articleModel: BTArticleModel? {
         didSet {
@@ -24,7 +26,14 @@ class BTArticleVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = UIColor.whiteColor()
+        
+        //加载动画
+        loadingView = BTLoadingView.shareInstance.loadingViewToView(self.view) as? BTLoadingView
+        loadingView?.startAnimation()
+        loadingView?.center.x = BTscreenW * 0.5
+        loadingView?.center.y = BTscreenH * 0.5
+        view.addSubview(loadingView!)
+        
         loadData()
     }
     
@@ -32,8 +41,10 @@ class BTArticleVC: UIViewController {
     func loadData() {
         BTHomePageDataTool.getArticalData { (listModel, error) in
             if error == nil {
-                
+                self.loadingView?.hideAnimation()
                 self.articleModel = listModel
+            } else {
+                self.loadingView?.hideAnimation()
             }
         }
     }
