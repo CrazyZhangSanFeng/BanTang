@@ -4,7 +4,7 @@
 //
 //  Created by 张灿 on 16/6/26.
 //  Copyright © 2016年 张灿. All rights reserved.
-//
+//  签到界面 只搭了界面,没做点击处理
 
 import UIKit
 

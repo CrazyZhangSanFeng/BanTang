@@ -21,7 +21,6 @@ PODS:
     - SDWebImage/Core (= 3.7.6)
   - SDWebImage/Core (3.7.6)
   - SnapKit (0.21.0)
-  - SwiftyJSON (2.3.2)
 
 DEPENDENCIES:
   - AFNetworking (~> 3.0)
@@ -29,16 +28,6 @@ DEPENDENCIES:
   - SDCycleScrollView
   - SDWebImage
   - SnapKit
-  - SwiftyJSON (from `https://github.com/SwiftyJSON/SwiftyJSON.git`)
-
-EXTERNAL SOURCES:
-  SwiftyJSON:
-    :git: https://github.com/SwiftyJSON/SwiftyJSON.git
-
-CHECKOUT OPTIONS:
-  SwiftyJSON:
-    :commit: 2a5b70f06001316d4fb54501edc70b4084705da0
-    :git: https://github.com/SwiftyJSON/SwiftyJSON.git
 
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
@@ -46,8 +35,7 @@ SPEC CHECKSUMS:
   SDCycleScrollView: 806fedb9342ab03b58b84442f985517b42c7cbb7
   SDWebImage: c325cf02c30337336b95beff20a13df489ec0ec9
   SnapKit: 2756fe24b706367af224c9c508d2f9166d03354c
-  SwiftyJSON: 04ccea08915aa0109039157c7974cf0298da292a
 
-PODFILE CHECKSUM: 57f7cd26d4803a9a69bd2b8a717350c6c1a8e70a
+PODFILE CHECKSUM: 6e4c23210849cd118157272add86fe333f5d62b3
 
 COCOAPODS: 1.0.0
